@@ -140,16 +140,22 @@
       </AnchorPane>
       <AnchorPane layoutX="780.0" layoutY="449.0" prefHeight="140.0" prefWidth="399.0" style="-fx-background-color: #ffffff;" AnchorPane.rightAnchor="10.0">
          <children>
-            <Label layoutX="104.0" layoutY="38.0" text="Service Charge  :" AnchorPane.rightAnchor="178.0">
+            <Label layoutX="104.0" layoutY="27.0" text="Service Charge  :" AnchorPane.rightAnchor="178.0">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="235.0" layoutY="37.0" prefHeight="27.0" prefWidth="159.0" text="0.00" AnchorPane.rightAnchor="5.0">
+            <Label alignment="CENTER" layoutX="235.0" layoutY="26.0" prefHeight="27.0" prefWidth="159.0" text="0.00" AnchorPane.rightAnchor="5.0">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
+            <Label layoutX="112.0" layoutY="52.0" text="Payment type  :">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXComboBox layoutX="254.0" layoutY="51.0" prefHeight="25.0" prefWidth="124.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="66.0" prefWidth="1136.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -244,12 +250,12 @@
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
       <TextField layoutX="1071.0" layoutY="318.0" prefHeight="25.0" prefWidth="36.0" text="1" AnchorPane.rightAnchor="82.0" />
-      <Label layoutX="912.0" layoutY="456.0" text="Sub Total  :" AnchorPane.rightAnchor="188.0">
+      <Label layoutX="912.0" layoutY="449.0" text="Sub Total  :" AnchorPane.rightAnchor="188.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="867.0" layoutY="522.0" text="Cash Paid  :" AnchorPane.rightAnchor="188.0">
+      <Label layoutX="920.0" layoutY="531.0" text="Cash Paid  :" AnchorPane.rightAnchor="188.0">
          <font>
             <Font size="16.0" />
          </font>
@@ -259,12 +265,12 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="1014.0" layoutY="456.0" prefHeight="27.0" prefWidth="159.0" text="0.00" AnchorPane.rightAnchor="16.0">
+      <Label alignment="CENTER" layoutX="1014.0" layoutY="449.0" prefHeight="27.0" prefWidth="159.0" text="0.00" AnchorPane.rightAnchor="16.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField alignment="CENTER" layoutX="961.0" layoutY="522.0" prefHeight="25.0" prefWidth="124.0" AnchorPane.rightAnchor="31.0" />
+      <TextField alignment="CENTER" layoutX="1034.0" layoutY="531.0" prefHeight="25.0" prefWidth="124.0" AnchorPane.rightAnchor="31.0" />
       <Label alignment="CENTER" layoutX="961.0" layoutY="557.0" prefHeight="27.0" prefWidth="159.0" text="0.00" AnchorPane.rightAnchor="16.0">
          <font>
             <Font size="16.0" />
