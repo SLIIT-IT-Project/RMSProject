@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="477.0" prefWidth="457.0" style="-fx-background-color: FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.mdss.fx.style.controller.MainFormController">
+<AnchorPane fx:id="root" prefHeight="477.0" prefWidth="457.0" style="-fx-background-color: FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.LoginFormController">
    <children>
       <ImageView fx:id="lbl_back111" fitHeight="121.0" fitWidth="211.0" layoutX="165.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -36,12 +36,12 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <JFXPasswordField fx:id="txt_pass" layoutX="187.0" layoutY="279.0" onAction="#logc" prefHeight="25.0" prefWidth="169.0">
+      <JFXPasswordField fx:id="txt_pass" layoutX="187.0" layoutY="279.0" prefHeight="25.0" prefWidth="169.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXPasswordField>
-      <JFXButton fx:id="btn_sign" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="167.0" layoutY="378.0" onAction="#log" prefHeight="48.0" prefWidth="126.0" style="-fx-background-color: #eb5527;" text="Log In   " textFill="WHITE">
+      <JFXButton fx:id="btn_log" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="167.0" layoutY="378.0" onAction="#log" prefHeight="48.0" prefWidth="126.0" style="-fx-background-color: #eb5527;" text="Log In   " textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

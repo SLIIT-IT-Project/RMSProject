@@ -8,11 +8,12 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/PlaceOrderForm.fxml"));
-        primaryStage.setTitle("Restaurant Management System");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/ManageEmployee.fxml"));
+        primaryStage.setTitle("Employee Management System");
+        primaryStage.setScene(new Scene(root, 1230, 885));
         primaryStage.show();
     }
 
