@@ -34,7 +34,7 @@ public class StockDetailsImpl implements IStockService {
     public boolean update(Stock stock) throws Exception {
 
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm= connection.prepareStatement("UPDATE stock set STItemName = ?,Quantity = ?,Type = ?,TotalCost = ?,DateTime = ?  WHERE sid=?");
+        PreparedStatement pstm= connection.prepareStatement("UPDATE stock set STName = ?,Quantity = ?,Type = ?,Date_Time = ?,TotalCost = ?  WHERE STId=?");
         pstm.setObject(6,stock.getSTId());
         pstm.setObject(1,stock.getSTName());
         pstm.setObject(2,stock.getQuantity());
@@ -49,7 +49,7 @@ public class StockDetailsImpl implements IStockService {
     public boolean delete(int STId) throws Exception {
 
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("DELETE FROM stock WHERE sid=?");
+        PreparedStatement pstm = connection.prepareStatement("DELETE FROM stock WHERE STId=?");
         pstm.setObject(1,STId);
 
         return pstm.executeUpdate()>0;

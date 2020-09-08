@@ -18,13 +18,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.nnj.rms.fx.model.Stock;
 import lk.nnj.rms.fx.model.Supplier;
+import lk.nnj.rms.fx.service.Impl.IStockService;
 import lk.nnj.rms.fx.service.Impl.ISupplierService;
+import lk.nnj.rms.fx.service.Impl.Impl.StockDetailsImpl;
 import lk.nnj.rms.fx.service.Impl.Impl.SupplierDetailsImpl;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -159,10 +163,10 @@ public class ManageSupplierController implements Initializable {
     @FXML
     void update(ActionEvent event) {
 
-        String SId,Name,Email,Company,PhoneNo,Discreption,Address;
+        String SId,SName,Email,Company,PhoneNo,Discreption,Address;
 
         SId =txtSId.getText();
-        Name=txtSName.getText();
+        SName=txtSName.getText();
         Email=txtEmail.getText();
         Company=txtCompny.getText();
         PhoneNo=txtPNo.getText();
@@ -170,7 +174,8 @@ public class ManageSupplierController implements Initializable {
         Address=txtAddress.getText();
 
         int id =Integer.parseInt(SId);
-        Supplier supplier=new Supplier(id,Name,Email,Company,PhoneNo,Discreption,Address);
+
+        Supplier supplier=new Supplier(id,SName,Company,PhoneNo,Email,Address,Discreption);
         ISupplierService isupplier = new SupplierDetailsImpl();
         try {
             if(isupplier.update(supplier))
@@ -212,13 +217,14 @@ public class ManageSupplierController implements Initializable {
 
 
     public void viewTable() {
-        TableDetailsSupplier.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("SID"));
-        TableDetailsSupplier.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("Name"));
-        TableDetailsSupplier.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("Email"));
-        TableDetailsSupplier.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("Company"));
-        TableDetailsSupplier.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("PhoneNo"));
-        TableDetailsSupplier.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("Discreption"));
-        TableDetailsSupplier.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("Address"));
+        TableDetailsSupplier.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("SId"));
+        TableDetailsSupplier.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("SName"));
+        TableDetailsSupplier.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("Email"));
+        TableDetailsSupplier.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("phoneNo"));
+        TableDetailsSupplier.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("company"));
+        TableDetailsSupplier.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("address"));
+        TableDetailsSupplier.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("discreption"));
+
 
         ISupplierService isupplier = new SupplierDetailsImpl();
         try {
@@ -228,15 +234,17 @@ public class ManageSupplierController implements Initializable {
             e.printStackTrace();
         }
     }
+
         public void viewTable(int SId)
         {
-            TableDetailsSupplier.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("SID"));
-            TableDetailsSupplier.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("Name"));
-            TableDetailsSupplier.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("Email"));
-            TableDetailsSupplier.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("Company"));
-            TableDetailsSupplier.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("PhoneNo"));
-            TableDetailsSupplier.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("Discreption"));
-            TableDetailsSupplier.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("Address"));
+            TableDetailsSupplier.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("SId"));
+            TableDetailsSupplier.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("SName"));
+            TableDetailsSupplier.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("Email"));
+            TableDetailsSupplier.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("phoneNo"));
+            TableDetailsSupplier.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("company"));
+            TableDetailsSupplier.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("address"));
+            TableDetailsSupplier.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("discreption"));
+
 
             ISupplierService isupplier = new SupplierDetailsImpl();
             try {
@@ -262,6 +270,7 @@ public class ManageSupplierController implements Initializable {
             txtDis.setText(supplier.getDiscreption());
             txtAddress.setText(supplier.getAddress());
 
+
         }
     }
 
@@ -274,7 +283,7 @@ public class ManageSupplierController implements Initializable {
             primaryStage.setScene(subScene);
             primaryStage.centerOnScreen();
             primaryStage.setResizable(true);
-            TranslateTransition tt = new TranslateTransition(Duration.millis(450), subScene.getRoot());
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
             tt.setFromX(-subScene.getWidth());
             tt.setToX(0);
             tt.play();

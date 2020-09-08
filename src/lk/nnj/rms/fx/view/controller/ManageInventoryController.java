@@ -61,7 +61,7 @@ public class ManageInventoryController {
             primaryStage.setScene(subScene);
             primaryStage.centerOnScreen();
             primaryStage.setResizable(true);
-            TranslateTransition tt = new TranslateTransition(Duration.millis(450),subScene.getRoot());
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350),subScene.getRoot());
             tt.setFromX(-subScene.getWidth());
             tt.setToX(0);
             tt.play();

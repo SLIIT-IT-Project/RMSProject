@@ -166,10 +166,10 @@ public class ManageStockController implements Initializable {
     @FXML
     void update(ActionEvent event) {
 
-        String STId,STItemName,Quantity,Type,TotalCost;
+        String STId,STName,Quantity,Type,TotalCost;
 
         STId =txtSTId.getText();
-        STItemName=txtStName.getText();
+        STName=txtStName.getText();
         Quantity=txtQut.getText();
         Type=txtType.getText();
         Date DateTime= Date.valueOf(date.getValue());
@@ -180,13 +180,20 @@ public class ManageStockController implements Initializable {
         int TC =Integer.parseInt(TotalCost);
 
 
-        Stock stock=new Stock(sid,STItemName,Qut,Type,DateTime,TC);
+        Stock stock=new Stock(sid,STName,Qut,Type,DateTime,TC);
         IStockService istock = new StockDetailsImpl();
         try {
-            istock.update(stock);
-            JOptionPane.showMessageDialog(null,"Add Success");
-            reset ();
-            viewTable();
+            if(istock.update(stock)) {
+
+                JOptionPane.showMessageDialog(null, "Add Success");
+                reset();
+                viewTable();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Update Faild");
+            }
+
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error! can't Add");
@@ -225,6 +232,7 @@ public class ManageStockController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         viewTable();
     }
 
@@ -233,7 +241,7 @@ public class ManageStockController implements Initializable {
         tableDetailsStock.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("STName"));
         tableDetailsStock.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("Quantity"));
         tableDetailsStock.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("Type"));
-        tableDetailsStock.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("DateTime"));
+        tableDetailsStock.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("Date_Time"));
         tableDetailsStock.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("TotalCost"));
 
 
@@ -253,7 +261,7 @@ public class ManageStockController implements Initializable {
         tableDetailsStock.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("STName"));
         tableDetailsStock.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("Quantity"));
         tableDetailsStock.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("Type"));
-        tableDetailsStock.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("DateTime"));
+        tableDetailsStock.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("Date_Time"));
         tableDetailsStock.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("TotalCost"));
 
         IStockService istock = new StockDetailsImpl();
@@ -274,7 +282,7 @@ public class ManageStockController implements Initializable {
             primaryStage.setScene(subScene);
             primaryStage.centerOnScreen();
             primaryStage.setResizable(true);
-            TranslateTransition tt = new TranslateTransition(Duration.millis(450), subScene.getRoot());
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
             tt.setFromX(-subScene.getWidth());
             tt.setToX(0);
             tt.play();

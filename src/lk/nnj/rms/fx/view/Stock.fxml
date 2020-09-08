@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="626.0" prefWidth="927.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageStockController">
+<AnchorPane fx:id="root" prefHeight="626.0" prefWidth="866.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageStockController">
    <children>
       <AnchorPane prefHeight="67.0" prefWidth="600.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -111,21 +111,21 @@
             <Image url="@../assest/icons8-printer-96.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tableDetailsStock" layoutX="20.0" layoutY="354.0" onMouseClicked="#viewSelectStock" prefHeight="258.0" prefWidth="887.0" style="-fx-background-color: #aab7b8;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="354.0">
+      <TableView fx:id="tableDetailsStock" layoutX="20.0" layoutY="354.0" onMouseClicked="#viewSelectStock" prefHeight="258.0" prefWidth="834.0" style="-fx-background-color: #aab7b8;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="354.0">
         <columns>
             <TableColumn prefWidth="91.0" text="Stock Iteam ID" />
             <TableColumn prefWidth="181.0" text="Stock Item Name" />
             <TableColumn minWidth="0.0" prefWidth="111.0" text="Type" />
             <TableColumn prefWidth="135.0" text="Quantity ( Kg / Bottel )" />
             <TableColumn minWidth="0.0" prefWidth="151.0" text="Total Cost" />
-            <TableColumn prefWidth="217.0" text="Date / Time (24H)" />
+            <TableColumn prefWidth="164.0" text="Date " />
         </columns>
       </TableView>
-      <PieChart fx:id="piechart" cache="true" cacheHint="QUALITY" layoutX="496.0" layoutY="77.0" mouseTransparent="true" prefHeight="266.0" prefWidth="281.0" style="-fx-background-color: #FFF8DC;" title="Available Stock">
+      <PieChart fx:id="piechart" cache="true" cacheHint="QUALITY" layoutX="496.0" layoutY="77.0" mouseTransparent="true" prefHeight="223.0" prefWidth="232.0" style="-fx-background-color: #FFF8DC;" title="Available Stock">
          <opaqueInsets>
             <Insets />
          </opaqueInsets></PieChart>
-      <ImageView fitHeight="109.0" fitWidth="118.0" layoutX="781.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="109.0" fitWidth="118.0" layoutX="736.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assest/icons8-product-96.png" />
          </image>

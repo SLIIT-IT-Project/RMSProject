@@ -20,10 +20,11 @@ public class SupplierDetailsImpl implements ISupplierService {
         pstm.setObject(1,supplier.getSId());
         pstm.setObject(2,supplier.getSName());
         pstm.setObject(3,supplier.getEmail());
-        pstm.setObject(4,supplier.getCompany());
-        pstm.setObject(5,supplier.getPhoneNo());
-        pstm.setObject(6,supplier.getDiscreption());
-        pstm.setObject(7,supplier.getAddress());
+        pstm.setObject(4,supplier.getPhoneNo());
+        pstm.setObject(5,supplier.getCompany());
+        pstm.setObject(6,supplier.getAddress());
+        pstm.setObject(7,supplier.getDiscreption());
+
 
         return pstm.executeUpdate()>0;
     }
@@ -31,15 +32,15 @@ public class SupplierDetailsImpl implements ISupplierService {
     @Override
     public boolean update(Supplier supplier) throws Exception {
 
-        Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm= connection.prepareStatement("UPDATE supplier set Name=?,Email=?,Company=?,PhoneNo=?,Discreption=?,Address=?  WHERE id=?");
+        Connection connection =DBConnection.getConnection();
+        PreparedStatement pstm =connection.prepareStatement("UPDATE supplier set SName =? ,company = ?,phoneNo = ?,Email = ?,address = ?,discreption = ?  WHERE SId=?");
         pstm.setObject(7,supplier.getSId());
         pstm.setObject(1,supplier.getSName());
-        pstm.setObject(2,supplier.getEmail());
-        pstm.setObject(3,supplier.getCompany());
-        pstm.setObject(4,supplier.getPhoneNo());
-        pstm.setObject(5,supplier.getDiscreption());
-        pstm.setObject(6,supplier.getAddress());
+        pstm.setObject(2,supplier.getCompany());
+        pstm.setObject(3,supplier.getPhoneNo());
+        pstm.setObject(4,supplier.getEmail());
+        pstm.setObject(5,supplier.getAddress());
+        pstm.setObject(6,supplier.getDiscreption());
 
         return pstm.executeUpdate()>0;
     }
@@ -47,7 +48,7 @@ public class SupplierDetailsImpl implements ISupplierService {
     @Override
     public boolean delete(int SId) throws Exception {
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("DELETE FROM supplier WHERE id=?");
+        PreparedStatement pstm = connection.prepareStatement("DELETE FROM supplier WHERE SId=?");
         pstm.setObject(1,SId);
 
         return pstm.executeUpdate()>0;
@@ -57,7 +58,7 @@ public class SupplierDetailsImpl implements ISupplierService {
     public Supplier find(int SId) throws Exception {
 
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM supplier WHERE id=?");
+        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM supplier WHERE SId=?");
         pstm.setObject(1,SId);
 
 
@@ -84,7 +85,7 @@ public class SupplierDetailsImpl implements ISupplierService {
 
         ArrayList<Supplier> allSupplier = new ArrayList<>();
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM suppplier ");
+        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM supplier ");
         ResultSet rst = pstm.executeQuery();
 
         while(rst.next())
@@ -97,7 +98,7 @@ public class SupplierDetailsImpl implements ISupplierService {
             String Discreption=rst.getString(6);
             String Address=rst.getString(7);
 
-            Supplier supplier = new Supplier(SId,SName,Email,Company,PhoneNo,Discreption,Address);
+            Supplier supplier = new Supplier(SId,SName,Company,PhoneNo,Email,Address,Discreption);
             allSupplier.add(supplier);
         }
         return allSupplier;

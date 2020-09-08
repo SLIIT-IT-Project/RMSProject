@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource( "/lk/nnj/rms/fx/view/Inventory.fxml"));
         primaryStage.setTitle("Restaurant Management System - Supplier");
-        primaryStage.setScene(new Scene(root, 1052 , 582));
+        primaryStage.setScene(new Scene(root, 600 , 420));
         primaryStage.show();
 
 
