@@ -208,6 +208,7 @@ public class CustomerManagementController implements Initializable {
         txt_address.setText("");
         txt_no_of_orders.setText("");
         txt_searchCustomerID.setText("");
+
     }
     @FXML
     void back(MouseEvent event) throws IOException {

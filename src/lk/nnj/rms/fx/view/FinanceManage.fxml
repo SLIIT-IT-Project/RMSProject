@@ -28,7 +28,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="lbl_back" fitHeight="35.0" fitWidth="30.0" layoutX="14.0" layoutY="18.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assest/icons8-back-arrow-64.png" />
                </image>
