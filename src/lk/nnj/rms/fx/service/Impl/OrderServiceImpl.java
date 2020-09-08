@@ -17,7 +17,7 @@ public class OrderServiceImpl implements IOrderService {
     @Override
     public boolean add(Order order) throws Exception {
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("INSERT INTO Order1 VALUES(?,?,?,?,?,?,?,?,?)");
+        PreparedStatement pstm = connection.prepareStatement("INSERT INTO Order1 VALUES(?,?,?,?,?,?,?,?)");
         pstm.setObject(1,order.getOid());
         pstm.setObject(2,order.getDate_tme());
         pstm.setObject(3,order.getDescription());

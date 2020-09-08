@@ -17,10 +17,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="701.0" prefWidth="1189.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.PlaceOrderFormController">
+<AnchorPane fx:id="root" prefHeight="701.0" prefWidth="1189.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.PlaceOrderFormController">
    <children>
       <AnchorPane layoutX="12.0" layoutY="70.0" prefHeight="54.0" prefWidth="761.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="416.0" />
-      <AnchorPane layoutX="779.0" layoutY="70.0" prefHeight="374.0" prefWidth="399.0" style="-fx-background-color: #ffffff;" AnchorPane.rightAnchor="11.0">
+      <AnchorPane layoutX="779.0" layoutY="70.0" prefHeight="350.0" prefWidth="399.0" style="-fx-background-color: #ffffff;" AnchorPane.rightAnchor="11.0">
          <children>
             <JFXButton fx:id="btn_dessert" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="231.0" layoutY="10.0" onAction="#viewDessert" prefHeight="27.0" prefWidth="159.0" style="-fx-background-color: #ffffff;" text="Dessert     ">
                <cursor>
@@ -92,6 +92,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </ImageView>
+            <Label fx:id="lbl_unitPrice" layoutX="228.0" layoutY="8.0" underline="true" visible="false" />
          </children></AnchorPane>
       <AnchorPane layoutY="597.0" prefHeight="104.0" prefWidth="1136.0" style="-fx-background-color: #ced1d6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="597.0">
          <children>
@@ -142,7 +143,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="780.0" layoutY="449.0" prefHeight="140.0" prefWidth="399.0" style="-fx-background-color: #ffffff;" AnchorPane.rightAnchor="10.0">
+      <AnchorPane layoutX="780.0" layoutY="424.0" prefHeight="165.0" prefWidth="399.0" style="-fx-background-color: #ffffff;" AnchorPane.rightAnchor="10.0">
          <children>
             <Label layoutX="104.0" layoutY="27.0" text="Service Charge  :" AnchorPane.rightAnchor="178.0">
                <font>
@@ -154,12 +155,22 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="112.0" layoutY="52.0" text="Payment type  :">
+            <Label layoutX="112.0" layoutY="81.0" text="Payment type  :">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <JFXComboBox fx:id="cmb_pType" layoutX="254.0" layoutY="51.0" prefHeight="25.0" prefWidth="124.0" />
+            <JFXComboBox fx:id="cmb_pType" layoutX="254.0" layoutY="79.0" prefHeight="25.0" prefWidth="124.0" />
+            <Label layoutX="90.0" layoutY="52.0" text="Total Amount  :">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_totAmount" alignment="CENTER" layoutX="233.0" layoutY="53.0" prefHeight="27.0" prefWidth="159.0" text="0.00">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="66.0" prefWidth="1136.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -174,7 +185,7 @@
                   <Image url="@../assest/icons8-purchase-order-96.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="1145.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="9.0">
+            <ImageView fx:id="lbl_logOut" fitHeight="35.0" fitWidth="36.0" layoutX="1145.0" layoutY="14.0" onMouseClicked="#logOut" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="9.0">
                <image>
                   <Image url="@../assest/icons8-export-96.png" />
                </image>
@@ -182,13 +193,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <Label layoutX="957.0" layoutY="24.0" text="Invoice No" AnchorPane.rightAnchor="175.0" />
+            <TextField fx:id="txt_invoiceNo" alignment="CENTER" disable="true" layoutX="1024.0" layoutY="20.0" prefHeight="25.0" prefWidth="98.0" AnchorPane.rightAnchor="67.0" />
          </children>
       </AnchorPane>
-      <Label layoutX="753.0" layoutY="23.0" text="Invoice No" AnchorPane.rightAnchor="379.0" />
-      <TextField fx:id="txt_invoiceNo" disable="true" layoutX="820.0" layoutY="19.0" prefHeight="25.0" prefWidth="98.0" AnchorPane.rightAnchor="271.0" />
-      <Label layoutX="927.0" layoutY="23.0" text="Date &amp; Time" AnchorPane.rightAnchor="195.0" />
-      <TextField fx:id="txt_dateTime" disable="true" layoutX="1003.0" layoutY="19.0" prefHeight="25.0" prefWidth="124.0" AnchorPane.rightAnchor="62.0" />
-      <TableView fx:id="lbl_itemOrder" layoutX="11.0" layoutY="132.0" prefHeight="310.0" prefWidth="761.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="417.0" AnchorPane.topAnchor="132.0">
+      <TableView fx:id="tbl_itemOrder" layoutX="11.0" layoutY="132.0" onMouseClicked="#Click" prefHeight="310.0" prefWidth="761.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="417.0" AnchorPane.topAnchor="132.0">
         <columns>
           <TableColumn prefWidth="0.0" text="Item ID" />
           <TableColumn minWidth="250.0" prefWidth="298.0" text="Item Name" />
@@ -199,7 +208,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <JFXListView fx:id="lst_viewCategory" layoutX="726.0" layoutY="132.0" prefHeight="304.0" prefWidth="216.0" style="-fx-background-color: #e6e6e6 #e6e6e6;" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="132.0" />
+      <JFXListView fx:id="lst_viewCategory" layoutX="726.0" layoutY="132.0" prefHeight="281.0" prefWidth="216.0" style="-fx-background-color: #e6e6e6 #e6e6e6;" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="132.0" />
       <JFXComboBox fx:id="cmb_sCategory" layoutX="726.0" layoutY="83.0" prefHeight="25.0" prefWidth="216.0" promptText="Select Category" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="83.0" />
       <JFXButton fx:id="btn_smallP" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="1010.0" layoutY="111.0" onAction="#viewSmall" prefHeight="66.0" prefWidth="76.0" style="-fx-background-color: #ffffff;" text="Small" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="111.0">
          <cursor>
@@ -239,45 +248,45 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <JFXButton fx:id="btn_add1" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="1010.0" layoutY="354.0" onAction="#AddItem1" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #ffffff;" text="Add     " AnchorPane.rightAnchor="20.0">
+      <JFXButton fx:id="btn_add1" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="1010.0" layoutY="332.0" onAction="#AddItem1" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #ffffff;" text="Add     " AnchorPane.rightAnchor="20.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
-      <JFXButton fx:id="btn_remove1" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="1010.0" layoutY="400.0" onAction="#removeItem1" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #ffffff;" text="Remove     " AnchorPane.rightAnchor="20.0">
+      <JFXButton fx:id="btn_remove1" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="1010.0" layoutY="378.0" onAction="#removeItem1" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #ffffff;" text="Remove     " AnchorPane.rightAnchor="20.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
-      <TextField fx:id="txt_qty1" layoutX="1071.0" layoutY="318.0" prefHeight="25.0" prefWidth="36.0" text="1" AnchorPane.rightAnchor="82.0" />
-      <Label layoutX="912.0" layoutY="449.0" text="Sub Total  :" AnchorPane.rightAnchor="188.0">
+      <TextField fx:id="txt_qty1" layoutX="1071.0" layoutY="296.0" prefHeight="25.0" prefWidth="36.0" text="1" AnchorPane.rightAnchor="82.0" />
+      <Label layoutX="912.0" layoutY="424.0" text="Sub Total  :" AnchorPane.rightAnchor="188.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="920.0" layoutY="531.0" text="Cash Paid  :" AnchorPane.rightAnchor="188.0">
+      <Label layoutX="920.0" layoutY="543.0" text="Cash Paid  :" AnchorPane.rightAnchor="188.0">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="880.0" layoutY="559.0" text="Balance  :" AnchorPane.rightAnchor="188.0">
+      <Label layoutX="943.0" layoutY="568.0" text="Balance  :" AnchorPane.rightAnchor="187.0">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbl_subTotal" alignment="CENTER" layoutX="1014.0" layoutY="449.0" prefHeight="27.0" prefWidth="159.0" text="0.00" AnchorPane.rightAnchor="16.0">
+      <Label fx:id="lbl_subTotal" alignment="CENTER" layoutX="1014.0" layoutY="424.0" prefHeight="27.0" prefWidth="159.0" text="0.00" AnchorPane.rightAnchor="16.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_cashPaid" alignment="CENTER" layoutX="1034.0" layoutY="531.0" prefHeight="25.0" prefWidth="124.0" AnchorPane.rightAnchor="31.0" />
-      <Label fx:id="lbl_balance" alignment="CENTER" layoutX="961.0" layoutY="557.0" prefHeight="27.0" prefWidth="159.0" text="0.00" AnchorPane.rightAnchor="16.0">
+      <TextField fx:id="txt_cashPaid" alignment="CENTER" layoutX="1034.0" layoutY="539.0" prefHeight="25.0" prefWidth="124.0" AnchorPane.rightAnchor="31.0" />
+      <Label fx:id="lbl_balance" alignment="CENTER" layoutX="1014.0" layoutY="562.0" prefHeight="27.0" prefWidth="159.0" text="0.00" AnchorPane.rightAnchor="16.0">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </Label>
       <ImageView fx:id="lbl_plus" fitHeight="27.0" fitWidth="36.0" layoutX="422.0" layoutY="85.0" onMouseClicked="#plus" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="740.0">
@@ -295,7 +304,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="btn_plus1" fitHeight="27.0" fitWidth="36.0" layoutX="1036.0" layoutY="317.0" onMouseClicked="#plus1" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="126.0">
+      <ImageView fx:id="btn_plus1" fitHeight="27.0" fitWidth="36.0" layoutX="1036.0" layoutY="295.0" onMouseClicked="#plus1" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="126.0">
          <image>
             <Image url="@../assest/icons8-plus-64.png" />
          </image>
@@ -303,7 +312,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="btn_minus1" fitHeight="27.0" fitWidth="36.0" layoutX="1116.0" layoutY="317.0" onMouseClicked="#minus1" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="46.0">
+      <ImageView fx:id="btn_minus1" fitHeight="27.0" fitWidth="36.0" layoutX="1116.0" layoutY="295.0" onMouseClicked="#minus1" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="46.0">
          <image>
             <Image url="@../assest/icons8-minus-64.png" />
          </image>
@@ -329,7 +338,7 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </ImageView>
-      <ImageView fitHeight="17.0" fitWidth="25.0" layoutX="1021.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="151.0">
+      <ImageView fitHeight="17.0" fitWidth="25.0" layoutX="1021.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="151.0">
          <image>
             <Image url="@../assest/icons8-plus-math-40.png" />
          </image>
@@ -337,7 +346,7 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </ImageView>
-      <ImageView fitHeight="17.0" fitWidth="25.0" layoutX="1021.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="151.0">
+      <ImageView fitHeight="17.0" fitWidth="25.0" layoutX="1021.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="151.0">
          <image>
             <Image url="@../assest/icons8-subtract-40.png" />
          </image>

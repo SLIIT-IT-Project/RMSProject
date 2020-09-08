@@ -2,17 +2,46 @@ package lk.nnj.rms.fx.view.controller;
 
 
 import com.jfoenix.controls.*;
+import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+import lk.nnj.rms.fx.model.Item;
+import lk.nnj.rms.fx.model.ItemOrder;
+import lk.nnj.rms.fx.model.Order;
+import lk.nnj.rms.fx.service.IItemOrderService;
+import lk.nnj.rms.fx.service.IItemService;
+import lk.nnj.rms.fx.service.IOrderService;
+import lk.nnj.rms.fx.service.IQueryService;
+import lk.nnj.rms.fx.service.Impl.ItemOrderServiceImpl;
+import lk.nnj.rms.fx.service.Impl.ItemServiceImpl;
+import lk.nnj.rms.fx.service.Impl.OrderServiceImpl;
+import lk.nnj.rms.fx.service.Impl.QueryServiceImpl;
+import org.controlsfx.control.textfield.TextFields;
 
+import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.time.LocalDateTime;
+import java.util.*;
 
 public class PlaceOrderFormController implements Initializable {
+
+    @FXML
+    private AnchorPane root;
+
     @FXML
     private JFXButton btn_dessert;
 
@@ -62,16 +91,18 @@ public class PlaceOrderFormController implements Initializable {
     private Label lbl_serviceCharge;
 
     @FXML
-    private JFXComboBox<?> cmb_pType;
+    private ImageView lbl_logOut;
+
+
+    @FXML
+    private JFXComboBox<String> cmb_pType;
 
     @FXML
     private TextField txt_invoiceNo;
 
-    @FXML
-    private TextField txt_dateTime;
 
     @FXML
-    private TableView<?> lbl_itemOrder;
+    private TableView<ItemOrder> tbl_itemOrder;
 
     @FXML
     private JFXListView<?> lst_viewCategory;
@@ -143,6 +174,9 @@ public class PlaceOrderFormController implements Initializable {
     private ImageView btn_plus1;
 
     @FXML
+    private Label lbl_totAmount;
+
+    @FXML
     private ImageView btn_minus1;
 
     @FXML
@@ -157,13 +191,71 @@ public class PlaceOrderFormController implements Initializable {
     @FXML
     private ImageView lbl_elargeP;
 
+
+    @FXML
+    private Label lbl_unitPrice;
+
+    static double subTotal = 0, serviceCharge=0, totAmount = 0;
+
     @FXML
     void AddItem1(ActionEvent event) {
 
     }
+    @FXML
+    void Click(MouseEvent event) {
+        ArrayList<ItemOrder> itemList =  new ArrayList<>(tbl_itemOrder.getSelectionModel().getSelectedItems());
+        for(ItemOrder item:itemList)
+        {
+            txt_itemID.setText(item.getItemID());
+            txt_itemName.setText(item.getItemName());
+            txt_qty.setText(Integer.toString(item.getQty()));
+            lbl_unitPrice.setText(Double.toString(item.getUnitPrice()));
+        }
+    }
 
+    //Add items to the Item Order Table
     @FXML
     void addItem(ActionEvent event) {
+
+        double unit_price;
+        String itemID;
+        int orderID;
+        int qty;
+        IQueryService iQueryService = new QueryServiceImpl();
+        String itemName = txt_itemName.getText();
+        if(itemName.equals(""))
+        {
+
+        }else
+            {
+                try {
+                    orderID = Integer.parseInt(txt_invoiceNo.getText());
+                    itemID=iQueryService.getItemID(itemName);
+                    txt_itemID.setText(itemID);
+                    qty =Integer.parseInt(txt_qty.getText());
+                    unit_price = iQueryService.getItemPrice(itemName);
+
+                    IOrderService iOrderService = new OrderServiceImpl();
+                    try {
+                        iOrderService.add(new Order(orderID, LocalDateTime.now(), "", "", 0, 0, 0, 100));
+                    }catch (Exception e)
+                    {
+
+                    }
+                    IItemOrderService iItemOrderService = new ItemOrderServiceImpl();
+                    iItemOrderService.add(new ItemOrder(orderID,itemID,itemName,qty,unit_price));
+                    subTotal = subTotal + unit_price * qty ;
+                    serviceCharge = subTotal * 10.0/100;
+                    totAmount = subTotal + serviceCharge;
+                    lbl_subTotal.setText(Double.toString(subTotal));
+                    lbl_serviceCharge.setText(Double.toString(serviceCharge));
+                    lbl_totAmount.setText(Double.toString(totAmount));
+                    viewTable(orderID);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
 
     }
 
@@ -178,6 +270,10 @@ public class PlaceOrderFormController implements Initializable {
         if(rb_del.isSelected())
         {
             txt_address.setDisable(false);
+            lbl_serviceCharge.setText("0.0");
+            totAmount = totAmount - serviceCharge;
+            serviceCharge=0;
+            lbl_totAmount.setText(Double.toString(totAmount));
         }
     }
     //Check whether takeAway radio button is selected
@@ -186,6 +282,11 @@ public class PlaceOrderFormController implements Initializable {
         if(rb_tAway.isSelected())
         {
             txt_address.setDisable(true);
+            lbl_serviceCharge.setText("0.0");
+            totAmount = totAmount - serviceCharge;
+            serviceCharge =0;
+            lbl_totAmount.setText(Double.toString(totAmount));
+
         }
     }
     //Check whether dineInn radio button is selected
@@ -194,13 +295,19 @@ public class PlaceOrderFormController implements Initializable {
         if(rb_dine.isSelected())
         {
             txt_address.setDisable(true);
+            double totCharge = totAmount;
+            double sCharge = totCharge* 10.0/100;
+            totCharge = sCharge + totCharge;
+            lbl_serviceCharge.setText(Double.toString(sCharge));
+            lbl_totAmount.setText(Double.toString(totCharge));
+
         }
     }
     //Decrement Quantity
     @FXML
     void minus(MouseEvent event) {
         int qty = Integer.parseInt(txt_qty.getText());
-        if(qty!=0)
+        if(qty!=1)
         {
             qty--;
             txt_qty.setText(Integer.toString(qty));
@@ -232,7 +339,40 @@ public class PlaceOrderFormController implements Initializable {
 
     @FXML
     void removeItem(ActionEvent event) {
+        String itemID;
+        double unit_price;
+        int qty;
+        int orderID = Integer.parseInt(txt_invoiceNo.getText());
 
+        itemID = txt_itemID.getText();
+
+        //Check whether item id is empty or not
+        if(!txt_itemID.getText().equals(""))
+        {
+            IItemOrderService iItemOrderService = new ItemOrderServiceImpl();
+            try {
+                unit_price = Double.parseDouble(lbl_unitPrice.getText());
+                qty = Integer.parseInt(txt_qty.getText());
+                iItemOrderService.delete(itemID);
+                subTotal = subTotal - unit_price * qty ;
+                serviceCharge = subTotal * 10.0/100;
+
+                if(subTotal ==0.0)
+                {
+                    IOrderService iOrderService = new OrderServiceImpl();
+                    iOrderService.delete(orderID);
+                }
+
+                totAmount = subTotal + serviceCharge;
+                lbl_subTotal.setText(Double.toString(subTotal));
+                lbl_serviceCharge.setText(Double.toString(serviceCharge));
+                lbl_totAmount.setText(Double.toString(totAmount));
+                viewTable(orderID);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
@@ -276,7 +416,73 @@ public class PlaceOrderFormController implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources){
+        ObservableList<String> options =
+                FXCollections.observableArrayList(
+                        "Cash",
+                        "Credit",
+                        "Debit"
+                );
+
+        rb_dine.setSelected(true);
+        cmb_pType.setItems(options);
+        cmb_pType.setValue("Cash");
+        IQueryService iQueryService = new QueryServiceImpl();
+        try {
+            txt_invoiceNo.setText(Integer.toString(iQueryService.getInvoiceNo()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        List<String> itemList;
+        try {
+            itemList = iQueryService.getAllItemNames();
+            String[] items = new String[itemList.size()];
+            items = itemList.toArray(items);
+            TextFields.bindAutoCompletion(txt_itemName, items);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void logOut(MouseEvent event) throws IOException {
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/LoginForm.fxml"));
+        if (root != null) {
+            Scene subScene = new Scene(root);
+            Stage primaryStage = (Stage) this.root.getScene().getWindow();
+            primaryStage.setScene(subScene);
+            primaryStage.centerOnScreen();
+            primaryStage.setResizable(false);
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+            tt.setFromX(-subScene.getWidth());
+            tt.setToX(0);
+            tt.play();
+        }
+    }
+
+    public void viewTable(int oid)
+    {
+        tbl_itemOrder.getColumns().get(0).setStyle("-fx-alignment: center");
+        tbl_itemOrder.getColumns().get(1).setStyle("-fx-alignment: center");
+        tbl_itemOrder.getColumns().get(2).setStyle("-fx-alignment: center");
+        tbl_itemOrder.getColumns().get(3).setStyle("-fx-alignment: center");
+
+        tbl_itemOrder.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("itemID"));
+        tbl_itemOrder.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        tbl_itemOrder.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("qty"));
+        tbl_itemOrder.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+
+        IItemOrderService iItemOrderService = new ItemOrderServiceImpl();
+        try {
+            List<ItemOrder> allItems = iItemOrderService.findAll(oid);
+            tbl_itemOrder.setItems(FXCollections.observableArrayList(allItems));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }

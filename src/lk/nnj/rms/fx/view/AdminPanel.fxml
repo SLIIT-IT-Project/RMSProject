@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="690.0" prefWidth="1111.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.mdss.fx.style.controller.AdminPanelController">
+<AnchorPane fx:id="root" prefHeight="690.0" prefWidth="1111.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.AdminPanelController">
    <children>
       <Pane layoutX="263.0" layoutY="42.0" prefHeight="81.0" prefWidth="198.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -23,7 +23,7 @@
                   <Image url="@../assest/icons8-purchase-order-96.png" />
                </image>
             </ImageView>
-            <Label layoutX="93.0" layoutY="14.0" text="0">
+            <Label fx:id="lbl_tOrder" layoutX="93.0" layoutY="14.0" text="0">
                <font>
                   <Font size="24.0" />
                </font>
@@ -41,7 +41,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btn_place" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="77.0" onAction="#place" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Order Management" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_order" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="77.0" onAction="#viewOrder" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Order Management" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -49,7 +49,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="btn_order" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="177.0" onAction="#order" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Category Management" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_category" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="177.0" onAction="#viewCategory" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Category Management" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -65,7 +65,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <JFXButton fx:id="btn_deliver" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="277.0" onAction="#dpartners" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Financial Management " textAlignment="RIGHT">
+            <JFXButton fx:id="btn_finance" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="277.0" onAction="#viewFinance" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Financial Management " textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -73,7 +73,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="btn_cus" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="327.0" onAction="#customer" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Inventory Management" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_inventory" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="327.0" onAction="#viewInventory" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Inventory Management" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -114,7 +114,7 @@
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
             </ImageView>
-            <JFXButton fx:id="btn_about" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="631.0" onAction="#about" prefHeight="35.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="About" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_about" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="631.0" onAction="#viewAbout" prefHeight="35.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="About" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -130,7 +130,7 @@
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
             </ImageView>
-            <JFXButton fx:id="btn_item" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="227.0" onAction="#items" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Item Management" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_item" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="227.0" onAction="#viewItem" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Item Management" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -146,7 +146,7 @@
                   <Image url="@../assest/icons8-pizza-96.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="btn_track" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="127.0" onAction="#track" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Deliver Management" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_del" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="127.0" onAction="#viewDel" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Deliver Management" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -162,7 +162,7 @@
                   <Image url="@../assest/deliver.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="btn_cus1" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="377.0" onAction="#customer" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Customer Management" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_cus" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="377.0" onAction="#viewCustomer" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Customer Management" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -178,7 +178,7 @@
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
             </ImageView>
-            <JFXButton fx:id="btn_cus2" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="427.0" onAction="#customer" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Employee Management" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_emp" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="427.0" onAction="#viewEmp" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Employee Management" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -194,7 +194,7 @@
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
             </ImageView>
-            <JFXButton fx:id="btn_cus3" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="477.0" onAction="#customer" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Property Management" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_prop" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="477.0" onAction="#viewProp" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Property Management" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -210,7 +210,7 @@
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
             </ImageView>
-            <JFXButton fx:id="btn_cus4" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="526.0" onAction="#customer" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Event Management" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_event" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="526.0" onAction="#viewEvent" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Event Management" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -226,7 +226,7 @@
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
             </ImageView>
-            <JFXButton fx:id="btn_cus41" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="576.0" onAction="#customer" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Play Area Management" textAlignment="RIGHT">
+            <JFXButton fx:id="btn_play" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="12.0" layoutY="576.0" onAction="#viewPlay" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #dadce0;" text="Play Area Management" textAlignment="RIGHT">
                <effect>
                   <Glow />
                </effect>
@@ -245,7 +245,7 @@
          </children>
       </Pane>
       <Separator layoutX="210.0" layoutY="135.0" prefHeight="13.0" prefWidth="825.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" />
-      <AreaChart layoutX="221.0" layoutY="190.0" prefHeight="378.0" prefWidth="882.0">
+      <AreaChart fx:id="Sales_Chart" layoutX="221.0" layoutY="190.0" prefHeight="378.0" prefWidth="882.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -266,7 +266,7 @@
                   <Image url="@../assest/icons8-sales-performance-96.png" />
                </image>
             </ImageView>
-            <Label layoutX="76.0" layoutY="15.0" text="Rs.0">
+            <Label fx:id="lbl_tSales" layoutX="76.0" layoutY="15.0" text="Rs.0">
                <font>
                   <Font size="24.0" />
                </font>
@@ -284,7 +284,7 @@
                   <Image url="@../assest/icons8-pizza-96.png" />
                </image>
             </ImageView>
-            <Label layoutX="102.0" layoutY="16.0" text="0">
+            <Label fx:id="lbl_tSold" layoutX="102.0" layoutY="16.0" text="0">
                <font>
                   <Font size="24.0" />
                </font>
@@ -302,7 +302,7 @@
                   <Image url="@../assest/icons8-queue-96.png" />
                </image>
             </ImageView>
-            <Label layoutX="119.0" layoutY="16.0" text="0">
+            <Label fx:id="lbl_tCustomer" layoutX="119.0" layoutY="16.0" text="0">
                <font>
                   <Font size="24.0" />
                </font>

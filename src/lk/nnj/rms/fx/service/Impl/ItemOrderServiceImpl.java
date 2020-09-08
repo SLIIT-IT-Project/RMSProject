@@ -36,7 +36,7 @@ public class ItemOrderServiceImpl implements IItemOrderService {
     }
 
     @Override
-    public List<ItemOrder> findAll(String id) throws Exception {
+    public List<ItemOrder> findAll(int id) throws Exception {
         ArrayList<ItemOrder> allItems = new ArrayList<>();
         Connection connection = DBConnection.getConnection();
         PreparedStatement pstm = connection.prepareStatement("SELECT * FROM Order_Item WHERE order_id=?");

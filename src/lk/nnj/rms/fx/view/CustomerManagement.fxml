@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="640.0" prefWidth="940.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.CustomerManagementController">
+<AnchorPane fx:id="root" prefHeight="640.0" prefWidth="940.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.CustomerManagementController">
    <children>
       <AnchorPane prefHeight="60.0" prefWidth="796.0" style="-fx-background-color: #a9a4ed #a9a4ed;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -20,10 +20,13 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="35.0" fitWidth="40.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="lbl_back" fitHeight="35.0" fitWidth="40.0" layoutX="14.0" layoutY="13.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assest/icons8-back-arrow-64.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fitHeight="54.0" fitWidth="61.0" layoutX="875.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0">
                <image>
@@ -39,6 +42,9 @@
                <image>
                   <Image url="@../assest/RHG/icons8-find-user-RHG.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="12.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
                <image>
