@@ -5,20 +5,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-
     private static Connection connection;
 
     public static Connection getConnection() throws SQLException {
-        if (connection == null) {
+        if(connection==null)
+        {
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/financedb",
+                    "jdbc:mysql://localhost:3306/restdb",
                     "root",
-                    "Backspace1#"
-
+                    "1234"
             );
         }
         return connection;
     }
 }
-
-
