@@ -6,14 +6,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.net.URL;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/PlaceOrderForm.fxml"));
-        primaryStage.setTitle("Restaurant Management System");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource( "/lk/nnj/rms/fx/view/Inventory.fxml"));
+        primaryStage.setTitle("Restaurant Management System - Supplier");
+        primaryStage.setScene(new Scene(root, 1052 , 582));
         primaryStage.show();
+
+
     }
 
     public static void main(String[] args) {

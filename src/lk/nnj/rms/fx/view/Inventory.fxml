@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageInventoryController">
+<AnchorPane fx:id="root" prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageInventoryController">
    <children>
-      <AnchorPane prefHeight="67.0" prefWidth="600.0" style="-fx-background-color: #ced1d6;">
+      <AnchorPane prefHeight="67.0" prefWidth="600.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="47.0" fitWidth="41.0" layoutX="11.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgback" fitHeight="47.0" fitWidth="41.0" layoutX="11.0" layoutY="17.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assest/icons8-back-arrow-64.png" />
                </image>
@@ -23,10 +23,11 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <JFXButton alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="102.0" layoutY="97.0" prefHeight="134.0" prefWidth="375.0" ripplerFill="BLUE" style="-fx-background-color: #fffff1;" text=" Manage Supplier" textAlignment="RIGHT" textOverrun="CLIP" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="97.0">
+      <JFXButton fx:id="btnSupplier" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="102.0" layoutY="97.0" onAction="#SupplierManage" prefHeight="134.0" prefWidth="375.0" ripplerFill="BLUE" style="-fx-background-color: #fffff1;" text=" Manage Supplier" textAlignment="RIGHT" textOverrun="CLIP" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="97.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
+
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -36,7 +37,7 @@
             <Image url="@../assest/icons8-supplier-96.png" />
          </image>
       </ImageView>
-      <JFXButton alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="102.0" layoutY="254.0" prefHeight="134.0" prefWidth="375.0" ripplerFill="RED" style="-fx-background-color: #fffff1;" text="Manage Stock" textAlignment="RIGHT" textOverrun="CLIP" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="123.0">
+      <JFXButton fx:id="btnStock" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="102.0" layoutY="254.0" onAction="#StockManage" prefHeight="134.0" prefWidth="375.0" ripplerFill="RED" style="-fx-background-color: #fffff1;" text="Manage Stock" textAlignment="RIGHT" textOverrun="CLIP" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="123.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
