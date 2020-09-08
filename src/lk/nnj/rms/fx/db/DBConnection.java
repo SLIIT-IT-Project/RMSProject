@@ -5,21 +5,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-
     private static Connection connection;
 
     public static Connection getConnection() throws SQLException {
         if(connection==null)
         {
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:3306/testdb",
+                    "jdbc:mysql://localhost:3306/restdb",
                     "root",
                     "1234"
             );
-
         }
         return connection;
     }
-
-
 }
