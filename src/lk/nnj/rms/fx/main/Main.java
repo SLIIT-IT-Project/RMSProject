@@ -10,11 +10,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/PlaceOrderForm.fxml"));
-        primaryStage.setTitle("Restaurant Management System");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/CalculateExpencess.fxml"));
+        primaryStage.setTitle("User Registration");
+        primaryStage.setScene(new Scene(root, 1800, 850));
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
+
+
 
     public static void main(String[] args) {
         launch(args);

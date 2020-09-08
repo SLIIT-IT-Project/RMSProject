@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="684.0" prefWidth="1258.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.FinanceManageController">
+<AnchorPane fx:id="rootpane" prefHeight="684.0" prefWidth="1258.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.FinanceController">
    <children>
       <AnchorPane layoutX="2.0" prefHeight="70.0" prefWidth="1258.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <opaqueInsets>
@@ -44,7 +45,7 @@
       </Label>
       <HBox layoutX="6.0" layoutY="112.0" prefHeight="97.0" prefWidth="796.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="112.0">
          <children>
-            <JFXButton prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Summary">
+            <JFXButton fx:id="btn_summary" onAction="#summary" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #cccccc; -fx-background-radius: 12;" text="Summary">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -64,8 +65,11 @@
                <font>
                   <Font size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Salary">
+            <JFXButton fx:id="btn_salary" onAction="#salary" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Salary">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -85,8 +89,11 @@
                <font>
                   <Font size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Expences">
+            <JFXButton fx:id="btn_expences" onAction="#expences" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Expences">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -106,8 +113,11 @@
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="20.0" top="10.0" />
                </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Rate">
+            <JFXButton fx:id="btn_rate" onAction="#rate" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Rate">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -127,8 +137,11 @@
                      </viewport>
                   </ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Reports">
+            <JFXButton onAction="#reports" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Reports">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -148,6 +161,9 @@
                <font>
                   <Font size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
             <ImageView fitHeight="94.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
                <image>
