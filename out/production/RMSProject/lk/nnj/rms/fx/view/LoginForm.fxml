@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="477.0" prefWidth="457.0" style="-fx-background-color: FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.LoginFormController">
+   <children>
+      <ImageView fx:id="lbl_back111" fitHeight="121.0" fitWidth="211.0" layoutX="165.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/icons8-pizza-512.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="103.0" layoutY="236.0" text="User ID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txt_user" layoutX="187.0" layoutY="222.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="102.0" layoutY="292.0" text="Password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXPasswordField fx:id="txt_pass" layoutX="187.0" layoutY="279.0" onAction="#logc" prefHeight="25.0" prefWidth="169.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="btn_sign" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="167.0" layoutY="378.0" onAction="#log" prefHeight="48.0" prefWidth="126.0" style="-fx-background-color: #eb5527;" text="Log In   " textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="lbl_back11" fitHeight="36.0" fitWidth="27.0" layoutX="175.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/icons8-forgot-password-48.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ImageView>
+      <Line endX="329.0" layoutX="116.0" layoutY="204.0" startX="-102.0" stroke="#eb5527" />
+      <Label layoutX="96.0" layoutY="168.0" prefHeight="32.0" prefWidth="259.0" text="Restaurant Management System" textFill="#ffb200">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="197.0" layoutY="135.0" prefHeight="35.0" prefWidth="63.0" text="Pizza" textFill="#eb5527">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
