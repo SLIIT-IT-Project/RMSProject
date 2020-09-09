@@ -211,11 +211,6 @@ public class ManageEmployeeController implements Initializable {
     @FXML
     void attendance(ActionEvent event) throws IOException {
 
-//        FXMLLoader Loader = new FXMLLoader();
-//
-//        Loader.setLocation(getClass().getResource("/lk/nnj/rms/fx/view/ManageAttendance.fxml"));
-//        Loader.load();
-
         Parent root = null;
         root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/ManageAttendance.fxml"));
         if (root != null){
@@ -224,7 +219,7 @@ public class ManageEmployeeController implements Initializable {
             primaryStage.setScene(subScene);
             primaryStage.centerOnScreen();
             primaryStage.setResizable(true);
-            TranslateTransition tt = new TranslateTransition(Duration.millis(400), subScene.getRoot());
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
             tt.setFromX(-subScene.getWidth());
             tt.setToX(0);
             tt.play();
