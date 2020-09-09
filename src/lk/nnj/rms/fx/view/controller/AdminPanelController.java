@@ -201,8 +201,20 @@ public class AdminPanelController {
     }
 
     @FXML
-    void viewInventory(ActionEvent event) {
-
+    void viewInventory(ActionEvent event) throws IOException {
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/Inventory.fxml"));
+        if (root != null) {
+            Scene subScene = new Scene(root);
+            Stage primaryStage = (Stage) this.root.getScene().getWindow();
+            primaryStage.setScene(subScene);
+            primaryStage.centerOnScreen();
+            primaryStage.setResizable(false);
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+            tt.setFromX(-subScene.getWidth());
+            tt.setToX(0);
+            tt.play();
+        }
     }
 
     @FXML

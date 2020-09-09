@@ -19,9 +19,6 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-//        IOrderService iOrderService = new OrderServiceImpl();
-//        iOrderService.add(new Order(1000,java.time.LocalDateTime.now(),"ahjkdhajd","ordertype",1,100.0,100.0,100.0,"C001"));
-
     }
 
     public static void main(String[] args) {

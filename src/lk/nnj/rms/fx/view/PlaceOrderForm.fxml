@@ -283,7 +283,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_cashPaid" alignment="CENTER" layoutX="1034.0" layoutY="539.0" prefHeight="25.0" prefWidth="124.0" AnchorPane.rightAnchor="31.0" />
+      <TextField fx:id="txt_cashPaid" alignment="CENTER" layoutX="1034.0" layoutY="539.0" onAction="#setBalance" prefHeight="25.0" prefWidth="124.0" AnchorPane.rightAnchor="31.0" />
       <Label fx:id="lbl_balance" alignment="CENTER" layoutX="1014.0" layoutY="562.0" prefHeight="27.0" prefWidth="159.0" text="0.00" AnchorPane.rightAnchor="16.0">
          <font>
             <Font size="14.0" />

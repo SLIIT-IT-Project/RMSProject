@@ -1,8 +1,8 @@
-package lk.nnj.rms.fx.service.Impl.Impl;
+package lk.nnj.rms.fx.service.Impl;
 
 import lk.nnj.rms.fx.db.DBConnection;
 import lk.nnj.rms.fx.model.Supplier;
-import lk.nnj.rms.fx.service.Impl.ISupplierService;
+import lk.nnj.rms.fx.service.ISupplierService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,12 +1,11 @@
-package lk.nnj.rms.fx.service.Impl.Impl;
+package lk.nnj.rms.fx.service.Impl;
 import lk.nnj.rms.fx.db.DBConnection;
 import lk.nnj.rms.fx.model.Stock;
-import lk.nnj.rms.fx.service.Impl.IStockService;
+import lk.nnj.rms.fx.service.IStockService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

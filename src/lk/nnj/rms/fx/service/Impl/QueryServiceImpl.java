@@ -28,6 +28,39 @@ public class QueryServiceImpl implements IQueryService {
     }
 
     @Override
+    public int getCusNo() throws Exception {
+        int inID = 100;
+        int cID;
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT customer_id FROM Customer ORDER BY customer_id DESC LIMIT 1");
+        ResultSet rst = pstm.executeQuery();
+
+        if(rst.next())
+        {
+            cID = rst.getInt(1);
+            inID = cID+1;
+
+        }
+        return inID;
+    }
+
+    @Override
+    public int getPaymentNo() throws Exception {
+        int inID = 1000000;
+        int pID;
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT payment_id FROM Payment ORDER BY payment_id DESC LIMIT 1");
+        ResultSet rst = pstm.executeQuery();
+
+        if(rst.next())
+        {
+            pID = rst.getInt(1);
+            inID = pID+1;
+
+        }
+        return inID;
+    }
+    @Override
     public List<String> getAllItemNames() throws Exception {
         ArrayList<String> itemList= new ArrayList<>();
         Connection connection = DBConnection.getConnection();
@@ -67,5 +100,23 @@ public class QueryServiceImpl implements IQueryService {
             return rst.getDouble(1);
         }
         return 0;
+    }
+    @Override
+    public String findOrderDetails(int id) throws Exception {
+        String allItems="";
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT item_name, qty FROM Order_Item WHERE order_id=?");
+        pstm.setObject(1,id);
+        ResultSet rst = pstm.executeQuery();
+
+        while(rst.next())
+        {
+            String itemName = rst.getString(1);
+            String qty = rst.getString(2);
+
+            allItems = itemName + " X  "+qty +",";
+        }
+
+        return allItems.substring(0,allItems.length()-1);
     }
 }

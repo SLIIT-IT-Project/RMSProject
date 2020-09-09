@@ -79,7 +79,7 @@ public class ManageItemController implements Initializable {
         description=txt_description.getText();
 
         //Check whether required fields are empty or not
-        if(itemID.equals("") || itemName.equals("") || description.equals(""))
+        if(itemID.equals("") || itemName.equals(""))
         {
             JOptionPane.showMessageDialog(null,"One or more required field is empty");
         }else

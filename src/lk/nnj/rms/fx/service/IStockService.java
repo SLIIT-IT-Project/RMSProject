@@ -1,4 +1,4 @@
-package lk.nnj.rms.fx.service.Impl;
+package lk.nnj.rms.fx.service;
 
 import lk.nnj.rms.fx.model.Stock;
 

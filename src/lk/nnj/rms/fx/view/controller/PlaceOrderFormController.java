@@ -18,17 +18,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.nnj.rms.fx.model.Customer;
 import lk.nnj.rms.fx.model.Item;
 import lk.nnj.rms.fx.model.ItemOrder;
 import lk.nnj.rms.fx.model.Order;
-import lk.nnj.rms.fx.service.IItemOrderService;
-import lk.nnj.rms.fx.service.IItemService;
-import lk.nnj.rms.fx.service.IOrderService;
-import lk.nnj.rms.fx.service.IQueryService;
-import lk.nnj.rms.fx.service.Impl.ItemOrderServiceImpl;
-import lk.nnj.rms.fx.service.Impl.ItemServiceImpl;
-import lk.nnj.rms.fx.service.Impl.OrderServiceImpl;
-import lk.nnj.rms.fx.service.Impl.QueryServiceImpl;
+import lk.nnj.rms.fx.service.*;
+import lk.nnj.rms.fx.service.Impl.*;
 import org.controlsfx.control.textfield.TextFields;
 
 import java.awt.event.ActionListener;
@@ -260,8 +255,61 @@ public class PlaceOrderFormController implements Initializable {
     }
 
     @FXML
-    void checkOut(MouseEvent event) {
+    void checkOut(MouseEvent event){
+        if(rb_dine.isSelected())
+        {
+            int oid = Integer.parseInt(txt_invoiceNo.getText());
+            String oType = "Dine Inn";
+            double orderAmount = Double.parseDouble(lbl_subTotal.getText());
+            double sCharge = Double.parseDouble(lbl_serviceCharge.getText());
+            double totAmount = Double.parseDouble(lbl_totAmount.getText());
+            String desc="";
+            int cid=0;
+            try
+            {
+                IQueryService iQueryService = new QueryServiceImpl();
+                cid = iQueryService.getCusNo();
+                desc = iQueryService.findOrderDetails(oid);
+            }catch (Exception e)
+            {
 
+            }
+
+
+            String cname = txt_cname.getText();
+            String mobile = txt_cmobile.getText();
+
+            //add customer to the database
+            try
+            {
+                ICustomerService iCustomerService = new CustomerServiceImpl();
+                iCustomerService.add(new Customer(cid,cname,mobile,"",0));
+            }catch (Exception e)
+            {
+
+            }
+            //update order
+            try
+            {
+                IOrderService iOrderService = new OrderServiceImpl();
+                iOrderService.update(new Order(oid,LocalDateTime.now(),desc,oType,orderAmount,sCharge,totAmount,cid));
+            }catch (Exception e)
+            {
+
+            }
+            //Add payment Details
+            try
+            {
+                IQueryService iQueryService = new QueryServiceImpl();
+                int pid = iQueryService.getPaymentNo();
+
+            }catch (Exception e)
+            {
+
+            }
+
+
+        }
     }
 
     //Check whether deliver radio button is selected if enable address text area
@@ -316,7 +364,12 @@ public class PlaceOrderFormController implements Initializable {
 
     @FXML
     void minus1(MouseEvent event) {
-
+        int qty = Integer.parseInt(txt_qty1.getText());
+        if(qty!=1)
+        {
+            qty--;
+            txt_qty1.setText(Integer.toString(qty));
+        }
     }
 
     @FXML
@@ -334,7 +387,17 @@ public class PlaceOrderFormController implements Initializable {
 
     @FXML
     void plus1(MouseEvent event) {
+        int qty = Integer.parseInt(txt_qty1.getText());
+        qty++;
+        txt_qty1.setText(Integer.toString(qty));
+    }
 
+    @FXML
+    void setBalance(ActionEvent event) {
+        double totAmount = Double.parseDouble(lbl_totAmount.getText());
+        double rec = Double.parseDouble(txt_cashPaid.getText());
+
+        lbl_balance.setText(Double.toString(rec-totAmount));
     }
 
     @FXML

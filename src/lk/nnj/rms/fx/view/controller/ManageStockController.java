@@ -5,7 +5,6 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
-import javafx.embed.swing.JFXPanel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +20,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.nnj.rms.fx.model.Stock;
-import lk.nnj.rms.fx.service.Impl.IStockService;
-import lk.nnj.rms.fx.service.Impl.Impl.StockDetailsImpl;
+import lk.nnj.rms.fx.service.IStockService;
+import lk.nnj.rms.fx.service.Impl.StockDetailsImpl;
 
 import java.io.IOException;
 import java.sql.*;
