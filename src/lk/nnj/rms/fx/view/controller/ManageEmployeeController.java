@@ -17,6 +17,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.nnj.rms.fx.model.User;
@@ -32,6 +33,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ManageEmployeeController implements Initializable {
+
+    @FXML
+    private AnchorPane root;
 
     @FXML
     private JFXButton btn_add;
@@ -80,7 +84,6 @@ public class ManageEmployeeController implements Initializable {
 
     @FXML
     private TableView<User> tbl_details;
-    private JFXPanel root;
 
 
     @FXML
@@ -207,6 +210,12 @@ public class ManageEmployeeController implements Initializable {
 
     @FXML
     void attendance(ActionEvent event) throws IOException {
+
+//        FXMLLoader Loader = new FXMLLoader();
+//
+//        Loader.setLocation(getClass().getResource("/lk/nnj/rms/fx/view/ManageAttendance.fxml"));
+//        Loader.load();
+
         Parent root = null;
         root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/ManageAttendance.fxml"));
         if (root != null){
@@ -219,7 +228,7 @@ public class ManageEmployeeController implements Initializable {
             tt.setFromX(-subScene.getWidth());
             tt.setToX(0);
             tt.play();
-            
+
         }
 
     }

@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.nnj.rms.fx.model.Attendance;
 import lk.nnj.rms.fx.service.IAttendance;
@@ -21,10 +22,17 @@ import javax.swing.*;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static sun.plugin.ClassLoaderInfo.reset;
+
 public class ManageAttendanceController implements Initializable {
+
+    @FXML
+    private AnchorPane root;
+
     @FXML
     private JFXButton btn_search;
 
@@ -44,6 +52,9 @@ public class ManageAttendanceController implements Initializable {
     private JFXButton btn_add;
 
     @FXML
+    private TableView<Attendance> tbl_attendance;
+
+    @FXML
     private JFXButton btn_print;
 
     @FXML
@@ -53,10 +64,57 @@ public class ManageAttendanceController implements Initializable {
     private JFXDatePicker txt_date;
 
     @FXML
-    private AnchorPane root;
+    private JFXButton btn_update;
 
     @FXML
-    private TableView<Attendance> tbl_attendance;
+    private JFXButton btn_delete;
+
+    @FXML
+    void add(ActionEvent event) {
+        String emp_id, fullname, date;
+        int working_h, ot_h;
+        emp_id = txt_empid.getText();
+        fullname = txt_name.getText();
+        java.sql.Date sqlDate = java.sql.Date.valueOf(txt_date.getValue());
+        working_h = Integer.parseInt(txt_workingh.getText());
+        ot_h = Integer.parseInt(txt_oth.getText());
+
+        Attendance attendance = new Attendance(emp_id, fullname, sqlDate, working_h, ot_h);
+        IAttendance iAttendance = new AttendanceServiceImpl();
+
+        try {
+            if (iAttendance.add(attendance)) {
+                JOptionPane.showMessageDialog(null, "Success");
+                reset();
+                viewTable();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error! Cannot Add.");
+            e.printStackTrace();
+        }
+    }
+
+
+
+    @FXML
+    void delete(ActionEvent event) {
+        String id = txt_empid.getText();
+
+        IAttendance iAttendance = new AttendanceServiceImpl();
+        try {
+            iAttendance.delete(id);
+            JOptionPane.showMessageDialog(null, "Deleted");
+
+            reset();
+            viewTable();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error! Cannot Delete.");
+
+        }
+
+    }
 
     @FXML
     void print(ActionEvent event) {
@@ -85,75 +143,24 @@ public class ManageAttendanceController implements Initializable {
 
     }
 
-    public void reset() {
-        txt_empid.setText("");
-        txt_name.setText("");
-        txt_date.setValue(LocalDate.parse(String.valueOf(txt_date.getValue())));
-        txt_workingh.setText("");
-        txt_oth.setText("");
-    }
+    @FXML
+    void tbl_click(MouseEvent event) {
+        ArrayList<Attendance> attendanceList = new ArrayList<>(tbl_attendance.getSelectionModel().getSelectedItems());
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+            for (Attendance attendance:attendanceList) {
+                txt_empid.setText("");
+                txt_name.setText("");
+                txt_date.setValue(LocalDate.parse(String.valueOf(txt_date.getValue())));
+                txt_workingh.setText("");
+                txt_oth.setText("");
+            }
 
-        viewTable();
-
-
-    }
-
-    public void viewTable() {
-        tbl_attendance.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("emp_id"));
-        tbl_attendance.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("fullname"));
-        tbl_attendance.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
-        tbl_attendance.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("working_h"));
-        tbl_attendance.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("ot_h"));
-
-        IAttendance iAttendance = new AttendanceServiceImpl();
-        try {
-            List<Attendance> allUsers = iAttendance.findAll();
-            tbl_attendance.setItems(FXCollections.observableArrayList(allUsers));
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
-    }
 
-    public void viewTable(String id) {
-        tbl_attendance.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("emp_id"));
-        tbl_attendance.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("fullname"));
-        tbl_attendance.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
-        tbl_attendance.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("working_h"));
-        tbl_attendance.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("ot_h"));
-        IUser iUserService = new UserServiceImpl();
-        IAttendance iAttendance = new AttendanceServiceImpl();
-        try {
-            List<Attendance> allUsers = iAttendance.findAll();
-            tbl_attendance.setItems(FXCollections.observableArrayList(allUsers));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-//        @FXML
-//        void tbl_click (MouseEvent event){
-//
-//
-//            ArrayList<Attendance> attendancesList = new ArrayList<>(tbl_attendance.getSelectionModel().getSelectedItems());
-//
-//            for (Attendance attendance : attendancesList) {
-//                txt_empid.setText("");
-//                txt_name.setText("");
-//                txt_date.setValue(LocalDate.parse(String.valueOf(txt_date.getValue())));
-//                txt_workingh.setText("");
-//                txt_oth.setText("");
-//            }
-//
-//        }
-//
-//
-//    }
-
-    void update(ActionEvent event) throws Exception {
+    @FXML
+    void update(ActionEvent event) {
         String emp_id, fullname, date;
         int working_h, ot_h;
         emp_id = txt_empid.getText();
@@ -179,52 +186,234 @@ public class ManageAttendanceController implements Initializable {
             e.printStackTrace();
         }
 
+
     }
 
-
-    @Override
-    public boolean delete(String emp_id) throws Exception {
-        String id = txt_empid.getText();
+    private void viewTable() {
+                tbl_attendance.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("emp_id"));
+        tbl_attendance.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("fullname"));
+        tbl_attendance.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
+        tbl_attendance.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("working_h"));
+        tbl_attendance.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("ot_h"));
 
         IAttendance iAttendance = new AttendanceServiceImpl();
         try {
-            iAttendance.delete(id);
-            JOptionPane.showMessageDialog(null, "Deleted");
-
-            reset();
-            viewTable();
-
+            List<Attendance> allUsers = iAttendance.findAll();
+            tbl_attendance.setItems(FXCollections.observableArrayList(allUsers));
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error! Cannot Delete.");
-
         }
     }
 
-    @Override
-    public boolean add(ActionEvent event) throws Exception {
-        String emp_id, fullname, date;
-        int working_h, ot_h;
-        emp_id = txt_empid.getText();
-        fullname = txt_name.getText();
-        java.sql.Date sqlDate = java.sql.Date.valueOf(txt_date.getValue());
-        working_h = Integer.parseInt(txt_workingh.getText());
-        ot_h = Integer.parseInt(txt_oth.getText());
-
-        Attendance attendance = new Attendance(emp_id, fullname, sqlDate, working_h, ot_h);
+    public void viewTable(String id){
+        tbl_attendance.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("emp_id"));
+        tbl_attendance.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("fullname"));
+        tbl_attendance.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
+        tbl_attendance.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("working_h"));
+        tbl_attendance.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("ot_h"));
+        IUser iUserService = new UserServiceImpl();
         IAttendance iAttendance = new AttendanceServiceImpl();
-
         try {
-            if (iAttendance.add(attendance)) {
-                JOptionPane.showMessageDialog(null, "Success");
-                reset();
-                viewTable();
+            List<Attendance> allUsers = iAttendance.findAll();
+            tbl_attendance.setItems(FXCollections.observableArrayList(allUsers));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+        public void reset() {
+        txt_empid.setText("");
+        txt_name.setText("");
+        txt_date.setValue(LocalDate.parse(String.valueOf(txt_date.getValue())));
+        txt_workingh.setText("");
+        txt_oth.setText("");
+    }
+
+
+    @FXML
+    void tbl_clck(MouseEvent event) {
+            ArrayList<Attendance> attendancesList = new ArrayList<>(tbl_attendance.getSelectionModel().getSelectedItems());
+
+            for (Attendance attendance : attendancesList) {
+                txt_empid.setText("");
+                txt_name.setText("");
+                txt_date.setValue(LocalDate.parse(String.valueOf(txt_date.getValue())));
+                txt_workingh.setText("");
+                txt_oth.setText("");
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error! Cannot Add.");
-            e.printStackTrace();
+
         }
+
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
+
+//
+//    @FXML
+//    void search(ActionEvent event) {
+//        String id = txt_empid.getText();
+//
+//        IAttendance iAttendance = new AttendanceServiceImpl();
+//        try {
+//            Attendance attendance = iAttendance.find(id);
+//            txt_name.setText(attendance.getFullname());
+//            txt_date.setValue(LocalDate.parse(String.valueOf(attendance.getDate())));
+//            txt_workingh.setText(String.valueOf(attendance.getWorking_h()));
+//            txt_oth.setText(String.valueOf(attendance.getOt_h()));
+//
+//            viewTable();
+//
+//
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Error! Cannot Find.");
+//            e.printStackTrace();
+//        }
+//
+//    }
+//
+//    public void reset() {
+//        txt_empid.setText("");
+//        txt_name.setText("");
+//        txt_date.setValue(LocalDate.parse(String.valueOf(txt_date.getValue())));
+//        txt_workingh.setText("");
+//        txt_oth.setText("");
+//    }
+//
+//    @Override
+//    public void initialize(URL location, ResourceBundle resources) {
+//
+//        viewTable();
+//
+//
+//    }
+//
+//    public void viewTable() {
+//        tbl_attendance.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("emp_id"));
+//        tbl_attendance.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("fullname"));
+//        tbl_attendance.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
+//        tbl_attendance.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("working_h"));
+//        tbl_attendance.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("ot_h"));
+//
+//        IAttendance iAttendance = new AttendanceServiceImpl();
+//        try {
+//            List<Attendance> allUsers = iAttendance.findAll();
+//            tbl_attendance.setItems(FXCollections.observableArrayList(allUsers));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+//
+//    public void viewTable(String id) {
+//        tbl_attendance.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("emp_id"));
+//        tbl_attendance.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("fullname"));
+//        tbl_attendance.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
+//        tbl_attendance.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("working_h"));
+//        tbl_attendance.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("ot_h"));
+//        IUser iUserService = new UserServiceImpl();
+//        IAttendance iAttendance = new AttendanceServiceImpl();
+//        try {
+//            List<Attendance> allUsers = iAttendance.findAll();
+//            tbl_attendance.setItems(FXCollections.observableArrayList(allUsers));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+////        @FXML
+////        void tbl_click (MouseEvent event){
+////
+////
+////            ArrayList<Attendance> attendancesList = new ArrayList<>(tbl_attendance.getSelectionModel().getSelectedItems());
+////
+////            for (Attendance attendance : attendancesList) {
+////                txt_empid.setText("");
+////                txt_name.setText("");
+////                txt_date.setValue(LocalDate.parse(String.valueOf(txt_date.getValue())));
+////                txt_workingh.setText("");
+////                txt_oth.setText("");
+////            }
+////
+////        }
+////
+////
+////    }
+//
+//    void update(ActionEvent event) throws Exception {
+//        String emp_id, fullname, date;
+//        int working_h, ot_h;
+//        emp_id = txt_empid.getText();
+//        fullname = txt_name.getText();
+//        java.sql.Date sqlDate = java.sql.Date.valueOf(txt_date.getValue());
+//        working_h = Integer.parseInt(txt_workingh.getText());
+//        ot_h = Integer.parseInt(txt_oth.getText());
+//
+//        Attendance attendance = new Attendance(emp_id, fullname, sqlDate, working_h, ot_h);
+//        IAttendance iAttendance = new AttendanceServiceImpl();
+//
+//        try {
+//            if (iAttendance.update(attendance)) {
+//                JOptionPane.showMessageDialog(null, "Updated Success");
+//                reset();
+//                viewTable();
+//
+//            } else {
+//                JOptionPane.showMessageDialog(null, "Updated Faild.");
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Error! Cannot Update.");
+//            e.printStackTrace();
+//        }
+//
+//    }
+//
+//
+//    @Override
+//    public boolean delete(String emp_id) throws Exception {
+//        String id = txt_empid.getText();
+//
+//        IAttendance iAttendance = new AttendanceServiceImpl();
+//        try {
+//            iAttendance.delete(id);
+//            JOptionPane.showMessageDialog(null, "Deleted");
+//
+//            reset();
+//            viewTable();
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            JOptionPane.showMessageDialog(null, "Error! Cannot Delete.");
+//
+//        }
+//    }
+//
+//    @Override
+//    void add(ActionEvent event) throws Exception {
+//        String emp_id, fullname, date;
+//        int working_h, ot_h;
+//        emp_id = txt_empid.getText();
+//        fullname = txt_name.getText();
+//        java.sql.Date sqlDate = java.sql.Date.valueOf(txt_date.getValue());
+//        working_h = Integer.parseInt(txt_workingh.getText());
+//        ot_h = Integer.parseInt(txt_oth.getText());
+//
+//        Attendance attendance = new Attendance(emp_id, fullname, sqlDate, working_h, ot_h);
+//        IAttendance iAttendance = new AttendanceServiceImpl();
+//
+//        try {
+//            if (iAttendance.add(attendance)) {
+//                JOptionPane.showMessageDialog(null, "Success");
+//                reset();
+//                viewTable();
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Error! Cannot Add.");
+//            e.printStackTrace();
+//        }
+//    }
 }
 
 

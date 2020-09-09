@@ -50,7 +50,7 @@
             <Image url="@../assest/icons8-plus-64.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tbl_attendance" layoutX="53.0" layoutY="444.0" onMouseClicked="#tbl_click" prefHeight="310.0" prefWidth="964.0" style="-fx-background-color: #ced1d6;">
+      <TableView fx:id="tbl_attendance" layoutX="53.0" layoutY="444.0" onMouseClicked="#tbl_clck" prefHeight="310.0" prefWidth="964.0" style="-fx-background-color: #ced1d6;">
         <columns>
           <TableColumn prefWidth="194.0" text="Emp No." />
           <TableColumn prefWidth="240.0" text="Name" />
