@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -21,12 +20,15 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="35.0" fitWidth="32.0" layoutX="13.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="lbl_back" fitHeight="35.0" fitWidth="32.0" layoutX="13.0" layoutY="15.0" onMouseClicked="#Back" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assest/icons8-back-arrow-64.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-            <JFXButton alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="507.0" layoutY="15.0" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #ffffff;" text="Add    " AnchorPane.rightAnchor="221.0">
+            <JFXButton fx:id="btn_add" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="507.0" layoutY="15.0" onAction="#Add" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #ffffff;" text="Add    " AnchorPane.rightAnchor="221.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -38,8 +40,11 @@
                <image>
                   <Image url="@../assest/icons8-plus-64.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
             </ImageView>
-            <JFXButton alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="612.0" layoutY="15.0" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #ffffff;" text="Update    " AnchorPane.rightAnchor="116.0">
+            <JFXButton fx:id="btn_update" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="612.0" layoutY="15.0" onAction="#Update" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #ffffff;" text="Update    " AnchorPane.rightAnchor="116.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -51,8 +56,11 @@
                <image>
                   <Image url="@../assest/icons8-synchronize-64.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
             </ImageView>
-            <JFXButton alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="715.0" layoutY="15.0" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #ffffff;" text="Delete    " AnchorPane.rightAnchor="13.0">
+            <JFXButton fx:id="btn_delete" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="715.0" layoutY="15.0" onAction="#Delete" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #ffffff;" text="Delete    " AnchorPane.rightAnchor="13.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -64,39 +72,53 @@
                <image>
                   <Image url="@../assest/icons8-minus-64.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
             </ImageView>
-            <JFXTextField layoutX="299.0" layoutY="19.0" prefHeight="25.0" prefWidth="126.0" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="432.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+            <JFXTextField fx:id="txt_sItemID" layoutX="314.0" layoutY="19.0" prefHeight="25.0" prefWidth="126.0" />
+            <ImageView fx:id="lbl_search" fitHeight="25.0" fitWidth="25.0" layoutX="447.0" layoutY="21.0" onMouseClicked="#Search" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assest/icons8-search-96.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-            <Label layoutX="245.0" layoutY="25.0" text="Item ID">
+            <Label layoutX="260.0" layoutY="25.0" text="Item ID">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
+            <ImageView fx:id="lbl_reset" fitHeight="25.0" fitWidth="25.0" layoutX="214.0" layoutY="22.0" onMouseClicked="#Reset" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assest/icons8-available-updates-40.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
          </children>
       </AnchorPane>
-      <JFXTextField layoutX="17.0" layoutY="100.0" prefHeight="25.0" prefWidth="69.0" />
+      <JFXTextField fx:id="txt_itemID" layoutX="17.0" layoutY="100.0" prefHeight="25.0" prefWidth="69.0" />
       <Label layoutX="17.0" layoutY="78.0" text="Item ID">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <JFXTextField layoutX="305.0" layoutY="100.0" prefHeight="25.0" prefWidth="277.0" AnchorPane.leftAnchor="305.0" AnchorPane.rightAnchor="271.0" />
-      <Label layoutX="305.0" layoutY="78.0" text="Description" AnchorPane.leftAnchor="305.0" AnchorPane.rightAnchor="449.0">
+      <JFXTextField fx:id="txt_description" layoutX="336.0" layoutY="100.0" prefHeight="25.0" prefWidth="395.0" AnchorPane.leftAnchor="336.0" AnchorPane.rightAnchor="122.0" />
+      <Label layoutX="336.0" layoutY="78.0" text="Description" AnchorPane.leftAnchor="336.0" AnchorPane.rightAnchor="418.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <JFXTextField layoutX="721.0" layoutY="100.0" prefHeight="25.0" prefWidth="90.0" AnchorPane.rightAnchor="14.0" />
+      <JFXTextField fx:id="txt_unitPrice" layoutX="721.0" layoutY="100.0" prefHeight="25.0" prefWidth="90.0" AnchorPane.rightAnchor="14.0" />
       <Label layoutX="721.0" layoutY="78.0" text="Unit price" AnchorPane.rightAnchor="44.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="149.0" prefHeight="383.0" prefWidth="746.0" style="-fx-background-color: #ced1d6;" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="149.0">
+      <TableView fx:id="tbl_item" layoutX="14.0" layoutY="149.0" onMouseClicked="#Click" prefHeight="383.0" prefWidth="746.0" style="-fx-background-color: #ced1d6;" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="149.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Item ID" />
           <TableColumn minWidth="100.0" prefWidth="75.0" text="Item Name" />
@@ -107,12 +129,11 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <JFXComboBox layoutX="595.0" layoutY="100.0" prefHeight="25.0" prefWidth="134.0" promptText="Select Category" AnchorPane.rightAnchor="124.0" />
       <Label layoutX="102.0" layoutY="78.0" text="Item Name">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <JFXTextField layoutX="102.0" layoutY="100.0" prefHeight="25.0" prefWidth="192.0" />
+      <JFXTextField fx:id="txt_itemName" layoutX="102.0" layoutY="100.0" prefHeight="25.0" prefWidth="217.0" />
    </children>
 </AnchorPane>

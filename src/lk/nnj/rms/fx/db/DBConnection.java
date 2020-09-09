@@ -8,9 +8,10 @@ public class DBConnection {
     private static Connection connection;
 
     public static Connection getConnection() throws SQLException {
-        if (connection == null){
+        if(connection==null)
+        {
             connection = DriverManager.getConnection(
-                   "jdbc:mysql://localhost:3306/employee",
+                    "jdbc:mysql://localhost:3306/restdb",
                     "root",
                     "1234"
             );
