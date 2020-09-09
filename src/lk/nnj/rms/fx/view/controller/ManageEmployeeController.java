@@ -35,6 +35,9 @@ import java.util.ResourceBundle;
 public class ManageEmployeeController implements Initializable {
 
     @FXML
+    private ImageView lbl_back;
+
+    @FXML
     private AnchorPane root;
 
     @FXML
@@ -297,4 +300,21 @@ public class ManageEmployeeController implements Initializable {
 
     }
 
+    @FXML
+    void back(MouseEvent event) throws IOException {
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource( "/lk/nnj/rms/fx/view/AdminPanel.fxml"));
+        if(root != null)
+        {
+            Scene subScene = new Scene(root);
+            Stage primaryStage = (Stage) this.root.getScene().getWindow();
+            primaryStage.setScene(subScene);
+            primaryStage.centerOnScreen();
+            primaryStage.setResizable(true);
+            TranslateTransition tt = new TranslateTransition(Duration.millis(450),subScene.getRoot());
+            tt.setFromX(-subScene.getWidth());
+            tt.setToX(0);
+            tt.play();
+        }
+    }
 }

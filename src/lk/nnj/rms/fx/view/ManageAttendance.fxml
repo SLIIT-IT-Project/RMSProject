@@ -22,8 +22,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <JFXButton layoutX="14.0" layoutY="22.0" />
-            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="26.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="lbl_back" fitHeight="41.0" fitWidth="41.0" layoutX="26.0" layoutY="17.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assest/icons8-back-arrow-64.png" />
                </image>

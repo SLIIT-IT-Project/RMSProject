@@ -3,31 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="42095d49-78c5-4fed-8f3e-fce5e6f88259" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/IStockService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/ISupplierService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/Impl/StockDetailsImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/Impl/SupplierDetailsImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/AdminPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/AdminPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/ManageStockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/ManageStockController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/ManageSupplierController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/ManageSupplierController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IQueryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IStockService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ISupplierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ISupplierService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/QueryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/QueryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/StockDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/StockDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/SupplierDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/SupplierDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/EventManagement.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/PlaceOrderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/PlaceOrderForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/PropertyManaagement.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ManageAttendance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ManageAttendance.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ManageEmployee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ManageEmployee.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageEventController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageAttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageAttendanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageEmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePropertyController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageStockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageSupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageSupplierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,24 +23,26 @@
     <session id="-444190326">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="998" />
-          <entry key="txt" value="13" />
+          <entry key="java" value="1058" />
+          <entry key="txt" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="998" />
-          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="JAVA" value="1058" />
+          <entry key="PLAIN_TEXT" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="11" />
+          <entry key="fxml" value="1" />
+          <entry key="java" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="JAVA" value="22" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -71,11 +56,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="183" column="42" selection-start-line="183" selection-start-column="42" selection-end-line="183" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="87" selection-start-line="87" selection-end-line="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageEmployeeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="318" column="5" lean-forward="true" selection-start-line="302" selection-start-column="3" selection-end-line="318" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageAttendanceController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="270" lean-forward="true" selection-start-line="270" selection-end-line="270" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageInventoryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="49" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IUser.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/AttendanceServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="84" selection-start-line="84" selection-end-line="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/model/Attendance.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageItemController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1010">
-              <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+            <state relative-caret-position="333">
+              <caret line="161" column="13" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -89,11 +153,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java" />
         <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/SupplierDetailsImpl.java" />
         <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/QueryServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IQueryService.java" />
         <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ViewFromController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageEmployeeController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageAttendanceController.java" />
         <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageItemController.java" />
       </list>
     </option>
@@ -126,11 +193,6 @@
             <path>
               <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -138,20 +200,6 @@
               <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="fx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fx" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fx" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
@@ -159,21 +207,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="fx" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fx" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fx" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="Impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
@@ -211,8 +244,15 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1599625560574" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1599628812900" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../OnetPOS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\RMSProject\src\lk\nnj\rms\fx\model" />
+      <recent name="D:\Projects\RMSProject\src\lk\nnj\rms\fx\service\Impl" />
+      <recent name="D:\Projects\RMSProject\src\lk\nnj\rms\fx\service" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -261,7 +301,7 @@
       <workItem from="1599283907659" duration="6438000" />
       <workItem from="1599309279594" duration="68968000" />
       <workItem from="1599548182280" duration="10116000" />
-      <workItem from="1599616657596" duration="7926000" />
+      <workItem from="1599616657596" duration="10922000" />
     </task>
     <task id="LOCAL-00001" summary="by NNJ 16">
       <created>1599623203882</created>
@@ -270,14 +310,29 @@
       <option name="project" value="LOCAL" />
       <updated>1599623203883</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Changes by NNJ16">
+      <created>1599625746762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599625746762</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Final Commit 75% done and Integrate by NNJ16">
+      <created>1599627311607</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599627311607</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8323000" />
+    <option name="totallyTimeSpent" value="11319000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24810892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -288,12 +343,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.21290323" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49924356" weight="0.13225806" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49924356" weight="0.13064516" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.1016129" />
@@ -348,19 +403,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="by madhura" />
     <MESSAGE value="by NNJ 16" />
-    <option name="LAST_COMMIT_MESSAGE" value="by NNJ 16" />
+    <MESSAGE value="Add Changes by NNJ16" />
+    <MESSAGE value="Final Commit 75% done and Integrate by NNJ16" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Commit 75% done and Integrate by NNJ16" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="211" column="43" selection-start-line="211" selection-start-column="43" selection-end-line="211" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/FinanceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
@@ -452,10 +499,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IUser.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/model/Attendance.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ViewFromController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/AttendanceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ManageAttendance.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1091" />
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="183" column="42" selection-start-line="183" selection-start-column="42" selection-end-line="183" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageInventoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="49" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageEmployeeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="318" column="5" lean-forward="true" selection-start-line="302" selection-start-column="3" selection-end-line="318" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageAttendanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="270" lean-forward="true" selection-start-line="270" selection-end-line="270" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageItemController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1010">
-          <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+        <state relative-caret-position="333">
+          <caret line="161" column="13" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
         </state>
       </provider>
     </entry>

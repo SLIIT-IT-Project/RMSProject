@@ -144,21 +144,24 @@ public class ManageItemController implements Initializable {
     void Delete(ActionEvent event) {
         String itemID = txt_itemID.getText();
         IItemService iItemService = new ItemServiceImpl();
-
-        try {
-            boolean result  = iItemService.delete(itemID);
-            if(result)
-            {
-                JOptionPane.showMessageDialog(null,"Deleted successfully");
-                viewTable();
-                reset();
-            }else
+        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this item ?", "WARNING",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            try {
+                boolean result  = iItemService.delete(itemID);
+                if(result)
+                {
+                    JOptionPane.showMessageDialog(null,"Deleted successfully");
+                    viewTable();
+                    reset();
+                }else
                 {
                     JOptionPane.showMessageDialog(null,"Delete failed");
                 }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Error! cannot delete");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Error! cannot delete");
+            }
         }
+
 
     }
 
