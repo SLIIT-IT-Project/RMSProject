@@ -70,6 +70,27 @@ public class CategoryServiceImpl implements ICategoryService{
     }
 
     @Override
+    public Category findId(String id) throws Exception {
+        Connection connection=DBConnection.getConnection();
+        PreparedStatement pstm=connection.prepareStatement("SELECT * FROM category WHERE category_name=?");
+        pstm.setObject(1,id);
+
+        ResultSet rst= pstm.executeQuery();
+
+        if(rst.next())
+        {
+            return new Category(
+                    rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(4)
+
+            );
+        }
+        return null;
+    }
+
+    @Override
     public List<Category> findAll() throws Exception {
         ArrayList<Category> allCategory= new ArrayList<>();
         Connection connection= DBConnection.getConnection();

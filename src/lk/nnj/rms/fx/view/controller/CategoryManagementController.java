@@ -218,4 +218,6 @@ public class CategoryManagementController implements Initializable{
         txt_category_id.setText("");
         txt_searchCategoryID.setText("");
     }
+
+
 }

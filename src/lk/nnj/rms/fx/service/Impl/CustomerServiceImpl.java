@@ -35,7 +35,15 @@ public class CustomerServiceImpl implements ICustomerService{
         pstm.setObject(2,customer.getMobile());
         pstm.setObject(3,customer.getAddress());
         pstm.setObject(4,customer.getNo_of_orders());
+        return pstm.executeUpdate()>0;
+    }
 
+    @Override
+    public boolean update(int noOfOrder, int cid) throws Exception {
+        Connection connection= DBConnection.getConnection();
+        PreparedStatement pstm =connection.prepareStatement("UPDATE customer SET no_of_orders=? WHERE customer_id=?");
+        pstm.setObject(1,noOfOrder);
+        pstm.setObject(2,cid);
         return pstm.executeUpdate()>0;
     }
 
@@ -88,5 +96,27 @@ public class CustomerServiceImpl implements ICustomerService{
             allCustomer.add(customer);
         }
         return allCustomer;
+    }
+
+    @Override
+    public Customer find(String mobile) throws Exception {
+        Connection connection=DBConnection.getConnection();
+        PreparedStatement pstm=connection.prepareStatement("SELECT * FROM customer WHERE mobile=?");
+        pstm.setObject(1,mobile);
+
+        ResultSet rst= pstm.executeQuery();
+
+        if(rst.next())
+        {
+            return new Customer(
+                    rst.getInt(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(4),
+                    rst.getInt(5)
+
+            );
+        }
+        return null;
     }
 }

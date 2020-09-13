@@ -33,14 +33,14 @@ public class OrderServiceImpl implements IOrderService {
     @Override
     public boolean update(Order order) throws Exception {
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("UPDATE Order1 SET description=?,order_type=?,order_amount=?,service_charge=?" +
-                "tot_amount=? WHERE order_id=?");
-        pstm.setObject(6,order.getOid());
+        PreparedStatement pstm = connection.prepareStatement("UPDATE Order1 SET description=?,order_type=?,order_amount=?,service_charge=?,tot_amount=?,cid=? WHERE order_id=?");
+        pstm.setObject(7,order.getOid());
         pstm.setObject(1,order.getDescription());
         pstm.setObject(2,order.getOrder_type());
         pstm.setObject(3,order.getOrder_amount());
         pstm.setObject(4,order.getService_charge());
         pstm.setObject(5,order.getTot_amount());
+        pstm.setObject(6,order.getCid());
 
         return pstm.executeUpdate()>0;
     }

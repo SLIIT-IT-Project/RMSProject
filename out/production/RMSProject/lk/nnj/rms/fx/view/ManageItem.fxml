@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="613.0" prefWidth="853.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageItemController">
+<AnchorPane fx:id="root" prefHeight="651.0" prefWidth="853.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageItemController">
    <children>
       <AnchorPane prefHeight="71.0" prefWidth="644.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -118,7 +118,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="tbl_item" layoutX="14.0" layoutY="149.0" onMouseClicked="#Click" prefHeight="383.0" prefWidth="746.0" style="-fx-background-color: #ced1d6;" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="149.0">
+      <TableView fx:id="tbl_item" layoutX="14.0" layoutY="149.0" onMouseClicked="#Click" prefHeight="441.0" prefWidth="827.0" style="-fx-background-color: #ced1d6;" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="149.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Item ID" />
           <TableColumn minWidth="100.0" prefWidth="75.0" text="Item Name" />
@@ -135,5 +135,31 @@
          </font>
       </Label>
       <JFXTextField fx:id="txt_itemName" layoutX="102.0" layoutY="100.0" prefHeight="25.0" prefWidth="217.0" />
+      <JFXButton fx:id="btn_category" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="15.0" layoutY="601.0" onAction="#viewCategory" prefHeight="42.0" prefWidth="159.0" style="-fx-background-color: #ffffff;" text="Add To Category    " AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="15.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="21.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="21.0">
+         <image>
+            <Image url="@../assest/icons8-edit-column-96.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="639.0" layoutY="601.0" text="Total Items :" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="84.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="779.0" layoutY="601.0" text="0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="61.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

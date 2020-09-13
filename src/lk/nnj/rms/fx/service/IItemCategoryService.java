@@ -8,8 +8,8 @@ import java.util.List;
 public interface IItemCategoryService {
 
     boolean add(ItemCategory itemCategory) throws Exception;
-    boolean delete(String id) throws Exception;
+    boolean delete(String itemId,String catID) throws Exception;
     ItemCategory find(String id) throws Exception;
-    List<ItemCategory> findAll() throws Exception;
+    List<ItemCategory> findAll(String itemId) throws Exception;
 
 }

@@ -4,10 +4,12 @@ public class ItemCategory {
 
     private String item_id;
     private String category_id;
+    private String categoryName;
 
-    public ItemCategory(String item_id, String category_id) {
+    public ItemCategory(String item_id, String category_id, String categoryName) {
         this.item_id = item_id;
         this.category_id = category_id;
+        this.categoryName = categoryName;
     }
 
     public String getItem_id() {
@@ -26,7 +28,11 @@ public class ItemCategory {
         this.category_id = category_id;
     }
 
+    public String getCategoryName() {
+        return categoryName;
+    }
 
-
-
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
 }

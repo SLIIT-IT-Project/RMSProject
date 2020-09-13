@@ -10,6 +10,7 @@ public interface ICategoryService {
     boolean update(Category category) throws Exception;
     boolean delete(String id) throws Exception;
     Category find(String id) throws Exception;
+    Category findId(String id) throws Exception;
     List<Category> findAll() throws Exception;
     List<String> findAllCategory() throws Exception;
 }

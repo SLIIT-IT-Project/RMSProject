@@ -35,7 +35,7 @@
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
             </ImageView>
-            <JFXButton fx:id="btn_beverage" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="231.0" layoutY="183.0" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: #ffffff;" text="Beverages     ">
+            <JFXButton fx:id="btn_beverage" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="231.0" layoutY="183.0" onAction="#viewBeverages" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: #ffffff;" text="Beverages     ">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -96,21 +96,21 @@
          </children></AnchorPane>
       <AnchorPane layoutY="597.0" prefHeight="104.0" prefWidth="1136.0" style="-fx-background-color: #ced1d6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="597.0">
          <children>
-            <JFXButton fx:id="btn_remove" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="862.0" layoutY="24.0" onAction="#removeOrder" prefHeight="73.0" prefWidth="67.0" style="-fx-background-color: #ffffff;" text="Remove" AnchorPane.rightAnchor="260.0">
+            <JFXButton fx:id="btn_remove" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="862.0" layoutY="24.0" onAction="#removeOrder" prefHeight="73.0" prefWidth="67.0" style="-fx-background-color: #e6e6e6;" text="Remove" AnchorPane.rightAnchor="260.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></JFXButton>
-            <JFXButton fx:id="btn_new" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="941.0" layoutY="23.0" onAction="#newOrder" prefHeight="73.0" prefWidth="67.0" style="-fx-background-color: #ffffff;" text="New" AnchorPane.rightAnchor="181.0">
+            <JFXButton fx:id="btn_new" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="941.0" layoutY="23.0" onAction="#newOrder" prefHeight="73.0" prefWidth="67.0" style="-fx-background-color: #e6e6e6;" text="New" AnchorPane.rightAnchor="181.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></JFXButton>
-            <JFXButton fx:id="btn_checkOut" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="1019.0" layoutY="23.0" onAction="#checkOut" prefHeight="73.0" prefWidth="159.0" style="-fx-background-color: #ffffff;" text="Check Out" AnchorPane.rightAnchor="11.0">
+            <JFXButton fx:id="btn_checkOut" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="1019.0" layoutY="23.0" onAction="#checkOut" prefHeight="73.0" prefWidth="159.0" style="-fx-background-color: #e6e6e6;" text="Check Out" AnchorPane.rightAnchor="11.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -208,12 +208,13 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <JFXListView fx:id="lst_viewCategory" layoutX="726.0" layoutY="132.0" prefHeight="281.0" prefWidth="216.0" style="-fx-background-color: #e6e6e6 #e6e6e6;" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="132.0" />
-      <JFXComboBox fx:id="cmb_sCategory" layoutX="726.0" layoutY="83.0" prefHeight="25.0" prefWidth="216.0" promptText="Select Category" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="83.0" />
+      <JFXListView fx:id="lst_viewCategory" layoutX="726.0" layoutY="132.0" onMouseClicked="#SelectItem" prefHeight="281.0" prefWidth="216.0" style="-fx-background-color: #e6e6e6 #e6e6e6;" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="132.0" />
+      <JFXComboBox fx:id="cmb_sCategory" layoutX="726.0" layoutY="83.0" onAction="#SelectCmb" prefHeight="25.0" prefWidth="216.0" promptText="Select Category" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="83.0" />
       <JFXButton fx:id="btn_smallP" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="1010.0" layoutY="111.0" onAction="#viewSmall" prefHeight="66.0" prefWidth="76.0" style="-fx-background-color: #ffffff;" text="Small" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="111.0">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></JFXButton>
+         </cursor>
+      </JFXButton>
       <JFXButton fx:id="btn_largeP" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="1010.0" layoutY="180.0" onAction="#viewLarge" prefHeight="66.0" prefWidth="76.0" style="-fx-background-color: #ffffff;" text="Large" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="180.0">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -354,7 +355,7 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="lbl_mediumP" fitHeight="35.0" fitWidth="32.0" layoutX="1115.0" layoutY="124.0" onMouseClicked="#viewMedium" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="42.0">
+      <ImageView fx:id="lbl_mediumP" fitHeight="35.0" fitWidth="35.0" layoutX="1113.0" layoutY="120.0" onMouseClicked="#viewMedium" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="41.0">
          <image>
             <Image url="@../assest/icons8-pizza-96.png" />
          </image>
@@ -362,7 +363,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="lbl_largeP" fitHeight="44.0" fitWidth="39.0" layoutX="1029.0" layoutY="190.0" onMouseClicked="#viewLarge" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="121.0">
+      <ImageView fx:id="lbl_largeP" fitHeight="46.0" fitWidth="46.0" layoutX="1028.0" layoutY="180.0" onMouseClicked="#viewLarge" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="115.0">
          <image>
             <Image url="@../assest/icons8-pizza-96.png" />
          </image>
@@ -370,7 +371,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="lbl_smallP" fitHeight="25.0" fitWidth="25.0" layoutX="1035.0" layoutY="121.0" onMouseClicked="#viewSmall" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="129.0">
+      <ImageView fx:id="lbl_smallP" fitHeight="32.0" fitWidth="32.0" layoutX="1034.0" layoutY="121.0" onMouseClicked="#viewSmall" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="123.0">
          <image>
             <Image url="@../assest/icons8-pizza-96.png" />
          </image>
@@ -378,7 +379,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="lbl_elargeP" fitHeight="46.0" fitWidth="57.0" layoutX="1109.0" layoutY="185.0" onMouseClicked="#viewElarge" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="34.0">
+      <ImageView fx:id="lbl_elargeP" fitHeight="54.0" fitWidth="59.0" layoutX="1107.0" layoutY="177.0" onMouseClicked="#viewElarge" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="28.0">
          <image>
             <Image url="@../assest/icons8-pizza-96.png" />
          </image>

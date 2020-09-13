@@ -14,9 +14,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.nnj.rms.fx.model.Item;
@@ -36,6 +38,9 @@ public class ManageItemController implements Initializable {
 
     @FXML
     private ImageView lbl_back;
+
+    @FXML
+    private JFXButton btn_category;
 
     @FXML
     private JFXButton btn_add;
@@ -270,5 +275,36 @@ public class ManageItemController implements Initializable {
         txt_itemName.setText("");
         txt_description.setText("");
         txt_unitPrice.setText("");
+    }
+    private static Stage stage =null;
+    @FXML
+    void viewCategory(ActionEvent event) throws IOException {
+
+        if(!txt_itemID.getText().equals("")) {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/rms/fx/view/ItemCategoryManagement.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            if (root != null) {
+                if (stage == null) {
+                    stage = new Stage();
+                    stage.setTitle("Add to Category");
+                    ItemCategoryManagementController setController = fxmlLoader.getController();
+                    setController.setItemId(txt_itemID.getText());
+//                Image image = new Image("/lk/nnj/mdss/fx/assest/main.png");
+//                stage.getIcons().add(image);
+                    stage.setResizable(false);
+                    stage.initModality(Modality.APPLICATION_MODAL);
+                    stage.setOnCloseRequest(event1 -> {
+                                stage = null;
+                            }
+                    );
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                }
+
+            }
+        }else
+            {
+                JOptionPane.showMessageDialog(null,"select item before added to the category");
+            }
     }
 }

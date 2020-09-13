@@ -49,7 +49,7 @@ public class QueryServiceImpl implements IQueryService {
         int inID = 1000000;
         int pID;
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT payment_id FROM Payment ORDER BY payment_id DESC LIMIT 1");
+        PreparedStatement pstm = connection.prepareStatement("SELECT PID FROM PaymentTable ORDER BY PID DESC LIMIT 1");
         ResultSet rst = pstm.executeQuery();
 
         if(rst.next())
@@ -60,6 +60,22 @@ public class QueryServiceImpl implements IQueryService {
         }
         return inID;
     }
+
+    @Override
+    public List<String> getAllItems(String category) throws Exception {
+        ArrayList<String> itemList= new ArrayList<>();
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT item_name FROM ItemView WHERE category_name=?");
+        pstm.setObject(1,category);
+        ResultSet rst = pstm.executeQuery();
+
+        while (rst.next())
+        {
+            itemList.add(rst.getString(1));
+        }
+        return itemList;
+    }
+
     @Override
     public List<String> getAllItemNames() throws Exception {
         ArrayList<String> itemList= new ArrayList<>();
@@ -114,7 +130,7 @@ public class QueryServiceImpl implements IQueryService {
             String itemName = rst.getString(1);
             String qty = rst.getString(2);
 
-            allItems = itemName + " X  "+qty +",";
+            allItems = allItems +" "+itemName + " X  "+qty +",";
         }
 
         return allItems.substring(0,allItems.length()-1);
