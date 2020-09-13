@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,17 +21,143 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9c7b6ca-cfd7-4408-9bd1-e07e88b2af24" name="Default Changelist" comment="75% finished project" />
+=======
+  <component name="ChangeListManager">
+    <list default="true" id="42095d49-78c5-4fed-8f3e-fce5e6f88259" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/Machine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/PlayerMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IMachineService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IPaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IPlayerMachineService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IPlayerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/MachineServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/PaymentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/PlayerMachineServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/PlayerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/model/ItemCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/model/ItemCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/ICategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/ICategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/ICustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/ICustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IItemCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IItemCategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IItemOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IItemOrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IQueryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IQueryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/CategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/CustomerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/ItemCategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/ItemCategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/ItemOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/ItemOrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/OrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/QueryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/QueryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/ItemCategoryManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/ItemCategoryManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/ManageItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/ManageItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/PlaceOrderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/PlaceOrderForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/ItemCategoryManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/ItemCategoryManagementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/ManageItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/ManageItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/ItemCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/ItemCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ICategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ICategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IItemCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IItemCategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IItemOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IItemOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IQueryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ItemCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ItemCategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ItemOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ItemOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/QueryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/QueryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ItemCategoryManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ItemCategoryManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ManageItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ManageItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/PlaceOrderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/PlaceOrderForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/CategoryManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/CategoryManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ItemCategoryManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ItemCategoryManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> master
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
         <option value="Interface" />
         <option value="package-info" />
+=======
+  <component name="FUSProjectUsageTrigger">
+    <session id="-444190326">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="6166" />
+          <entry key="txt" value="79" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="6166" />
+          <entry key="PLAIN_TEXT" value="79" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="fxml" value="2" />
+          <entry key="java" value="82" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="82" />
+          <entry key="XML" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.14" value="2" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="717" column="38" selection-start-line="717" selection-start-column="38" selection-end-line="717" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/QueryServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+>>>>>>> master
         <option value="Class" />
       </list>
     </option>
@@ -38,6 +165,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectId" id="1frz5fssktPsB1EPJXV8YgrntH5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -67,6 +195,154 @@
       <recent name="C:\Users\windows\IdeaProjects\RMSProject\src\lk\nnj\rms\fx\view" />
     </key>
   </component>
+=======
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/SupplierDetailsImpl.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ViewFromController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageEmployeeController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageAttendanceController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ItemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IOrderService.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/OrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/CategoryManagementController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/ItemCategory.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ICategoryService.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/CategoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IItemCategoryService.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ItemCategoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ItemCategoryManagementController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageItemController.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ICustomerService.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IQueryService.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/QueryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IItemOrderService.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ItemOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fx" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fx" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fx" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fx" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RMSProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RMSProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fx" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="RMSProject" type="58d84e3e:PackageViewProjectNode" />
+              <item name="RMSProject" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1599998392035" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testProject" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\RMSProject\src\lk\nnj\rms\fx\service\Impl" />
+      <recent name="D:\Projects\RMSProject\src\lk\nnj\rms\fx\service" />
+      <recent name="D:\Projects\RMSProject\src\lk\nnj\rms\fx\model" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+>>>>>>> master
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lk.nnj.rms.fx.main.Main" />
@@ -92,6 +368,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="a9c7b6ca-cfd7-4408-9bd1-e07e88b2af24" name="Default Changelist" comment="" />
       <created>1596990820998</created>
       <option name="number" value="Default" />
@@ -177,5 +454,431 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="95" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599616404358" />
+=======
+      <changelist id="42095d49-78c5-4fed-8f3e-fce5e6f88259" name="Default Changelist" comment="" />
+      <created>1596989688316</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596989688316</updated>
+      <workItem from="1596989695313" duration="9457000" />
+      <workItem from="1598326210211" duration="204000" />
+      <workItem from="1599283907659" duration="6438000" />
+      <workItem from="1599309279594" duration="68968000" />
+      <workItem from="1599548182280" duration="10116000" />
+      <workItem from="1599616657596" duration="14069000" />
+      <workItem from="1599709136604" duration="20811000" />
+      <workItem from="1599834160586" duration="4961000" />
+      <workItem from="1599881062998" duration="31164000" />
+      <workItem from="1599968690385" duration="19140000" />
+    </task>
+    <task id="LOCAL-00001" summary="by NNJ 16">
+      <created>1599623203882</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599623203883</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add Changes by NNJ16">
+      <created>1599625746762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599625746762</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Final Commit 75% done and Integrate by NNJ16">
+      <created>1599627311607</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599627311607</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Final Commit 75% done and Integrate by NNJ16">
+      <created>1599628880047</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1599628880047</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="90542000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25642964" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.47741935" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49924356" weight="0.13064516" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.1016129" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32903227" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21785174" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.21129033" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="by madhura" />
+    <MESSAGE value="by NNJ 16" />
+    <MESSAGE value="Add Changes by NNJ16" />
+    <MESSAGE value="Final Commit 75% done and Integrate by NNJ16" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Commit 75% done and Integrate by NNJ16" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/FinanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="80" column="5" selection-start-line="65" selection-start-column="4" selection-end-line="80" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ExpencesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6307">
+          <caret line="398" column="9" selection-start-line="398" selection-start-column="9" selection-end-line="398" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/StockDetailsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/SupplierDetailsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IStockService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ISupplierService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePropertyController.java" />
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IUser.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ViewFromController.java" />
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ManageAttendance.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1091" />
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2856">
+          <caret line="183" column="42" selection-start-line="183" selection-start-column="42" selection-end-line="183" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageEmployeeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4896">
+          <caret line="318" column="5" selection-start-line="302" selection-start-column="3" selection-end-line="318" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageAttendanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4012">
+          <caret line="270" selection-start-line="270" selection-end-line="270" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageInventoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="49" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/AttendanceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/model/Attendance.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ItemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/model/ItemOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_171/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="176" selection-start-line="176" selection-end-line="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/model/Machine.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IMachineService.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/MachineServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ItemCategoryController.java" />
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/ItemCategoryManagement.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/CategoryManagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2743">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/model/ItemCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IItemCategoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ItemCategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1079">
+          <caret line="294" column="46" selection-start-line="294" selection-start-column="46" selection-end-line="294" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ICategoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/ICustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/CustomerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/CategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_171/javafx-src.zip!/javafx/event/ActionEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IQueryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/PaymentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ItemCategoryManagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="145" column="74" lean-forward="true" selection-start-line="145" selection-start-column="74" selection-end-line="145" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IItemOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ItemOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/ExpencesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-314">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/QueryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="717" column="38" selection-start-line="717" selection-start-column="38" selection-end-line="717" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> master
   </component>
 </project>

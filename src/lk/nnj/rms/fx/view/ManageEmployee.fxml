@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="885.0" prefWidth="1230.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageEmployeeController">
+   <children>
+      <AnchorPane prefHeight="75.0" prefWidth="600.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="88.0" layoutY="20.0" text="Manage Employee" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="945.0" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="btn_add" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="518.0" layoutY="152.0" onAction="#add" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: #ffffff;" text="Add" textAlignment="CENTER" />
+      <ImageView fitHeight="44.0" fitWidth="41.0" layoutX="534.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/icons8-plus-64.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txt_fullname" layoutX="196.0" layoutY="147.0" prefHeight="31.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" />
+      <Label layoutX="26.0" layoutY="152.0" text="Full Name" />
+      <Label layoutX="27.0" layoutY="211.0" text="Type" />
+      <Label layoutX="22.0" layoutY="274.0" prefHeight="21.0" prefWidth="119.0" text="Date of Birth" />
+      <JFXTextField fx:id="txt_address" layoutX="197.0" layoutY="326.0" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #ffffff;" />
+      <Label layoutX="27.0" layoutY="332.0" text="Address" />
+      <JFXTextField fx:id="txt_mobile" layoutX="196.0" layoutY="380.0" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #ffffff;" />
+      <Label layoutX="24.0" layoutY="385.0" text="Telephone" />
+      <Label layoutX="27.0" layoutY="440.0" text="Job started date" />
+      <JFXButton fx:id="btn_update" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="518.0" layoutY="221.0" onAction="#update" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: #ffffff;" text="Update" textAlignment="CENTER" />
+      <ImageView fitHeight="44.0" fitWidth="41.0" layoutX="534.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/icons8-synchronize-64.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btn_delete" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="518.0" layoutY="291.0" onAction="#delete" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: #ffffff;" text="Delete" textAlignment="CENTER" />
+      <ImageView fitHeight="44.0" fitWidth="41.0" layoutX="534.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/icons8-delete-128.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btn_attendance" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="518.0" layoutY="362.0" onAction="#attendance" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: #ffffff;" text="Attendance" textAlignment="CENTER" />
+      <ImageView fitHeight="60.0" fitWidth="70.0" layoutX="525.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/icons8-attendance-24.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txt_empid" layoutX="28.0" layoutY="98.0" prefHeight="31.0" prefWidth="450.0" promptText="Employee ID" style="-fx-background-color: #ffffff;" unFocusColor="BLACK" />
+      <ImageView fx:id="img_search" fitHeight="35.0" fitWidth="32.0" layoutX="486.0" layoutY="98.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="755.0" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="712.0" AnchorPane.topAnchor="98.0">
+         <image>
+            <Image url="@../assest/icons8-search-96.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tbl_details" layoutX="22.0" layoutY="578.0" onMouseClicked="#tbl_click" prefHeight="295.0" prefWidth="1185.0" style="-fx-background-color: #ced1d6;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="578.0">
+        <columns>
+          <TableColumn prefWidth="126.0" text="Emp ID" />
+          <TableColumn prefWidth="173.0" text="Name" />
+            <TableColumn prefWidth="142.0" text="Type" />
+            <TableColumn prefWidth="133.0" text="DOB" />
+            <TableColumn prefWidth="217.0" text="Address" />
+            <TableColumn prefWidth="144.0" text="Telephone" />
+            <TableColumn prefWidth="125.0" text="Started Date" />
+            <TableColumn prefWidth="124.0" text="Password" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <JFXButton fx:id="btn_print" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="518.0" layoutY="440.0" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: #ffffff;" text="Print" textAlignment="CENTER" />
+      <ImageView fitHeight="44.0" fitWidth="41.0" layoutX="532.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/icons8-print-96%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lbl_back" fitHeight="41.0" fitWidth="41.0" layoutX="26.0" layoutY="16.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="828.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="1163.0" AnchorPane.topAnchor="16.0">
+         <image>
+            <Image url="@../assest/icons8-back-arrow-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="244.0" fitWidth="250.0" layoutX="895.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="91.0" AnchorPane.topAnchor="162.0">
+         <image>
+            <Image url="@../assest/icons8-management-100.png" />
+         </image>
+      </ImageView>
+      <JFXComboBox fx:id="txt_type" layoutX="197.0" layoutY="206.0" prefHeight="31.0" prefWidth="272.0" />
+      <JFXDatePicker fx:id="txt_dob" layoutX="206.0" layoutY="268.0" prefHeight="31.0" prefWidth="272.0" />
+      <JFXTextField fx:id="txt_pwd" layoutX="196.0" layoutY="480.0" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #ffffff;" />
+      <Label layoutX="27.0" layoutY="485.0" text="Password" />
+      <JFXDatePicker fx:id="txt_jsd" layoutX="200.0" layoutY="434.0" prefHeight="31.0" prefWidth="272.0" />
+   </children>
+</AnchorPane>

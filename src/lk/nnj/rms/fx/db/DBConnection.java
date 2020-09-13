@@ -1,6 +1,5 @@
 package lk.nnj.rms.fx.db;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,7 +13,7 @@ public class DBConnection {
             connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/restdb",
                     "root",
-                    "Pablo@1234"
+                    "1234"
             );
         }
         return connection;
