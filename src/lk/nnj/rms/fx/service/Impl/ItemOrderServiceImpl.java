@@ -42,6 +42,27 @@ public class ItemOrderServiceImpl implements IItemOrderService {
         pstm.setObject(2,oid);
         return pstm.executeUpdate()>0;
     }
+    @Override
+    public ItemOrder find(String id,int oid) throws Exception {
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM Order_Item WHERE item_id=? AND order_id=?");
+        pstm.setObject(1,id);
+        pstm.setObject(2,oid);
+        ResultSet rst = pstm.executeQuery();
+
+        if(rst.next())
+        {
+            int order_id = rst.getInt(1);
+            String item_id = rst.getString(2);
+            String item_name = rst.getString(3);
+            int qty = rst.getInt(4);
+            double unit_price =rst.getDouble(5);
+
+            ItemOrder item = new ItemOrder(order_id,item_id,item_name,qty,unit_price);
+            return item;
+        }
+        return null;
+    }
 
     @Override
     public List<ItemOrder> findAll(int id) throws Exception {

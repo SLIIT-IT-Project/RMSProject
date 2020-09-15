@@ -11,4 +11,5 @@ public interface IItemOrderService {
     List<ItemOrder> findAll(int id) throws Exception;
     ItemOrder getItemOrder(int oid, String itemId) throws  Exception;
     boolean update(ItemOrder itemOrder) throws Exception;
+    ItemOrder find(String id,int oid) throws Exception;
 }

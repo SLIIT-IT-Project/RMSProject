@@ -1,6 +1,7 @@
 package lk.nnj.rms.fx.service.Impl;
 
 import lk.nnj.rms.fx.db.DBConnection;
+import lk.nnj.rms.fx.model.Delivery;
 import lk.nnj.rms.fx.service.IQueryService;
 
 import java.sql.Connection;
@@ -33,6 +34,23 @@ public class QueryServiceImpl implements IQueryService {
         int cID;
         Connection connection = DBConnection.getConnection();
         PreparedStatement pstm = connection.prepareStatement("SELECT customer_id FROM Customer ORDER BY customer_id DESC LIMIT 1");
+        ResultSet rst = pstm.executeQuery();
+
+        if(rst.next())
+        {
+            cID = rst.getInt(1);
+            inID = cID+1;
+
+        }
+        return inID;
+    }
+
+    @Override
+    public int getDelNo() throws Exception {
+        int inID = 8000;
+        int cID;
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT track_id FROM Track ORDER BY track_id DESC LIMIT 1");
         ResultSet rst = pstm.executeQuery();
 
         if(rst.next())
@@ -134,5 +152,28 @@ public class QueryServiceImpl implements IQueryService {
         }
 
         return allItems.substring(0,allItems.length()-1);
+    }
+
+    @Override
+    public Delivery findDeliver(int id) throws Exception {
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM track WHERE oid=?");
+        pstm.setObject(1,id);
+
+        ResultSet rst = pstm.executeQuery();
+
+        if(rst.next())
+        {
+            return  new Delivery(
+                    rst.getInt(1),
+                    rst.getTimestamp(2),
+                    rst.getString(3),
+                    rst.getString(4),
+                    rst.getString(5),
+                    rst.getInt(6)
+            );
+        }
+        return null;
+
     }
 }

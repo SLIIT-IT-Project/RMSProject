@@ -1,5 +1,6 @@
 package lk.nnj.rms.fx.service;
 
+import lk.nnj.rms.fx.model.Delivery;
 import lk.nnj.rms.fx.model.Item;
 import lk.nnj.rms.fx.model.ItemOrder;
 
@@ -11,7 +12,9 @@ public interface IQueryService {
     String getItemID(String name) throws Exception;
     double getItemPrice(String name) throws Exception;
     int getCusNo() throws Exception;
+    int getDelNo() throws Exception;
     String findOrderDetails(int id) throws Exception;
     int getPaymentNo() throws Exception;
     List<String> getAllItems(String category) throws Exception;
+    Delivery findDeliver(int id) throws Exception;
 }

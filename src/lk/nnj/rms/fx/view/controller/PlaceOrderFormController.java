@@ -383,7 +383,7 @@ public class PlaceOrderFormController implements Initializable {
                     if(mobile.length()==10)
                     {
                         //if customer not found update the added new customer with the details
-                        iCustomerService.update(new Customer(cid,cname,mobile,"",0));
+                        iCustomerService.update(new Customer(cid,cname,mobile,txt_address.getText(),0));
 
                         //update the order with the new customers id
                         iOrderService.update(new Order(oid,LocalDateTime.now(),desc,oType,orderAmount,sCharge,totAmount,cid));
@@ -424,7 +424,7 @@ public class PlaceOrderFormController implements Initializable {
         }
     }
     @FXML
-    void checkOut(MouseEvent event){
+    void checkOut(MouseEvent event) throws Exception {
         if(rb_dine.isSelected())
         {
             String oType = "Dine Inn";
@@ -434,6 +434,16 @@ public class PlaceOrderFormController implements Initializable {
         {
             String oType = "Take Away";
             AddOrderDetails(oType);
+        }
+        if(rb_del.isSelected())
+        {
+            String oType = "Deliver";
+            int oid =Integer.parseInt(txt_invoiceNo.getText());
+            AddOrderDetails(oType);
+            IManageDeliveryService iManageDeliveryService = new ManageDeliveryServiceImpl();
+            IQueryService iQueryService = new QueryServiceImpl();
+            int tid = iQueryService.getDelNo();
+            iManageDeliveryService.add(new Delivery(tid,null,"Pending","","",oid));
         }
     }
 
@@ -726,6 +736,21 @@ public class PlaceOrderFormController implements Initializable {
 
                 }
 
+                try
+                {
+                    Delivery delivery = iQueryService.findDeliver(orderId);
+
+                    if(delivery != null)
+                    {
+                        IManageDeliveryService manageDeliveryService = new ManageDeliveryServiceImpl();
+                        manageDeliveryService.delete(delivery.getTrack_id());
+                    }
+
+                }catch (Exception e)
+                {
+
+                }
+
                 subTotal = 0;
                 serviceCharge = 0;
                 totAmount = 0;
@@ -820,7 +845,6 @@ public class PlaceOrderFormController implements Initializable {
             e.printStackTrace();
         }
 
-
         List<String> itemList;
         try {
             itemList = iQueryService.getAllItemNames();
@@ -830,7 +854,9 @@ public class PlaceOrderFormController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         ICategoryService iCategoryService = new CategoryServiceImpl();
+
         try {
             List<String> allCategory = iCategoryService.findAllCategory();
             String [] nameList = new String[allCategory.size()];
