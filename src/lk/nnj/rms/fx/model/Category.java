@@ -4,10 +4,10 @@ public class Category {
     private String category_id;
     private String category_name;
     private String description;
-    private String no_of_items;
+    private int no_of_items;
 
 
-    public Category(String category_id, String category_name, String description, String no_of_items) {
+    public Category(String category_id, String category_name, String description, int no_of_items) {
         this.category_id = category_id;
         this.category_name = category_name;
         this.description = description;
@@ -39,11 +39,11 @@ public class Category {
         this.description = description;
     }
 
-    public String getNo_of_items() {
+    public int getNo_of_items() {
         return no_of_items;
     }
 
-    public void setNo_of_orders(String no_of_items) {
+    public void setNo_of_orders(int no_of_items) {
         this.no_of_items = no_of_items;
     }
 

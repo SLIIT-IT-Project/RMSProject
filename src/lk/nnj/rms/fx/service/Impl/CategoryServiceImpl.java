@@ -40,6 +40,15 @@ public class CategoryServiceImpl implements ICategoryService{
     }
 
     @Override
+    public boolean updateNoOfItems(String id,int no) throws Exception {
+        Connection connection= DBConnection.getConnection();
+        PreparedStatement pstm =connection.prepareStatement("UPDATE category SET no_of_items=? WHERE category_id=?");
+        pstm.setObject(2,id);
+        pstm.setObject(1,no);
+        return pstm.executeUpdate()>0;
+    }
+
+    @Override
     public boolean delete(String id) throws Exception {
         Connection connection= DBConnection.getConnection();
         PreparedStatement pstm= connection.prepareStatement("DELETE FROM category WHERE category_id=?");
@@ -62,7 +71,7 @@ public class CategoryServiceImpl implements ICategoryService{
                     rst.getString(1),
                     rst.getString(2),
                     rst.getString(3),
-                    rst.getString(4)
+                    rst.getInt(4)
 
             );
         }
@@ -83,7 +92,7 @@ public class CategoryServiceImpl implements ICategoryService{
                     rst.getString(1),
                     rst.getString(2),
                     rst.getString(3),
-                    rst.getString(4)
+                    rst.getInt(4)
 
             );
         }
@@ -101,7 +110,7 @@ public class CategoryServiceImpl implements ICategoryService{
             String id=rst.getString(1);
             String name=rst.getString(2);
             String description=rst.getString(3);
-            String noOfItems=rst.getString(4);
+            int noOfItems=rst.getInt(4);
 
             Category category = new Category (id, name, description,noOfItems);
             allCategory.add(category);

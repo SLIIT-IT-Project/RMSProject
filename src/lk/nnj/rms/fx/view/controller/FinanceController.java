@@ -66,7 +66,7 @@ public class FinanceController implements Initializable {
     @FXML
     void back(MouseEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/AdminPanel.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/AdminPanel.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.rootpane.getScene().getWindow();

@@ -1,6 +1,7 @@
 package lk.nnj.rms.fx.view.controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,6 +36,15 @@ public class AdminPanelController {
 
     @FXML
     private JFXButton btn_finance;
+
+    @FXML
+    private JFXDatePicker txtFrom;
+
+    @FXML
+    private JFXDatePicker txtTo;
+
+    @FXML
+    private ImageView lbl_search;
 
     @FXML
     private JFXButton btn_inventory;
@@ -114,7 +124,7 @@ public class AdminPanelController {
     @FXML
     void back(MouseEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/LoginForm.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/LoginForm.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();
@@ -136,7 +146,7 @@ public class AdminPanelController {
     @FXML
     void viewCategory(ActionEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/CategoryManagement.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/CategoryManagement.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();
@@ -153,7 +163,7 @@ public class AdminPanelController {
     @FXML
     void viewCustomer(ActionEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/CustomerManagement.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/CustomerManagement.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();
@@ -168,14 +178,26 @@ public class AdminPanelController {
     }
 
     @FXML
-    void viewDel(ActionEvent event) {
-
+    void viewDel(ActionEvent event) throws IOException {
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/DeliveryDetails.fxml"));
+        if (root != null) {
+            Scene subScene = new Scene(root);
+            Stage primaryStage = (Stage) this.root.getScene().getWindow();
+            primaryStage.setScene(subScene);
+            primaryStage.centerOnScreen();
+            primaryStage.setResizable(true);
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+            tt.setFromX(-subScene.getWidth());
+            tt.setToX(0);
+            tt.play();
+        }
     }
 
     @FXML
     void viewEmp(ActionEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/ManageEmployee.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/ManageEmployee.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();
@@ -197,7 +219,7 @@ public class AdminPanelController {
     @FXML
     void viewFinance(ActionEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/FinanceManage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/FinanceManage.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();
@@ -215,7 +237,7 @@ public class AdminPanelController {
     @FXML
     void viewInventory(ActionEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/Inventory.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/Inventory.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();
@@ -232,7 +254,7 @@ public class AdminPanelController {
     @FXML
     void viewItem(ActionEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/ManageItem.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/ManageItem.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();
@@ -247,8 +269,24 @@ public class AdminPanelController {
     }
 
     @FXML
-    void viewOrder(ActionEvent event) {
-
+    void viewOrder(ActionEvent event) throws IOException {
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/OrderDetailForm.fxml"));
+        if (root != null) {
+            Scene subScene = new Scene(root);
+            Stage primaryStage = (Stage) this.root.getScene().getWindow();
+            primaryStage.setScene(subScene);
+            primaryStage.centerOnScreen();
+            if(primaryStage.isMaximized())
+            {
+                primaryStage.setMaximized(false);
+            }
+            primaryStage.setMaximized(true);
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+            tt.setFromX(-subScene.getWidth());
+            tt.setToX(0);
+            tt.play();
+        }
     }
 
     @FXML
@@ -258,6 +296,11 @@ public class AdminPanelController {
 
     @FXML
     void viewProp(ActionEvent event) {
+
+    }
+
+    @FXML
+    void search(MouseEvent event) {
 
     }
 

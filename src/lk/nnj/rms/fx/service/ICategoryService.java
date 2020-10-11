@@ -8,6 +8,7 @@ public interface ICategoryService {
 
     boolean add(Category category) throws Exception;
     boolean update(Category category) throws Exception;
+    boolean updateNoOfItems(String id, int no) throws Exception;
     boolean delete(String id) throws Exception;
     Category find(String id) throws Exception;
     Category findId(String id) throws Exception;

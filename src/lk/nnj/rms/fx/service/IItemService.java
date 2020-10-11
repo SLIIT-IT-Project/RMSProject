@@ -11,4 +11,5 @@ public interface IItemService {
     boolean delete(String id) throws Exception;
     Item find (String id) throws Exception;
     List<Item> findAll() throws Exception;
+    int totalItems() throws Exception;
 }

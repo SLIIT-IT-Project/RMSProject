@@ -1,35 +1,43 @@
 package lk.nnj.rms.fx.view.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
-import javafx.embed.swing.JFXPanel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.nnj.rms.fx.model.Item;
 import lk.nnj.rms.fx.service.IItemService;
 import lk.nnj.rms.fx.service.Impl.ItemServiceImpl;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ManageItemController implements Initializable {
@@ -41,6 +49,9 @@ public class ManageItemController implements Initializable {
 
     @FXML
     private JFXButton btn_category;
+
+    @FXML
+    private JFXButton btn_report;
 
     @FXML
     private JFXButton btn_add;
@@ -56,6 +67,12 @@ public class ManageItemController implements Initializable {
 
     @FXML
     private ImageView lbl_search;
+
+    @FXML
+    private Label lbl_tot;
+
+    @FXML
+    private ImageView lbl_excel;
 
     @FXML
     private ImageView lbl_reset;
@@ -86,7 +103,12 @@ public class ManageItemController implements Initializable {
         //Check whether required fields are empty or not
         if(itemID.equals("") || itemName.equals(""))
         {
-            JOptionPane.showMessageDialog(null,"One or more required field is empty");
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Error, cannot add data");
+            alert1.setContentText("One or more required field is empty.");
+            alert1.showAndWait();
+
         }else
             {
                 try
@@ -99,19 +121,35 @@ public class ManageItemController implements Initializable {
 
                     if(result)
                     {
-                        JOptionPane.showMessageDialog(null,"Item added successfully");
+                        Alert alert1= new Alert(Alert.AlertType.INFORMATION);
+                        alert1.setTitle("Information Dialog");
+                        alert1.setHeaderText("Item Added");
+                        alert1.setContentText("Item added successfully");
+                        alert1.showAndWait();
                         viewTable();
                         reset();
                     }else
                         {
-                            JOptionPane.showMessageDialog(null,"Item cannot add");
+                            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                            alert1.setTitle("Error Dialog");
+                            alert1.setHeaderText("Error, Database connection failed");
+                            alert1.setContentText("Item cannot add");
+                            alert1.showAndWait();
                         }
                 }catch (NumberFormatException e)
                 {
-                    JOptionPane.showMessageDialog(null,"Entered unit price is invalid");
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setTitle("Error Dialog");
+                    alert1.setHeaderText("Invalid input found");
+                    alert1.setContentText("Entered unit price is invalid.");
+                    alert1.showAndWait();
                 }catch (Exception e)
                 {
-                    JOptionPane.showMessageDialog(null,"Error! Item id already exists");
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setTitle("Error Dialog");
+                    alert1.setHeaderText("Invalid input found");
+                    alert1.setContentText("Error! Item id already exists");
+                    alert1.showAndWait();
                 }
             }
     }
@@ -119,7 +157,7 @@ public class ManageItemController implements Initializable {
     @FXML
     void Back(MouseEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/AdminPanel.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/AdminPanel.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();
@@ -149,21 +187,39 @@ public class ManageItemController implements Initializable {
     void Delete(ActionEvent event) {
         String itemID = txt_itemID.getText();
         IItemService iItemService = new ItemServiceImpl();
-        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this item ?", "WARNING",
-                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation Dialog");
+        alert.setHeaderText("Look, a Confirmation Dialog");
+        alert.setContentText("Are you ok with this?");
+
+        Optional<ButtonType> result1 = alert.showAndWait();
+        if (result1.get() == ButtonType.OK){
+            // ... user chose OK
             try {
                 boolean result  = iItemService.delete(itemID);
                 if(result)
                 {
-                    JOptionPane.showMessageDialog(null,"Deleted successfully");
+                    Alert alert1= new Alert(Alert.AlertType.INFORMATION);
+                    alert1.setTitle("Information Dialog");
+                    alert1.setHeaderText("Deleted Successfully");
+                    alert1.setContentText("Item deleted successfully");
+                    alert1.showAndWait();
                     viewTable();
                     reset();
                 }else
                 {
-                    JOptionPane.showMessageDialog(null,"Delete failed");
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setTitle("Error Dialog");
+                    alert1.setHeaderText("Error, delete failed");
+                    alert1.setContentText("Item cannot delete");
+                    alert1.showAndWait();
                 }
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null,"Error! cannot delete");
+                Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                alert1.setTitle("Error Dialog");
+                alert1.setHeaderText("Error, delete failed");
+                alert1.setContentText("Item cannot delete");
+                alert1.showAndWait();
             }
         }
 
@@ -192,7 +248,11 @@ public class ManageItemController implements Initializable {
         //Check whether required fields are empty or not
         if(itemID.equals("") || itemName.equals("") || description.equals(""))
         {
-            JOptionPane.showMessageDialog(null,"One or more required field is empty");
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Invalid input found");
+            alert1.setContentText("One or more required field is empty.");
+            alert1.showAndWait();
         }else
         {
             try
@@ -205,19 +265,35 @@ public class ManageItemController implements Initializable {
 
                 if(result)
                 {
-                    JOptionPane.showMessageDialog(null,"Item updated successfully");
+                    Alert alert1= new Alert(Alert.AlertType.INFORMATION);
+                    alert1.setTitle("Information Dialog");
+                    alert1.setHeaderText("Updated Successfully");
+                    alert1.setContentText("Item updated successfully");
+                    alert1.showAndWait();
                     viewTable();
                     reset();
                 }else
                 {
-                    JOptionPane.showMessageDialog(null,"Item cannot update");
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setTitle("Error Dialog");
+                    alert1.setHeaderText("Error, update failed");
+                    alert1.setContentText("Item cannot update");
+                    alert1.showAndWait();
                 }
             }catch (NumberFormatException e)
             {
-                JOptionPane.showMessageDialog(null,"Entered unit price is invalid");
+                Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                alert1.setTitle("Error Dialog");
+                alert1.setHeaderText("Invalid input found");
+                alert1.setContentText("Entered unit price is invalid");
+                alert1.showAndWait();
             }catch (Exception e)
             {
-                JOptionPane.showMessageDialog(null,"Error! Item id can't find");
+                Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                alert1.setTitle("Error Dialog");
+                alert1.setHeaderText("Invalid input found");
+                alert1.setContentText("Item id does not exist");
+                alert1.showAndWait();
             }
         }
     }
@@ -225,6 +301,13 @@ public class ManageItemController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         viewTable();
+        ItemServiceImpl itemService = new ItemServiceImpl();
+        try {
+            int c = itemService.totalItems();
+            lbl_tot.setText(Integer.toString(c));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     public void viewTable()
     {
@@ -281,7 +364,7 @@ public class ManageItemController implements Initializable {
     void viewCategory(ActionEvent event) throws IOException {
 
         if(!txt_itemID.getText().equals("")) {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/rms/fx/view/ItemCategoryManagement.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/rms/fx/view/style/ItemCategoryManagement.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             if (root != null) {
                 if (stage == null) {
@@ -289,8 +372,6 @@ public class ManageItemController implements Initializable {
                     stage.setTitle("Add to Category");
                     ItemCategoryManagementController setController = fxmlLoader.getController();
                     setController.setItemId(txt_itemID.getText());
-//                Image image = new Image("/lk/nnj/mdss/fx/assest/main.png");
-//                stage.getIcons().add(image);
                     stage.setResizable(false);
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.setOnCloseRequest(event1 -> {
@@ -304,7 +385,71 @@ public class ManageItemController implements Initializable {
             }
         }else
             {
-                JOptionPane.showMessageDialog(null,"select item before added to the category");
+                Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                alert1.setTitle("Error Dialog");
+                alert1.setHeaderText("Error, Item not selected");
+                alert1.setContentText("select item before added to the category.");
+                alert1.showAndWait();
             }
+    }
+    private static String[] columns = {"Item ID","Item Name","Description","Unit Price"};
+    @FXML
+    void generateReport(MouseEvent event) throws Exception {
+
+        IItemService iItemService = new ItemServiceImpl();
+        List<Item> allItems = iItemService.findAll();
+
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Item Details");
+
+        Font headerFont = workbook.createFont();
+        ((Font) headerFont).setBold(true);
+        headerFont.setFontHeightInPoints((short) 17);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+
+        Row headerRow = sheet.createRow(0);
+
+        for(int i=0 ; i<columns.length; i++)
+        {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        int rowNum=1;
+
+        for(Item item : allItems)
+        {
+            Row row = sheet.createRow(rowNum++);
+            row.createCell(0).setCellValue(item.getItem_id());
+            row.createCell(1).setCellValue(item.getItem_name());
+            row.createCell(2).setCellValue(item.getDescription());
+            row.createCell(3).setCellValue(item.getUnit_price());
+        }
+
+        for(int i =0; i<columns.length; i++)
+        {
+            sheet.autoSizeColumn(i);
+        }
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Export to Excel");
+        FileChooser.ExtensionFilter extFilter =
+                new FileChooser.ExtensionFilter("Excel Workbook (*.xlsx)", "*.xlsx");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File file = fileChooser.showSaveDialog(root.getScene().getWindow());
+        if (file != null)
+        {
+            String path = file.getAbsolutePath();
+            FileOutputStream fileOut = new FileOutputStream(path);
+            workbook.write(fileOut);
+            fileOut.close();
+            workbook.close();
+        }
+
+
+
     }
 }

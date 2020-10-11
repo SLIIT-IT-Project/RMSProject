@@ -85,4 +85,19 @@ public class ItemServiceImpl implements IItemService {
         }
         return allItems;
     }
+
+    @Override
+    public int totalItems() throws Exception {
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT COUNT(item_id) FROM Item");
+
+        ResultSet rst = pstm.executeQuery();
+        int count = 0;
+
+        if(rst.next())
+        {
+            count = rst.getInt(1);
+        }
+        return count;
+    }
 }

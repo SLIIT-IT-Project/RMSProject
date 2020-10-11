@@ -35,7 +35,7 @@ public class ManageInventoryController {
     @FXML
     void StockManage(ActionEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource( "/lk/nnj/rms/fx/view/Stock.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/Stock.fxml"));
         if(root != null)
         {
             Scene subScene = new Scene(root);
@@ -53,7 +53,7 @@ public class ManageInventoryController {
     @FXML
     void SupplierManage(ActionEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource( "/lk/nnj/rms/fx/view/Supplier.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/Supplier.fxml"));
         if(root != null)
         {
             Scene subScene = new Scene(root);
@@ -69,7 +69,7 @@ public class ManageInventoryController {
     }
     public void back(MouseEvent mouseEvent) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/AdminPanel.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/AdminPanel.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();

@@ -63,7 +63,7 @@ public class ItemCategoryManagementController implements Initializable {
         }else {
             boolean result = false;
                 result = iItemCategoryService.add(new ItemCategory(itemiId, category.getCategory_id(), category.getCategory_name()));
-
+                iCategoryService.updateNoOfItems(category.getCategory_id(),category.getNo_of_items()+1);
 
             if (result) {
                 JOptionPane.showMessageDialog(null, "Item successfully added to the selected category");
@@ -129,6 +129,7 @@ public class ItemCategoryManagementController implements Initializable {
             JOptionPane.showMessageDialog(null,"Select from table to remove");
         }else {
             boolean result = iItemCategoryService.delete(itemiId, category.getCategory_id());
+            iCategoryService.updateNoOfItems(category.getCategory_id(),category.getNo_of_items() -1);
             if (result) {
                 JOptionPane.showMessageDialog(null, "Item has successfully removed from selected category");
                 cmb_SelectCat.setValue(null);

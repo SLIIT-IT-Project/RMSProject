@@ -274,7 +274,7 @@ public class ManageStockController implements Initializable {
     }
     public void back(MouseEvent mouseEvent) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/Inventory.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/Inventory.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();

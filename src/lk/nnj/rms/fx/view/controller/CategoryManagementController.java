@@ -17,11 +17,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.nnj.rms.fx.model.Category;
-import lk.nnj.rms.fx.model.Customer;
 import lk.nnj.rms.fx.service.ICategoryService;
-import lk.nnj.rms.fx.service.ICustomerService;
 import lk.nnj.rms.fx.service.Impl.CategoryServiceImpl;
-import lk.nnj.rms.fx.service.Impl.CustomerServiceImpl;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -63,17 +60,21 @@ public class CategoryManagementController implements Initializable{
         private ImageView lbl_search_category;
 
         @FXML
+        private JFXTextField txt_noOfItems;
+
+        @FXML
         private ImageView lbl_back;
 
         @FXML
         void add(ActionEvent event) {
 
 
-            String category_id,category_name,description,no_of_items;
+            String category_id,category_name,description;
+            int no_of_items;
             category_id=txt_category_id.getText();
             category_name=txt_category_name.getText();
             description=txt_description.getText();
-            no_of_items="0";
+            no_of_items=Integer.parseInt(txt_noOfItems.getText());
 
 
             Category category = new Category(category_id,category_name,description,no_of_items);
@@ -110,11 +111,12 @@ public class CategoryManagementController implements Initializable{
         @FXML
         void update(ActionEvent event) {
 
-            String id,name,description,no_of_items;
+            String id,name,description;
+            int no_of_items;
             id=txt_category_id.getText();
             name=txt_category_name.getText();
             description=txt_description.getText();
-            no_of_items="0";
+            no_of_items=Integer.parseInt(txt_noOfItems.getText());
 
 
             Category category = new Category(id,name,description,no_of_items);
@@ -165,7 +167,7 @@ public class CategoryManagementController implements Initializable{
             txt_category_id.setText(category.getCategory_id());
             txt_category_name.setText(category.getCategory_name());
             txt_description.setText(category.getDescription());
-
+            txt_noOfItems.setText(Integer.toString(category.getNo_of_items()));
         }
 
     }
@@ -192,7 +194,7 @@ public class CategoryManagementController implements Initializable{
     @FXML
     void back(MouseEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/AdminPanel.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/AdminPanel.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();

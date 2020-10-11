@@ -16,19 +16,30 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.nnj.rms.fx.model.*;
 import lk.nnj.rms.fx.service.*;
 import lk.nnj.rms.fx.service.Impl.*;
+import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import org.controlsfx.control.textfield.TextFields;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 
 public class PlaceOrderFormController implements Initializable {
@@ -44,6 +55,9 @@ public class PlaceOrderFormController implements Initializable {
 
     @FXML
     private TextArea txt_address;
+
+    @FXML
+    private TextField txt_assist;
 
     @FXML
     private JFXRadioButton rb_dine;
@@ -392,12 +406,20 @@ public class PlaceOrderFormController implements Initializable {
                                 " Order added successfully with invoice no "+" : "+Integer.toString(oid));
                     }else
                     {
-                        JOptionPane.showMessageDialog(null,"Mobile no is invalid");
+                        Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                        alert1.setTitle("Error Dialog");
+                        alert1.setHeaderText("Invalid Input Found");
+                        alert1.setContentText("Mobile no is invalid");
+                        alert1.showAndWait();
                     }
 
                 }else
                 {
-                    JOptionPane.showMessageDialog(null,"Customer Details are required");
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setTitle("Error Dialog");
+                    alert1.setHeaderText("Input not found");
+                    alert1.setContentText("Customer Details are required");
+                    alert1.showAndWait();
                 }
 
             }
@@ -422,28 +444,86 @@ public class PlaceOrderFormController implements Initializable {
         {
             e.printStackTrace();
         }
+        //Print the bill
+        IItemOrderService iItemOrderService = new ItemOrderServiceImpl();
+        try {
+            List<ItemOrder> itemOrders = iItemOrderService.findAll(oid);
+            JRBeanCollectionDataSource itemList = new JRBeanCollectionDataSource(itemOrders);
+
+            File file = new File("reports/CustomerBill.jasper");
+            JasperReport compileReport = (JasperReport) JRLoader.loadObject(file);
+            HashMap<String,Object> parameters = new HashMap<>();
+            parameters.put("date", LocalDate.now().toString() + " : " + LocalTime.now());
+            parameters.put("inNo",oid);
+            parameters.put("cust",cname);
+            parameters.put("DataCollection",itemList);
+            parameters.put("subTot",orderAmount);
+            parameters.put("servChrg",sCharge);
+            parameters.put("totAmt",totAmount);
+            parameters.put("assist",txt_assist.getText());
+            parameters.put("cash",Double.parseDouble(txt_cashPaid.getText()));
+            parameters.put("bal",Double.parseDouble(lbl_balance.getText()));
+            parameters.put("pdate",LocalDate.now().toString() + " : " + LocalTime.now());
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport,parameters,new JREmptyDataSource());
+            JasperViewer.viewReport(jasperPrint,false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+
     @FXML
-    void checkOut(MouseEvent event) throws Exception {
-        if(rb_dine.isSelected())
+    void checkOut(ActionEvent event) throws Exception {
+        if(txt_cname.getText().equals(""))
         {
-            String oType = "Dine Inn";
-            AddOrderDetails(oType);
-        }
-        if(rb_tAway.isSelected())
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Input not found");
+            alert1.setContentText("Customer name required.");
+            alert1.showAndWait();
+        }else if(txt_cmobile.getText().trim().length() !=10)
         {
-            String oType = "Take Away";
-            AddOrderDetails(oType);
-        }
-        if(rb_del.isSelected())
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Invalid input found");
+            alert1.setContentText("Entered mobile no is invalid");
+            alert1.showAndWait();
+
+        }else if(txt_cashPaid.getText().equals("") || Double.parseDouble(txt_cashPaid.getText().trim())<0)
         {
-            String oType = "Deliver";
-            int oid =Integer.parseInt(txt_invoiceNo.getText());
-            AddOrderDetails(oType);
-            IManageDeliveryService iManageDeliveryService = new ManageDeliveryServiceImpl();
-            IQueryService iQueryService = new QueryServiceImpl();
-            int tid = iQueryService.getDelNo();
-            iManageDeliveryService.add(new Delivery(tid,null,"Pending","","",oid));
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Invalid input found");
+            alert1.setContentText("Cash paid amount is not valid");
+            alert1.showAndWait();
+        }else {
+            if (rb_dine.isSelected()) {
+                String oType = "Dine Inn";
+                AddOrderDetails(oType);
+            }
+            if (rb_tAway.isSelected()) {
+                String oType = "Take Away";
+                AddOrderDetails(oType);
+            }
+            if (rb_del.isSelected()) {
+                if(txt_address.getText().equals(""))
+                {
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setTitle("Error Dialog");
+                    alert1.setHeaderText("Input not found");
+                    alert1.setContentText("Customer address is required.");
+                    alert1.showAndWait();
+                }else {
+                    String oType = "Deliver";
+                    int oid = Integer.parseInt(txt_invoiceNo.getText());
+                    AddOrderDetails(oType);
+                    IManageDeliveryService iManageDeliveryService = new ManageDeliveryServiceImpl();
+                    IQueryService iQueryService = new QueryServiceImpl();
+                    int tid = iQueryService.getDelNo();
+                    iManageDeliveryService.add(new Delivery(tid, null, "Pending", "", "", oid));
+                }
+            }
         }
     }
 
@@ -516,7 +596,11 @@ public class PlaceOrderFormController implements Initializable {
 
         if(order == null || order.getDescription().equals(""))
         {
-            JOptionPane.showMessageDialog(null,"Checkout the current order before added a new order");
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Invalid Action");
+            alert1.setContentText("Checkout the current order before added a new order.");
+            alert1.showAndWait();
         }else {
             subTotal = 0;
             serviceCharge = 0;
@@ -542,7 +626,7 @@ public class PlaceOrderFormController implements Initializable {
         }
     }
     @FXML
-    void newOrder(MouseEvent event) throws Exception {
+    void newOrder(ActionEvent event) throws Exception {
         addNewOrder();
     }
 
@@ -579,7 +663,7 @@ public class PlaceOrderFormController implements Initializable {
         itemID = txt_itemID.getText();
 
         //Check whether item id is empty or not
-        if(!txt_itemID.getText().equals(""))
+        if(!tbl_itemOrder.getSelectionModel().getSelectedItems().isEmpty())
         {
             IItemOrderService iItemOrderService = new ItemOrderServiceImpl();
             try {
@@ -617,7 +701,14 @@ public class PlaceOrderFormController implements Initializable {
             } catch (Exception e) {
 
             }
-        }
+        }else
+            {
+                Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                alert1.setTitle("Error Dialog");
+                alert1.setHeaderText("Invalid Action");
+                alert1.setContentText("Select item to remove.");
+                alert1.showAndWait();
+            }
     }
     public void viewItems(String category) throws Exception {
         IQueryService iQueryService = new QueryServiceImpl();
@@ -652,7 +743,7 @@ public class PlaceOrderFormController implements Initializable {
         itemID = txt_itemID.getText();
 
         //Check whether item id is empty or not
-        if(!txt_itemID.getText().equals(""))
+        if(!tbl_itemOrder.getSelectionModel().getSelectedItems().isEmpty())
         {
             IItemOrderService iItemOrderService = new ItemOrderServiceImpl();
             try {
@@ -690,6 +781,13 @@ public class PlaceOrderFormController implements Initializable {
             } catch (Exception e) {
 
             }
+        }else
+        {
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Invalid Action");
+            alert1.setContentText("Select item to remove.");
+            alert1.showAndWait();
         }
     }
 
@@ -702,7 +800,12 @@ public class PlaceOrderFormController implements Initializable {
 
         if(order == null || order.getDescription().equals(""))
         {
-            JOptionPane.showMessageDialog(null,"Checkout the current order before delete it");
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Invalid Action");
+            alert1.setContentText("Checkout the current order before delete it.");
+            alert1.showAndWait();
+
         }else {
             try
             {
@@ -713,8 +816,11 @@ public class PlaceOrderFormController implements Initializable {
                 paymentService.delete(iQueryService.getPaymentNo()-1);
                 iOrderService.delete(orderId);
 
-                JOptionPane.showMessageDialog(null," Successfully removed the order with invoice no "
-                        +" : "+Integer.toString(orderId));
+                Alert alert1= new Alert(Alert.AlertType.INFORMATION);
+                alert1.setTitle("Information Dialog");
+                alert1.setHeaderText("Order removed");
+                alert1.setContentText("Successfully removed the order with invoice no" + " : "+Integer.toString(orderId));
+                alert1.showAndWait();
                 log++;
                 lst_log.getItems().add(log + " : " +LocalDateTime.now().toString() +" : "+
                         " Successfully removed the order with invoice no "+" : "+Integer.toString(orderId));
@@ -777,13 +883,30 @@ public class PlaceOrderFormController implements Initializable {
         }
     }
     @FXML
-    void removeOrder(MouseEvent event) throws Exception {
+    void removeOrder(ActionEvent event) throws Exception {
         removeCOrder();
     }
 
-    @FXML
-    void viewDel(MouseEvent event) {
+    private static Stage stage =null;
 
+    @FXML
+    void viewDel(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/rms/fx/view/style/OrderDeDetailForm.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+        if (root != null) {
+            if (stage == null) {
+                stage = new Stage();
+                stage.setTitle("Deliver Details Form");
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setOnCloseRequest(event1 -> {
+                            stage = null;
+                        }
+                );
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+
+        }
     }
 
     @FXML
@@ -799,25 +922,25 @@ public class PlaceOrderFormController implements Initializable {
     }
 
     @FXML
-    void viewElarge(MouseEvent event) throws Exception {
+    void viewElarge(ActionEvent event) throws Exception {
         lst_viewCategory.setItems(null);
         viewItems("Extra Large Pizza");
     }
 
     @FXML
-    void viewLarge(MouseEvent event) throws Exception {
+    void viewLarge(ActionEvent event) throws Exception {
         lst_viewCategory.setItems(null);
         viewItems("Large Pizza");
     }
 
     @FXML
-    void viewMedium(MouseEvent event) throws Exception {
+    void viewMedium(ActionEvent event) throws Exception {
         lst_viewCategory.setItems(null);
         viewItems("Medium Pizza");
     }
 
     @FXML
-    void viewSmall(MouseEvent event) throws Exception {
+    void viewSmall(ActionEvent event) throws Exception {
         lst_viewCategory.setItems(null);
         viewItems("Small Pizza");
     }
@@ -844,7 +967,6 @@ public class PlaceOrderFormController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         List<String> itemList;
         try {
             itemList = iQueryService.getAllItemNames();
@@ -872,8 +994,9 @@ public class PlaceOrderFormController implements Initializable {
 
     @FXML
     void logOut(MouseEvent event) throws IOException {
+        appendLogFile();
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/LoginForm.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/LoginForm.fxml"));
         if (root != null) {
             Scene subScene = new Scene(root);
             Stage primaryStage = (Stage) this.root.getScene().getWindow();
@@ -907,6 +1030,26 @@ public class PlaceOrderFormController implements Initializable {
             e.printStackTrace();
         }
 
+    }
+    public  void appendLogFile() throws IOException {
+        FileWriter file =new FileWriter("log.txt",true);
+        log++;
+        lst_log.getItems().add(log + " : " +LocalDateTime.now().toString() +" : "+
+                " Assistant logout from the system "+" : Emp ID :"+txt_assist.getText());
+        List<String>log =lst_log.getItems();
+        for (String lst : log)
+        {
+            file.write(lst);
+            file.append(System.lineSeparator());
+        }
+        file.close();
+    }
+    public void setAssistant(String assistant)
+    {
+        txt_assist.setText(assistant);
+        log++;
+        lst_log.getItems().add(log + " : " +LocalDateTime.now().toString() +" : "+
+                " Assistant login to the system "+" : Emp ID :"+txt_assist.getText());
     }
 
 }
