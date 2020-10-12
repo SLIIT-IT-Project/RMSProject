@@ -18,7 +18,6 @@ public class QueryServiceImpl implements IQueryService {
         Connection connection = DBConnection.getConnection();
         PreparedStatement pstm = connection.prepareStatement("SELECT order_id FROM Order1 ORDER BY order_id DESC LIMIT 1");
         ResultSet rst = pstm.executeQuery();
-
         if(rst.next())
         {
             orderID = rst.getInt(1);

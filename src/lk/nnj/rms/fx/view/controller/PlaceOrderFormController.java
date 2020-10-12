@@ -824,7 +824,6 @@ public class PlaceOrderFormController implements Initializable {
                 log++;
                 lst_log.getItems().add(log + " : " +LocalDateTime.now().toString() +" : "+
                         " Successfully removed the order with invoice no "+" : "+Integer.toString(orderId));
-
                 try
                 {
                     if(!iCustomerService.delete(cid))

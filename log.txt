@@ -16,3 +16,37 @@
 2.0 : 2020-10-10T22:14:17.845 :  Assistant logout from the system  : Emp ID :10001
 1.0 : 2020-10-10T22:23:01.799 :  Assistant login to the system  : Emp ID :10001
 2.0 : 2020-10-10T22:24:14.270 :  Assistant logout from the system  : Emp ID :10001
+1.0 : 2020-10-11T11:20:41.441 :  Assistant login to the system  : Emp ID :10001
+2.0 : 2020-10-11T11:20:49.050 :  Assistant logout from the system  : Emp ID :10001
+1.0 : 2020-10-11T11:20:41.441 :  Assistant login to the system  : Emp ID :10001
+2.0 : 2020-10-11T11:20:49.050 :  Assistant logout from the system  : Emp ID :10001
+3.0 : 2020-10-11T11:21:16.186 :  Assistant logout from the system  : Emp ID :10001
+1.0 : 2020-10-11T11:47:55.088 :  Assistant login to the system  : Emp ID :10001
+2.0 : 2020-10-11T11:48:31.883 :  Assistant logout from the system  : Emp ID :10001
+1.0 : 2020-10-11T18:36:19.033 :  Assistant login to the system  : Emp ID :10001
+2.0 : 2020-10-11T18:36:43.071 :  Order added successfully with invoice no  : 100073
+3.0 : 2020-10-11T18:36:57.436 :  generate new order with invoice no  : 100074
+4.0 : 2020-10-11T18:37:13.418 :  Order added successfully with invoice no  : 100074
+5.0 : 2020-10-11T18:37:28.544 :  Assistant logout from the system  : Emp ID :10001
+1.0 : 2020-10-11T18:46:12.135 :  Assistant login to the system  : Emp ID :10001
+2.0 : 2020-10-11T18:46:34.295 :  Order added successfully with invoice no  : 100075
+3.0 : 2020-10-11T18:46:39.275 :  generate new order with invoice no  : 100076
+4.0 : 2020-10-11T18:47:17.213 :  Order added successfully with invoice no  : 100076
+5.0 : 2020-10-11T18:47:28.183 :  Assistant logout from the system  : Emp ID :10001
+1.0 : 2020-10-11T22:19:41.754 :  Assistant login to the system  : Emp ID :10001
+2.0 : 2020-10-11T22:21:35.520 :  Assistant logout from the system  : Emp ID :10001
+1.0 : 2020-10-11T22:22:32.133 :  Assistant login to the system  : Emp ID :10001
+2.0 : 2020-10-11T22:23:16.127 :  Assistant logout from the system  : Emp ID :10001
+1.0 : 2020-10-12T10:09:54.182 :  Assistant login to the system  : Emp ID :10001
+2.0 : 2020-10-12T10:10:21.096 :  Order added successfully with invoice no  : 100077
+3.0 : 2020-10-12T10:10:36.065 :  generate new order with invoice no  : 100078
+4.0 : 2020-10-12T10:10:59.793 :  Order added successfully with invoice no  : 100078
+5.0 : 2020-10-12T10:11:06.909 :  generate new order with invoice no  : 100079
+6.0 : 2020-10-12T10:11:08.238 :  Assistant logout from the system  : Emp ID :10001
+1.0 : 2020-10-12T10:09:54.182 :  Assistant login to the system  : Emp ID :10001
+2.0 : 2020-10-12T10:10:21.096 :  Order added successfully with invoice no  : 100077
+3.0 : 2020-10-12T10:10:36.065 :  generate new order with invoice no  : 100078
+4.0 : 2020-10-12T10:10:59.793 :  Order added successfully with invoice no  : 100078
+5.0 : 2020-10-12T10:11:06.909 :  generate new order with invoice no  : 100079
+6.0 : 2020-10-12T10:11:08.238 :  Assistant logout from the system  : Emp ID :10001
+7.0 : 2020-10-12T10:32:22.319 :  Assistant logout from the system  : Emp ID :10001

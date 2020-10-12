@@ -392,7 +392,9 @@ public class ManageItemController implements Initializable {
                 alert1.showAndWait();
             }
     }
+
     private static String[] columns = {"Item ID","Item Name","Description","Unit Price"};
+
     @FXML
     void generateReport(MouseEvent event) throws Exception {
 
@@ -405,7 +407,7 @@ public class ManageItemController implements Initializable {
         Font headerFont = workbook.createFont();
         ((Font) headerFont).setBold(true);
         headerFont.setFontHeightInPoints((short) 17);
-        headerFont.setColor(IndexedColors.RED.getIndex());
+        headerFont.setColor(IndexedColors.BLACK.getIndex());
 
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont);
@@ -448,8 +450,5 @@ public class ManageItemController implements Initializable {
             fileOut.close();
             workbook.close();
         }
-
-
-
     }
 }
