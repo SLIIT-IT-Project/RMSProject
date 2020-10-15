@@ -246,7 +246,7 @@
          </children>
       </Pane>
       <Separator layoutX="210.0" layoutY="151.0" prefHeight="13.0" prefWidth="825.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" />
-      <AreaChart fx:id="Sales_Chart" layoutX="221.0" layoutY="202.0" prefHeight="438.0" prefWidth="882.0">
+      <AreaChart fx:id="Sales_Chart" layoutX="212.0" layoutY="202.0" prefHeight="438.0" prefWidth="891.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>

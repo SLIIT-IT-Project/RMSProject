@@ -74,65 +74,65 @@ public class AdminQueryServiceImpl implements IAdminQueryService {
     }
 
     @Override
-    public int findTotalSalesPerDay(LocalDate d1) throws Exception {
-        int noOfOrders=0;
+    public double findTotalSalesPerDay(LocalDate d1) throws Exception {
+        double totalSales=0;
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT COUNT(order_id) FROM Order1 WHERE date_time Like ?");
+        PreparedStatement pstm = connection.prepareStatement("SELECT SUM(tot_amount) FROM Order1 WHERE date_time Like ?");
         pstm.setObject(1,d1+"%");
         ResultSet rst = pstm.executeQuery();
         if(rst.next())
         {
-            noOfOrders = rst.getInt(1);
+            totalSales = rst.getInt(1);
 
         }
-        return noOfOrders;
+        return totalSales;
     }
 
     @Override
-    public int findDineInSalesPerDay(LocalDate d1) throws Exception {
-        int noOfOrders=0;
+    public double findDineInSalesPerDay(LocalDate d1) throws Exception {
+        double totalSales=0;
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT COUNT(order_id) FROM Order1 WHERE order_type=? AND date_time Like ?");
+        PreparedStatement pstm = connection.prepareStatement("SELECT SUM(tot_amount) FROM Order1 WHERE order_type=? AND date_time Like ?");
         pstm.setObject(1,"Dine Inn");
         pstm.setObject(2,d1+"%");
         ResultSet rst = pstm.executeQuery();
         if(rst.next())
         {
-            noOfOrders = rst.getInt(1);
+            totalSales = rst.getInt(1);
 
         }
-        return noOfOrders;
+        return totalSales;
     }
 
     @Override
-    public int findTakeAwaySalesPerDay(LocalDate d1) throws Exception {
-        int noOfOrders=0;
+    public double findTakeAwaySalesPerDay(LocalDate d1) throws Exception {
+        double totalSales=0;
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT COUNT(order_id) FROM Order1 WHERE order_type=? AND date_time Like ?");
+        PreparedStatement pstm = connection.prepareStatement("SELECT SUM(tot_amount) FROM Order1 WHERE order_type=? AND date_time Like ?");
         pstm.setObject(1,"Take Away");
         pstm.setObject(2,d1+"%");
         ResultSet rst = pstm.executeQuery();
         if(rst.next())
         {
-            noOfOrders = rst.getInt(1);
+            totalSales = rst.getInt(1);
 
         }
-        return noOfOrders;
+        return totalSales;
     }
 
     @Override
-    public int findDeliverSalesPerDay(LocalDate d1) throws Exception {
-        int noOfOrders=0;
+    public double findDeliverSalesPerDay(LocalDate d1) throws Exception {
+        double totalSales=0;
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT COUNT(order_id) FROM Order1 WHERE order_type=? AND date_time Like ?");
+        PreparedStatement pstm = connection.prepareStatement("SELECT SUM(tot_amount) FROM Order1 WHERE order_type=? AND date_time Like ?");
         pstm.setObject(1,"Deliver");
         pstm.setObject(2,d1+"%");
         ResultSet rst = pstm.executeQuery();
         if(rst.next())
         {
-            noOfOrders = rst.getInt(1);
+            totalSales = rst.getInt(1);
 
         }
-        return noOfOrders;
+        return totalSales;
     }
 }

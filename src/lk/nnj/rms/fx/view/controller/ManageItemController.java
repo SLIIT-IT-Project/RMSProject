@@ -63,6 +63,9 @@ public class ManageItemController implements Initializable {
     private JFXButton btn_delete;
 
     @FXML
+    private JFXButton btn_demo;
+
+    @FXML
     private JFXTextField txt_sItemID;
 
     @FXML
@@ -92,6 +95,13 @@ public class ManageItemController implements Initializable {
     @FXML
     private JFXTextField txt_itemName;
 
+    @FXML
+    void Demo(ActionEvent event) {
+        txt_itemID.setText("P0013");
+        txt_itemName.setText("Sausage Delight Medium Pizza");
+        txt_description.setText("Chicken sausages & onions with a double layer of mozzarella");
+        txt_unitPrice.setText("990");
+    }
     @FXML
     void Add(ActionEvent event) {
         String itemID,itemName,description;
@@ -127,6 +137,7 @@ public class ManageItemController implements Initializable {
                         alert1.setContentText("Item added successfully");
                         alert1.showAndWait();
                         viewTable();
+                        totItems();
                         reset();
                     }else
                         {
@@ -189,8 +200,8 @@ public class ManageItemController implements Initializable {
         IItemService iItemService = new ItemServiceImpl();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation Dialog");
-        alert.setHeaderText("Look, a Confirmation Dialog");
-        alert.setContentText("Are you ok with this?");
+        alert.setHeaderText("Confirm your decision. ");
+        alert.setContentText("Are you sure you want to delete ?");
 
         Optional<ButtonType> result1 = alert.showAndWait();
         if (result1.get() == ButtonType.OK){
@@ -206,6 +217,7 @@ public class ManageItemController implements Initializable {
                     alert1.showAndWait();
                     viewTable();
                     reset();
+                    totItems();
                 }else
                 {
                     Alert alert1 = new Alert(Alert.AlertType.ERROR);
@@ -297,10 +309,8 @@ public class ManageItemController implements Initializable {
             }
         }
     }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        viewTable();
+    public void totItems()
+    {
         ItemServiceImpl itemService = new ItemServiceImpl();
         try {
             int c = itemService.totalItems();
@@ -308,6 +318,11 @@ public class ManageItemController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        viewTable();
+        totItems();
     }
     public void viewTable()
     {

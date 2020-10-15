@@ -384,10 +384,10 @@ public class AdminPanelController implements Initializable {
         for(int i=1; i<=today.lengthOfMonth(); i++)
         {
             try {
-                int no= iAdminQueryService.findTotalSalesPerDay(today.withDayOfMonth(i));
-                int tno = iAdminQueryService.findTakeAwaySalesPerDay(today.withDayOfMonth(i));
-                int dno = iAdminQueryService.findDineInSalesPerDay(today.withDayOfMonth(i));
-                int deno= iAdminQueryService.findDeliverSalesPerDay(today.withDayOfMonth(i));
+                double no= iAdminQueryService.findTotalSalesPerDay(today.withDayOfMonth(i));
+                double tno = iAdminQueryService.findTakeAwaySalesPerDay(today.withDayOfMonth(i));
+                double dno = iAdminQueryService.findDineInSalesPerDay(today.withDayOfMonth(i));
+                double deno= iAdminQueryService.findDeliverSalesPerDay(today.withDayOfMonth(i));
                 date = today.withDayOfMonth(i);
                 series1.getData().add(new XYChart.Data(date.getMonthValue()+"/"+date.getDayOfMonth(),no));
                 series2.getData().add(new XYChart.Data(date.getMonthValue()+"/"+date.getDayOfMonth(),tno));
@@ -399,7 +399,6 @@ public class AdminPanelController implements Initializable {
             }
         }
         Sales_Chart.getData().addAll(series1,series2,series3,series4);
-
 
     }
 }
