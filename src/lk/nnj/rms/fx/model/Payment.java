@@ -1,19 +1,18 @@
 package lk.nnj.rms.fx.model;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class Payment {
 
     private int PID;
-    private Timestamp DateTime;
+    private LocalDateTime DateTime;
     private float Amount;
     private String Status;
     private String Type;
     private String Description;
     private int OID;
 
-    public Payment(int PID,float amount,Timestamp dateTime, String status, String type, String description, int OID) {
+    public Payment(int PID,float amount,LocalDateTime dateTime, String status, String type, String description, int OID) {
         this.PID = PID;
         DateTime = dateTime;
         Amount = amount;
@@ -31,11 +30,11 @@ public class Payment {
         this.PID = PID;
     }
 
-    public Timestamp getDateTime() {
+    public LocalDateTime getDateTime() {
         return DateTime;
     }
 
-    public void setDateTime(Timestamp dateTime) {
+    public void setDateTime(LocalDateTime dateTime) {
         DateTime = dateTime;
     }
 

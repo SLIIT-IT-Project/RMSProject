@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageInventoryController">
+   <children>
+      <AnchorPane prefHeight="67.0" prefWidth="600.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="imgback" fitHeight="47.0" fitWidth="41.0" layoutX="11.0" layoutY="17.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assest/icons8-back-arrow-64.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <Label layoutX="57.0" layoutY="12.0" prefHeight="47.0" prefWidth="232.0" text="Manage Inventory">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnSupplier" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="102.0" layoutY="97.0" onAction="#SupplierManage" prefHeight="134.0" prefWidth="375.0" ripplerFill="BLUE" style="-fx-background-color: #fffff1;" text=" Manage Supplier" textAlignment="RIGHT" textOverrun="CLIP" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="97.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="125.0" fitWidth="196.0" layoutX="130.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-supplier-96.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnStock" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="102.0" layoutY="254.0" onAction="#StockManage" prefHeight="134.0" prefWidth="375.0" ripplerFill="RED" style="-fx-background-color: #fffff1;" text="Manage Stock" textAlignment="RIGHT" textOverrun="CLIP" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="123.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="125.0" fitWidth="196.0" layoutX="130.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-product-96.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

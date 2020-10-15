@@ -290,8 +290,20 @@ public class AdminPanelController {
     }
 
     @FXML
-    void viewPlay(ActionEvent event) {
-
+    void viewPlay(ActionEvent event) throws IOException{
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/ManagePlayer.fxml"));
+        if (root != null) {
+            Scene subScene = new Scene(root);
+            Stage primaryStage = (Stage) this.root.getScene().getWindow();
+            primaryStage.setScene(subScene);
+            primaryStage.centerOnScreen();
+            primaryStage.setResizable(true);
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+            tt.setFromX(-subScene.getWidth());
+            tt.setToX(0);
+            tt.play();
+        }
     }
 
     @FXML

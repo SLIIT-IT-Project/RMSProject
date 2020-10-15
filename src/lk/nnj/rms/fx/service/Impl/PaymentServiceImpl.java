@@ -7,7 +7,7 @@ import lk.nnj.rms.fx.service.IPaymentService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +16,7 @@ public class PaymentServiceImpl implements IPaymentService {
     public boolean add(Payment payment) throws Exception {
         Connection connection = DBConnection.getConnection();
         PreparedStatement pstm = connection.prepareStatement("INSERT INTO paymentTable VALUES(?,?,?,?,?,?,?)");
+
         pstm.setObject(1,payment.getPID());
         pstm.setObject(2,payment.getAmount());
         pstm.setObject(3,payment.getDateTime());
@@ -63,7 +64,7 @@ public class PaymentServiceImpl implements IPaymentService {
             return new Payment(
                     rst.getInt(1),
                     rst.getFloat(2),
-                    rst.getTimestamp(3),
+                    rst.getTimestamp(3).toLocalDateTime(),
                     rst.getString(4),
                     rst.getString(5),
                     rst.getString(6),
@@ -86,7 +87,7 @@ public class PaymentServiceImpl implements IPaymentService {
         while(rst.next()) {
             int id = rst.getInt(1);
             float amount = rst.getFloat(2);
-            Timestamp datetime = rst.getTimestamp(3);
+            LocalDateTime datetime = rst.getTimestamp(3).toLocalDateTime();
             String status = rst.getString(4);
             String type = rst.getString(5);
             String description = rst.getString(6);

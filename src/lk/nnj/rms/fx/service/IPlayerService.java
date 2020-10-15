@@ -11,4 +11,5 @@ public interface IPlayerService {
     boolean delete(String id) throws Exception;
     Player find(String id) throws Exception;
     List<Player> findAll() throws Exception;
+    double CheckRank(String pid) throws Exception;
 }

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="688.0" prefWidth="1253.0" styleClass="bodybg" stylesheets="@../assest/playerBackground.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageMachineController">
+   <children>
+      <BorderPane layoutX="19.0" layoutY="113.0" prefHeight="94.0" prefWidth="582.0" style="-fx-background-color: #19e0a4;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </BorderPane>
+      <JFXTextField fx:id="txt_id" layoutX="27.0" layoutY="153.0" prefHeight="25.0" prefWidth="141.0" />
+      <Label layoutX="28.0" layoutY="138.0" text="MachineID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txt_name" layoutX="205.0" layoutY="153.0" prefHeight="25.0" prefWidth="211.0" />
+      <Label layoutX="206.0" layoutY="138.0" text="Game Name">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txt_score" layoutX="461.0" layoutY="153.0" prefHeight="25.0" prefWidth="115.0" />
+      <Label layoutX="462.0" layoutY="138.0" prefHeight="19.0" prefWidth="78.0" text="Score Limit">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="5.0" layoutY="6.0" pickOnBounds="false" prefHeight="100.0" prefWidth="664.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="79.0" layoutY="25.0" prefHeight="50.0" prefWidth="203.0" text="Manage Machine" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+               <effect>
+                  <Blend mode="DARKEN" />
+               </effect>
+            </Label>
+            <JFXTextField fx:id="txt_search" accessibleRole="TEXT" blendMode="LIGHTEN" cache="true" focusColor="WHITE" layoutX="359.0" layoutY="32.0" pickOnBounds="false" prefHeight="40.0" prefWidth="185.0" style="-fx-background-color: #676eeb;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btn_search" alignment="CENTER_RIGHT" buttonType="RAISED" contentDisplay="CENTER" layoutX="571.0" layoutY="31.0" onAction="#search" prefHeight="40.0" prefWidth="106.0" ripplerFill="#37c90f" style="-fx-background-color: #39e3b6;" text="SEARCH" textAlignment="RIGHT">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView disable="true" fitHeight="29.0" fitWidth="26.0" layoutX="581.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assest/yasoicons8-search-48.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btn_back" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="23.0" layoutY="25.0" onAction="#back" prefHeight="50.0" prefWidth="48.0" ripplerFill="#64009a" style="-fx-background-color: #0d07b3;" text="A" textAlignment="RIGHT">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView disable="true" fitHeight="40.0" fitWidth="45.0" layoutX="27.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assest/icons8-back-64.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="78.0" fitWidth="88.0" layoutX="1271.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assest/icons8-dratini-96.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btn_reset" layoutX="710.0" layoutY="25.0" onAction="#resetButton" prefHeight="50.0" prefWidth="56.0" text="A" />
+            <ImageView disable="true" fitHeight="40.0" fitWidth="45.0" layoutX="718.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assest/icons8-synchronize-64.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tbl_details" layoutX="19.0" layoutY="239.0" onMouseClicked="#viewSelect" prefHeight="412.0" prefWidth="696.0">
+        <columns>
+          <TableColumn prefWidth="160.0" text="MachineID" />
+          <TableColumn prefWidth="355.0" text="Game Name" />
+            <TableColumn prefWidth="183.0" text="Score Limit" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btn_add" alignment="CENTER_RIGHT" buttonType="RAISED" contentDisplay="CENTER" layoutX="675.0" layoutY="127.0" onAction="#add" prefHeight="60.0" prefWidth="134.0" ripplerFill="#37c90f" style="-fx-background-color: #65e672;" text="ADD" textAlignment="RIGHT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_update" alignment="CENTER_RIGHT" buttonType="RAISED" contentDisplay="CENTER" layoutX="846.0" layoutY="128.0" onAction="#update" prefHeight="60.0" prefWidth="134.0" ripplerFill="#f8b303" style="-fx-background-color: #e4e665;" text="UPDATE" textAlignment="RIGHT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_delete" alignment="CENTER_RIGHT" buttonType="RAISED" contentDisplay="CENTER" layoutX="1021.0" layoutY="128.0" onAction="#delete" prefHeight="60.0" prefWidth="134.0" ripplerFill="#c91111" style="-fx-background-color: #e66565;" text="DELETE" textAlignment="RIGHT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <ImageView disable="true" fitHeight="48.0" fitWidth="40.0" layoutX="1036.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/yasoicons8-delete-64.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="40.0" fitWidth="48.0" layoutX="686.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/yasoicons8-plus-64.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="48.0" layoutX="854.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/icons8-update-64.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btn_machineplayer" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1142.0" layoutY="378.0" onAction="#goMachinePlayer" prefHeight="110.0" prefWidth="168.0" ripplerFill="#c30c98" style="-fx-background-color: #eb5ebc;" text="MachinePlayer" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_player" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1142.0" layoutY="518.0" onAction="#goPlayer" prefHeight="110.0" prefWidth="168.0" ripplerFill="#c30c98" style="-fx-background-color: #eb5ebc;" text="Player" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_report" buttonType="RAISED" layoutX="1195.0" layoutY="191.0" onMouseClicked="#generateReport" prefHeight="67.0" prefWidth="63.0" style="-fx-background-color: #000000;" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="56.0" layoutX="1202.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/excelyas.png" />
+         </image>
+      </ImageView>
+      <PieChart fx:id="chart" layoutX="743.0" layoutY="254.0" prefHeight="390.0" prefWidth="369.0" style="-fx-background-color: #f5d451;" title="Scores" />
+      <JFXButton fx:id="btn_chart" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1199.0" layoutY="276.0" onAction="#ShowChart" prefHeight="59.0" prefWidth="59.0" ripplerFill="#544e4e" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <ImageView disable="true" fitHeight="50.0" fitWidth="48.0" layoutX="1204.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/circularchart.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btn_demo" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1211.0" layoutY="128.0" onAction="#setDemo" prefHeight="50.0" prefWidth="67.0" ripplerFill="#c30c98" style="-fx-background-color: #eb5ebc;" text="DEMO" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

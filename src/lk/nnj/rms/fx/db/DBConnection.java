@@ -11,9 +11,9 @@ public class DBConnection {
         if(connection==null)
         {
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/restdb",
+                    "jdbc:mysql://localhost:3306/testdb",
                     "root",
-                    "1234"
+                    "root"
             );
         }
         return connection;
