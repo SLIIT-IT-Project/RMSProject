@@ -2,13 +2,14 @@ package lk.nnj.rms.fx.service.Impl;
 
 import lk.nnj.rms.fx.db.DBConnection;
 import lk.nnj.rms.fx.model.Attendance;
-import lk.nnj.rms.fx.model.User;
 import lk.nnj.rms.fx.service.IAttendance;
 
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -98,6 +99,43 @@ public class AttendanceServiceImpl implements IAttendance {
         return allAttendance;
 
     }
+
+    @Override
+    public int findWorking_h(String id,int year,int month) throws Exception{
+        System.out.println(year+"  "+month);
+        Connection connection=DBConnection.getConnection();
+        PreparedStatement pstm=connection.prepareStatement("SELECT sum(working_h) FROM attendance WHERE emp_id=? AND YEAR(date)=? AND month(date)=?");
+        pstm.setObject(1,id);
+        pstm.setObject(2,year);
+        pstm.setObject(3,month);
+
+        ResultSet rst=pstm.executeQuery();
+        int tot=0;
+        if(rst.next()){
+            tot = rst.getInt(1);
+        }
+        return tot;
+    }
+
+    @Override
+    public int findOt_h(String id,int year,int month) throws Exception{
+        Connection connection=DBConnection.getConnection();
+        PreparedStatement pstm=connection.prepareStatement("SELECT sum(ot_h) FROM attendance WHERE emp_id=? AND YEAR(date)=? AND month(date)=?");
+        pstm.setObject(1,id);
+        pstm.setObject(2,year);
+        pstm.setObject(3,month);
+
+        ResultSet rst=pstm.executeQuery();
+        int tot=0;
+        if(rst.next()){
+            tot = rst.getInt(1);
+        }
+        return tot;
+    }
+
+
+
+
 }
 
 

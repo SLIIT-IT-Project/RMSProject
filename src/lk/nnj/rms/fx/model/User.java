@@ -8,13 +8,13 @@ public class User {
     private String type;
     private Date dob;
     private String address;
-    private int mobile;
+    private String mobile;
     private Date jsd;
     private String pwd;
 
 
 
-    public User(String emp_id, String fullname, Date dob, String address, int mobile, Date jsd, String pwd, String type) {
+    public User(String emp_id, String fullname, Date dob, String address, String mobile, Date jsd, String pwd, String type) {
         this.emp_id = emp_id;
         this.fullname = fullname;
         this.dob = dob;
@@ -60,11 +60,11 @@ public class User {
         this.address = address;
     }
 
-    public int getMobile() {
+    public String getMobile() {
         return mobile;
     }
 
-    public void setMobile(int mobile) {
+    public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 
@@ -99,7 +99,7 @@ public class User {
                 ", fullname='" + fullname + '\'' +
                 ", dob=" + dob +
                 ", address='" + address + '\'' +
-                ", mobile=" + mobile +
+                ", mobile=" + mobile + '\'' +
                 ", jsd=" + jsd +
                 ", pwd='" + pwd + '\'' +
                 ", type='" + type + '\'' +

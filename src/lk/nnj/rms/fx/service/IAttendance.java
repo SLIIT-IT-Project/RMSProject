@@ -1,7 +1,6 @@
 package lk.nnj.rms.fx.service;
 
 import lk.nnj.rms.fx.model.Attendance;
-import lk.nnj.rms.fx.model.User;
 
 import java.net.URL;
 import java.util.List;
@@ -14,6 +13,8 @@ public interface IAttendance {
     boolean delete(String emp_id) throws Exception;
     boolean add(Attendance attendance) throws Exception;
     Attendance find(String emp_id) throws Exception;
+    int findWorking_h(String id,int year,int month)throws Exception;
+    int findOt_h(String id,int year,int month)throws Exception;
 
     List<Attendance> findAll() throws Exception;
 }

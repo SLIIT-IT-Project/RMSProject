@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
@@ -12,10 +11,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="888.0" prefWidth="1066.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageAttendanceController">
+<AnchorPane fx:id="root" prefHeight="659.0" prefWidth="951.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageAttendanceController">
    <children>
-      <JFXButton fx:id="btn_search" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="361.0" layoutY="94.0" onAction="#search" prefHeight="60.0" prefWidth="138.0" style="-fx-background-color: #ffffff;" text="Search" textAlignment="CENTER" />
-      <AnchorPane layoutY="10.0" prefHeight="75.0" prefWidth="1232.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <JFXButton fx:id="btn_search" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="331.0" layoutY="94.0" onAction="#search" prefHeight="41.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Search" textAlignment="CENTER" AnchorPane.leftAnchor="331.0" AnchorPane.topAnchor="94.0" />
+      <AnchorPane layoutY="10.0" prefHeight="75.0" prefWidth="945.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label layoutX="90.0" layoutY="20.0" text="Manage Attendance">
                <font>
@@ -29,27 +28,26 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <JFXTextField fx:id="txt_name" layoutX="224.0" layoutY="157.0" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #ffffff;" />
-      <Label layoutX="54.0" layoutY="162.0" text="Full Name" />
-      <JFXTextField fx:id="txt_empid" layoutX="53.0" layoutY="108.0" opacity="0.5" prefHeight="31.0" prefWidth="290.0" promptText="Employee ID" style="-fx-background-color: #ffffff;" />
-      <ImageView fitHeight="41.0" fitWidth="109.0" layoutX="371.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+      <JFXTextField fx:id="txt_name" layoutX="131.0" layoutY="155.0" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #ffffff;" />
+      <Label layoutX="24.0" layoutY="162.0" text="Full Name" />
+      <JFXTextField fx:id="txt_empid" layoutX="23.0" layoutY="108.0" opacity="0.5" prefHeight="31.0" prefWidth="290.0" promptText="Employee ID" style="-fx-background-color: #ffffff;" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="337.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="337.0" AnchorPane.topAnchor="99.0">
          <image>
             <Image url="@../../assest/icons8-search-96.png" />
          </image>
       </ImageView>
-      <Label layoutX="54.0" layoutY="215.0" text="Type" />
-      <Label layoutX="53.0" layoutY="263.0" text="Date" />
-      <JFXTextField fx:id="txt_workingh" layoutX="223.0" layoutY="302.0" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #ffffff;" />
-      <Label layoutX="53.0" layoutY="307.0" text="Working Hours" />
-      <JFXTextField fx:id="txt_oth" layoutX="223.0" layoutY="355.0" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #ffffff;" />
-      <Label layoutX="53.0" layoutY="360.0" text="OT Hours" />
-      <JFXButton fx:id="btn_add" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="527.0" layoutY="259.0" onAction="#add" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: #ffffff;" text="Add" textAlignment="CENTER" AnchorPane.rightAnchor="319.0" AnchorPane.topAnchor="259.0" />
-      <ImageView fitHeight="44.0" fitWidth="41.0" layoutX="543.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="482.0" AnchorPane.topAnchor="269.0">
+      <Label layoutX="20.0" layoutY="220.0" text="Date" />
+      <JFXTextField fx:id="txt_workingh" layoutX="128.0" layoutY="260.0" prefHeight="31.0" prefWidth="189.0" style="-fx-background-color: #ffffff;" />
+      <Label layoutX="20.0" layoutY="267.0" text="Working Hours" />
+      <JFXTextField fx:id="txt_oth" layoutX="458.0" layoutY="260.0" prefHeight="31.0" prefWidth="189.0" style="-fx-background-color: #ffffff;" />
+      <Label layoutX="350.0" layoutY="267.0" text="OT Hours" />
+      <JFXButton fx:id="btn_add" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="20.0" layoutY="332.0" onAction="#add" prefHeight="41.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Add" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="332.0" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="28.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="338.0">
          <image>
-            <Image url="@../../assest/icons8-plus-64.png" />
+            <Image url="@../../assest/icons8-plus-128.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tbl_attendance" layoutX="53.0" layoutY="444.0" onMouseClicked="#tbl_clck" prefHeight="310.0" prefWidth="964.0" style="-fx-background-color: #ced1d6;" AnchorPane.bottomAnchor="134.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="444.0">
+      <TableView fx:id="tbl_attendance" layoutX="19.0" layoutY="401.0" onMouseClicked="#tbl_clck" prefHeight="244.0" prefWidth="917.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="401.0">
         <columns>
           <TableColumn prefWidth="194.0" text="Emp No." />
           <TableColumn prefWidth="240.0" text="Name" />
@@ -61,30 +59,34 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <JFXButton fx:id="btn_print" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="869.0" layoutY="776.0" onAction="#print" prefHeight="60.0" prefWidth="148.0" style="-fx-background-color: #ffffff;" text="Print" textAlignment="CENTER" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="776.0" />
-      <ImageView fitHeight="44.0" fitWidth="41.0" layoutX="883.0" layoutY="786.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="142.0" AnchorPane.topAnchor="786.0">
+      <JFXButton fx:id="btn_print" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="493.0" layoutY="336.0" onAction="#print" prefHeight="41.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Print" textAlignment="CENTER" AnchorPane.leftAnchor="493.0" AnchorPane.topAnchor="336.0" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="497.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="497.0" AnchorPane.topAnchor="342.0">
          <image>
-            <Image url="@../assest/icons8-print-96%20(1).png" />
+            <Image url="@../../assest/icons8-print-48.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="251.0" fitWidth="244.0" layoutX="770.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="88.0">
+      <ImageView fitHeight="159.0" fitWidth="167.0" layoutX="553.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="239.0" AnchorPane.topAnchor="98.0">
          <image>
             <Image url="@../../assest/icons8-attendance-100.png" />
          </image>
       </ImageView>
-      <JFXComboBox fx:id="cmb_type" layoutX="223.0" layoutY="210.0" prefHeight="31.0" prefWidth="272.0" />
-      <JFXDatePicker fx:id="txt_date" layoutX="224.0" layoutY="258.0" prefHeight="31.0" prefWidth="272.0" />
-      <JFXButton fx:id="btn_update" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="527.0" layoutY="356.0" onAction="#update" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: #ffffff;" text="Update" textAlignment="CENTER" AnchorPane.rightAnchor="319.0" AnchorPane.topAnchor="356.0" />
-      <ImageView fitHeight="44.0" fitWidth="41.0" layoutX="543.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="482.0" AnchorPane.topAnchor="366.0">
+      <JFXDatePicker fx:id="txt_date" layoutX="128.0" layoutY="213.0" prefHeight="31.0" prefWidth="198.0" />
+      <JFXButton fx:id="btn_update" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="178.0" layoutY="333.0" onAction="#update" prefHeight="41.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Update" textAlignment="CENTER" AnchorPane.leftAnchor="178.0" AnchorPane.topAnchor="333.0" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="186.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="186.0" AnchorPane.topAnchor="339.0">
          <image>
-            <Image url="@../../assest/icons8-synchronize-64.png" />
+            <Image url="@../../assest/icons8-available-updates-40.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btn_delete" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="794.0" layoutY="357.0" onAction="#delete" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: #ffffff;" text="Delete" textAlignment="CENTER" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="357.0" />
-      <ImageView fitHeight="44.0" fitWidth="41.0" layoutX="810.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="367.0">
+      <JFXButton fx:id="btn_delete" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="335.0" layoutY="334.0" onAction="#delete" prefHeight="41.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Delete" textAlignment="CENTER" AnchorPane.leftAnchor="335.0" AnchorPane.topAnchor="334.0" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="342.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="342.0" AnchorPane.topAnchor="339.0">
          <image>
             <Image url="@../../assest/icons8-delete-128.png" />
          </image>
       </ImageView>
+      <Label fx:id="lbl_workingh" layoutX="747.0" layoutY="143.0" prefHeight="21.0" prefWidth="179.0" style="-fx-background-color: #ced1d6;" />
+      <Label layoutX="747.0" layoutY="112.0" text="Working Hours This Month" />
+      <Label layoutX="747.0" layoutY="187.0" text="OT Hours This Month" />
+      <Label fx:id="lbl_oth" layoutX="747.0" layoutY="212.0" prefHeight="21.0" prefWidth="179.0" style="-fx-background-color: #ced1d6;" />
+      <JFXButton fx:id="demo" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="655.0" layoutY="341.0" onAction="#demo" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: #ffffff;" text="Demo" textAlignment="CENTER" />
    </children>
 </AnchorPane>

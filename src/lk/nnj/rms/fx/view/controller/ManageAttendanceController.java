@@ -12,25 +12,34 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.nnj.rms.fx.model.Attendance;
+import lk.nnj.rms.fx.model.User;
 import lk.nnj.rms.fx.service.IAttendance;
 import lk.nnj.rms.fx.service.IUser;
 import lk.nnj.rms.fx.service.Impl.AttendanceServiceImpl;
 import lk.nnj.rms.fx.service.Impl.UserServiceImpl;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.*;
-
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -67,7 +76,7 @@ public class ManageAttendanceController implements Initializable {
     private JFXButton btn_print;
 
     @FXML
-    private JFXComboBox<?> cmb_type;
+    private JFXComboBox<String> cmb_type;
 
     @FXML
     private JFXDatePicker txt_date;
@@ -77,6 +86,15 @@ public class ManageAttendanceController implements Initializable {
 
     @FXML
     private JFXButton btn_delete;
+
+    @FXML
+    private Label lbl_workingh;
+
+    @FXML
+    private Label lbl_oth;
+
+    @FXML
+    private JFXButton demo;
 
     @FXML
     void add(ActionEvent event) {
@@ -93,13 +111,23 @@ public class ManageAttendanceController implements Initializable {
 
         try {
             if (iAttendance.add(attendance)) {
-                JOptionPane.showMessageDialog(null, "Success");
+//                JOptionPane.showMessageDialog(null, "Success");
+                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                alert1.setTitle("Information Dialog");
+                alert1.setHeaderText("Added");
+                alert1.setContentText("Data you entered has been added.");
+                alert1.showAndWait();
                 reset();
                 viewTable();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error! Cannot Add.");
-            e.printStackTrace();
+//            JOptionPane.showMessageDialog(null, "Error! Cannot Add.");
+//            e.printStackTrace();
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Cannot Add.");
+            alert1.setContentText("Invalid Credentials");
+            alert1.showAndWait();
         }
     }
 
@@ -110,24 +138,30 @@ public class ManageAttendanceController implements Initializable {
 
         IAttendance iAttendance = new AttendanceServiceImpl();
         try {
-            iAttendance.delete(id);
-            JOptionPane.showMessageDialog(null, "Deleted");
+//            iAttendance.delete(id);
+//            JOptionPane.showMessageDialog(null, "Deleted");
+            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            alert1.setTitle("Information Dialog");
+            alert1.setHeaderText("Deleted");
+            alert1.setContentText("Data you selected has been deleted.");
+            alert1.showAndWait();
 
             reset();
             viewTable();
 
         } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error! Cannot Delete.");
+//            e.printStackTrace();
+//            JOptionPane.showMessageDialog(null, "Error! Cannot Delete.");
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Cannot Delete.");
+            alert1.setContentText("Invalid Credentials");
+            alert1.showAndWait();
 
         }
 
     }
 
-    @FXML
-    void print(ActionEvent event) {
-
-    }
 
     @FXML
     void search(ActionEvent event) {
@@ -145,8 +179,13 @@ public class ManageAttendanceController implements Initializable {
 
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error! Cannot Find.");
-            e.printStackTrace();
+//            JOptionPane.showMessageDialog(null, "Error! Cannot Find.");
+//            e.printStackTrace();
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Cannot Find.");
+            alert1.setContentText("Invalid Credentials");
+            alert1.showAndWait();
         }
 
     }
@@ -167,16 +206,31 @@ public class ManageAttendanceController implements Initializable {
 
         try {
             if (iAttendance.update(attendance)) {
-                JOptionPane.showMessageDialog(null, "Updated Success");
+//                JOptionPane.showMessageDialog(null, "Updated Success");
+                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                alert1.setTitle("Information Dialog");
+                alert1.setHeaderText("Updated");
+                alert1.setContentText("Data you selected has been updated.");
+                alert1.showAndWait();
                 reset();
                 viewTable();
 
             } else {
-                JOptionPane.showMessageDialog(null, "Updated Faild.");
+//                JOptionPane.showMessageDialog(null, "Updated Faild.");
+                Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                alert1.setTitle("Error Dialog");
+                alert1.setHeaderText("Update Faild.");
+                alert1.setContentText("Invalid Credentials");
+                alert1.showAndWait();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error! Cannot Update.");
-            e.printStackTrace();
+//            JOptionPane.showMessageDialog(null, "Error! Cannot Update.");
+//            e.printStackTrace();
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Cannot Update.");
+            alert1.setContentText("Invalid Credentials");
+            alert1.showAndWait();
         }
 
 
@@ -230,19 +284,45 @@ public class ManageAttendanceController implements Initializable {
         for (Attendance attendance : attendancesList) {
             txt_empid.setText(attendance.getEmp_id());
             txt_name.setText(attendance.getFullname());
-            txt_date.setValue(LocalDate.parse(String.valueOf(txt_date.getValue())));
+            txt_date.setValue(LocalDate.parse(String.valueOf(attendance.getDate())));
             txt_workingh.setText(String.valueOf(attendance.getWorking_h()));
             txt_oth.setText(String.valueOf(attendance.getOt_h()));
         }
 
+        IAttendance iAttendance= new AttendanceServiceImpl();
+
+        try{
+            int year=getYear();
+            int month=getMonth();
+
+            int ot_h=iAttendance.findOt_h(txt_empid.getText(),year,month);
+            int w_h=iAttendance.findWorking_h(txt_empid.getText(),year,month);
+
+            lbl_oth.setText(String.valueOf(ot_h));
+            lbl_workingh.setText(String.valueOf((w_h)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
+
+    private int getYear(){
+        Date date=new Date();
+        LocalDate localDate=date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int year = localDate.getYear();
+        return year;
+    };
+
+    private int getMonth(){
+        Date date=new Date();
+        LocalDate localDate=date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int month = localDate.getMonthValue();
+        return month;
+    };
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        cmb_type.getItems().add("Reciption");
-//        cmb_type.getItems().add("Manager");
-//        cmb_type.getItems().add("Deliver");
 
 
         viewTable();
@@ -251,7 +331,7 @@ public class ManageAttendanceController implements Initializable {
     @FXML
     void back(MouseEvent event) throws IOException {
         Parent root = null;
-        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/ManageEmployee.fxml"));
+        root = FXMLLoader.load(getClass().getResource( "/lk/nnj/rms/fx/view/style/ManageEmployee.fxml"));
         if(root != null)
         {
             Scene subScene = new Scene(root);
@@ -265,6 +345,70 @@ public class ManageAttendanceController implements Initializable {
             tt.play();
         }
     }
+
+    private static String[] columns = {"Employee ID","Employee Name","Date","Working Hours","OT Hours"};
+
+    @FXML
+    void print(ActionEvent event) throws Exception {
+        IAttendance iAttendance = new AttendanceServiceImpl();
+        List<Attendance> allItems = iAttendance.findAll();
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Item Details");
+        Font headerFont = workbook.createFont();
+        ((Font) headerFont).setBold(true);
+        headerFont.setFontHeightInPoints((short) 17);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+        Row headerRow = sheet.createRow(0);
+        for(int i=0 ; i<columns.length; i++)
+        {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+        int rowNum=1;
+        for(Attendance attendance : allItems)
+        {
+            Row row = sheet.createRow(rowNum++);
+            row.createCell(0).setCellValue(attendance.getEmp_id());
+            row.createCell(1).setCellValue(attendance.getFullname());
+            row.createCell(2).setCellValue(attendance.getDate().toString());
+            row.createCell(3).setCellValue(attendance.getWorking_h());
+            row.createCell(4).setCellValue(attendance.getOt_h());
+
+        }
+        for(int i =0; i<columns.length; i++)
+        {
+            sheet.autoSizeColumn(i);
+        }
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Export to Excel");
+        FileChooser.ExtensionFilter extFilter =
+                new FileChooser.ExtensionFilter("Excel Workbook (*.xlsx)", "*.xlsx");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File file = fileChooser.showSaveDialog(root.getScene().getWindow());
+        if (file != null)
+        {
+            String path = file.getAbsolutePath();
+            FileOutputStream fileOut = new FileOutputStream(path);
+            workbook.write(fileOut);
+            fileOut.close();
+            workbook.close();
+        }
+
+    }
+
+    @FXML
+    void demo(ActionEvent event) {
+        txt_empid.setText("Emp01");
+        txt_name.setText("Namal Rathnayake");
+        txt_date.setValue(LocalDate.of(2020,10,12));
+        txt_workingh.setText("5");
+        txt_oth.setText("3");
+
+    }
+
 }
 
 

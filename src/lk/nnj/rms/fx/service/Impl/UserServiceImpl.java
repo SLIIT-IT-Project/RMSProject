@@ -69,7 +69,7 @@ public class UserServiceImpl implements IUser {
                     rst.getString(2),
                     rst.getDate(3),
                     rst.getString(4),
-                    rst.getInt(5),
+                    rst.getString(5),
                     rst.getDate(6),
                     rst.getString(7),
                     rst.getString(8)
@@ -92,7 +92,7 @@ public class UserServiceImpl implements IUser {
             String fullname = rst.getString(2);
             Date dob = rst.getDate(3);
             String address = rst.getString(4);
-            int mobile = rst.getInt(5);
+            String mobile = rst.getString(5);
             Date jsd = rst.getDate(6);
             String pwd = rst.getString(7);
             String type = rst.getString(8);
