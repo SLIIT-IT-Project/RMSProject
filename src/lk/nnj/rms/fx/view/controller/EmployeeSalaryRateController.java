@@ -8,27 +8,26 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+import lk.nnj.rms.fx.model.EmployeeSalaryRate;
+import lk.nnj.rms.fx.service.ISalaryrateService;
+import lk.nnj.rms.fx.service.Impl.SalaryrateServiceImpl;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.*;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
-import javafx.scene.control.TableView;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import lk.nnj.rms.fx.model.EmployeeSalaryRate;
-import lk.nnj.rms.fx.service.ISalaryrateService;
-import lk.nnj.rms.fx.service.Impl.SalaryrateServiceImpl;
 
 
 public class EmployeeSalaryRateController  implements Initializable {
@@ -46,7 +45,8 @@ public class EmployeeSalaryRateController  implements Initializable {
     private JFXComboBox<String> combo_emptype;
 
     @FXML
-    private JFXTextField txt_id;
+    private Label lb_id;
+
 
     @FXML
     private TableView<EmployeeSalaryRate> tbl_details;
@@ -92,39 +92,72 @@ public class EmployeeSalaryRateController  implements Initializable {
     }
 
     private void LoadUi(String ui) throws IOException {
-        AnchorPane pane= FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/"+ui));
+        AnchorPane pane= FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/"+ui));
         rootpane.getChildren().setAll(pane);
     }
 
     @FXML
     void add(ActionEvent event) {
         String id,empType,basicSal,otRate,hourRate;
-        id = txt_id.getText();
+        addNewExpences();
+        id = lb_id.getText();
         empType = combo_emptype.getSelectionModel().getSelectedItem().toString();
         basicSal = txt_bsal.getText();
         otRate = txt_hourrate.getText();
         hourRate = txt_otrate.getText();
 
-        int idnew = Integer.parseInt(id);
-        EmployeeSalaryRate emprate = new EmployeeSalaryRate(idnew,empType,basicSal,otRate,hourRate);
-
-        ISalaryrateService iFinance = new SalaryrateServiceImpl();
-
-        try {
-            iFinance.add(emprate);
-            JOptionPane.showMessageDialog(null,"Success, added");
-            viewTable();
-            reset();
-        } catch (Exception e) {
-
-            JOptionPane.showMessageDialog(null,"Error!!! can not add");
-            e.printStackTrace();
+    /*    if(empType.equals("")){
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Please Select a Employee Type");
+            alert1.setContentText("Expenses Details are required");
+            alert1.showAndWait();
         }
+       else if(Integer.parseInt(basicSal)<=0){
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Please Enter possible Value to Basic Salary");
+            alert1.setContentText("Expenses Details are required");
+            alert1.showAndWait();
+        }
+        else if(Double.parseDouble(otRate)<=0){
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Please Enter possible Value to OT Rate");
+            alert1.setContentText("Expenses Details are required");
+            alert1.showAndWait();
+        }
+        else if(Double.parseDouble(hourRate)<=0){
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Please Enter possible Value to Hour Rate!");
+            alert1.setContentText("Expenses Details are required");
+            alert1.showAndWait();
+        }*/
+
+
+            int idnew = Integer.parseInt(id);
+            EmployeeSalaryRate emprate = new EmployeeSalaryRate(idnew, empType, basicSal, otRate, hourRate);
+
+            ISalaryrateService iFinance = new SalaryrateServiceImpl();
+
+            try {
+                replace(empType);
+                iFinance.add(emprate);
+                JOptionPane.showMessageDialog(null, "Success, added");
+                viewTable();
+                reset();
+            } catch (Exception e) {
+
+                JOptionPane.showMessageDialog(null, "Error!!! can not add");
+                e.printStackTrace();
+            }
+
     }
 
     @FXML
     void delete(ActionEvent event) {
-        String id = txt_id.getText();
+        String id = lb_id.getText();
         int idnew = Integer.parseInt(id);
 
         ISalaryrateService iFinance = new SalaryrateServiceImpl();
@@ -142,7 +175,7 @@ public class EmployeeSalaryRateController  implements Initializable {
 
     @FXML
     void search(ActionEvent event) {
-        String id = txt_id.getText();
+        String id = lb_id.getText();
         int idnew = Integer.parseInt(id);
 
         ISalaryrateService iFinance = new SalaryrateServiceImpl();
@@ -164,7 +197,7 @@ public class EmployeeSalaryRateController  implements Initializable {
     @FXML
     void update(ActionEvent event) {
         String id,empType,basicSal,otRate,hourRate;
-        id = txt_id.getText();
+        id = lb_id.getText();
         empType = combo_emptype.getSelectionModel().getSelectedItem().toString();
         basicSal = txt_bsal.getText();
         otRate = txt_otrate.getText();
@@ -193,7 +226,7 @@ public class EmployeeSalaryRateController  implements Initializable {
 
 
     public void reset(){
-        txt_id.setText("");
+        addNewExpences();
         combo_emptype.setValue("");
         txt_bsal.setText("");
         txt_otrate.setText("");
@@ -220,10 +253,35 @@ public class EmployeeSalaryRateController  implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        combo_emptype.getItems().add("sd 1");
-        combo_emptype.getItems().add("sd 2");
-        combo_emptype.getItems().add("sd 3");
+        combo_emptype.getItems().add("Receptionist");
+        combo_emptype.getItems().add("Chef");
+        combo_emptype.getItems().add("Cleaner");
+        combo_emptype.getItems().add("Deliver");
+        combo_emptype.getItems().add("Waiter");
+        combo_emptype.getItems().add("Manager");
+        addNewExpences();
         viewTable();
+    }
+
+    public void addNewExpences() {
+
+        ISalaryrateService iService = new SalaryrateServiceImpl();
+        try {
+            int Id = iService.getInvoiceNo();
+            lb_id.setText(String.valueOf(Id));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void replace(String type) {
+
+        ISalaryrateService iService = new SalaryrateServiceImpl();
+        try {
+            iService.replace(type);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -231,7 +289,7 @@ public class EmployeeSalaryRateController  implements Initializable {
         ArrayList<EmployeeSalaryRate> EmpRateList = new ArrayList<>(tbl_details.getSelectionModel().getSelectedItems());
 
         for(EmployeeSalaryRate emprate:EmpRateList){
-            txt_id.setText(Integer.toString(emprate.getId()));
+            lb_id.setText(Integer.toString(emprate.getId()));
             combo_emptype.setValue(emprate.getEmpType());
             txt_bsal.setText(emprate.getBasicSal());
             txt_otrate.setText(emprate.getOtRate());
@@ -256,5 +314,65 @@ public class EmployeeSalaryRateController  implements Initializable {
         }
 
     }
+
+    private static String[] columns = {"ID","EmpType","BasicSalary","OTRate","HourlyRate"};
+
+    @FXML
+    void report(MouseEvent event) throws Exception{
+
+        ISalaryrateService iSalaryrateService = new SalaryrateServiceImpl();
+        List<EmployeeSalaryRate> allItems = iSalaryrateService.findAll();
+
+        Workbook workbook = new XSSFWorkbook();
+
+        Sheet sheet = workbook.createSheet("Item Details");
+
+        Font headerFont = workbook.createFont();
+
+        ((Font)headerFont).setBold(true);
+        headerFont.setFontHeightInPoints((short) 17);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+        Row headerRow = sheet.createRow(0);
+
+        for(int i=0;i< columns.length;i++){
+            Cell cell=headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        int rowNum=1;
+        for(EmployeeSalaryRate rate:allItems){
+            Row row = sheet.createRow(rowNum++);
+            row.createCell(0).setCellValue(rate.getId());
+            row.createCell(1).setCellValue(rate.getEmpType());
+            row.createCell(2).setCellValue(rate.getBasicSal());
+            row.createCell(3).setCellValue(rate.getOtRate());
+            row.createCell(4).setCellValue(rate.getHourRate());
+        }
+
+        for(int i = 0; i<columns.length; i++){
+            sheet.autoSizeColumn(i);
+        }
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Export to Excel");
+        FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("Excel workbook (*.xlsx)","*.xlsx");
+        fileChooser.getExtensionFilters().add(extensionFilter);
+
+        File file = fileChooser.showSaveDialog(rootpane.getScene().getWindow());
+
+        if(file!=null){
+            String path =file.getAbsolutePath();
+            FileOutputStream fileOut = new FileOutputStream(path);
+            workbook.write(fileOut);
+            fileOut.close();
+            workbook.close();
+        }
+    }
+
+
+
 }
 

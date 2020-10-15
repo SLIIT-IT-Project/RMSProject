@@ -14,6 +14,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -88,7 +90,7 @@
                   <Font size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton onAction="#expences" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #cccccc; -fx-background-radius: 12;" text="Expencess">
+            <JFXButton onAction="#expences" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #cccccc; -fx-background-radius: 12;" text="Expenses">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -130,7 +132,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton onAction="#reports" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Reports">
+            <JFXButton onAction="#reports" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Payment">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -143,7 +145,7 @@
                <graphic>
                   <ImageView fitHeight="52.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../assest/icons8-report-card-96.png" />
+                        <Image url="@../../assest/icons8-payment-history-64.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -161,11 +163,11 @@
             </ImageView>
          </children>
       </HBox>
-      <Line endX="1049.5" layoutX="76.0" layoutY="229.0" startX="56.5" />
-      <AnchorPane layoutX="26.0" layoutY="255.0" prefHeight="60.0" prefWidth="831.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="377.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="490.0" AnchorPane.topAnchor="255.0">
+      <Line endX="1049.5" layoutX="76.0" layoutY="229.0" startX="56.5" stroke="#d3d3d3" />
+      <AnchorPane layoutX="26.0" layoutY="255.0" prefHeight="53.0" prefWidth="831.0" style="-fx-background-color: #ffffff; -fx-border-color: #c4c4c4; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.bottomAnchor="385.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="490.0" AnchorPane.topAnchor="255.0">
          <children>
-            <JFXTextField fx:id="txt_search" layoutX="591.0" layoutY="17.0" prefHeight="25.0" prefWidth="169.0" promptText="Search" />
-            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="8.0" layoutY="20.0" onMouseClicked="#backward" pickOnBounds="true" preserveRatio="true">
+            <JFXTextField fx:id="txt_search" layoutX="591.0" layoutY="15.0" prefHeight="25.0" prefWidth="169.0" promptText="Search" unFocusColor="#cdcaca" />
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="11.0" layoutY="18.0" onMouseClicked="#backward" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assest/icons8-back-arrow-64.png" />
                </image>
@@ -173,7 +175,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="139.0" layoutY="19.0" onMouseClicked="#forward" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="142.0" layoutY="17.0" onMouseClicked="#forward" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                <image>
                   <Image url="@../../assest/icons8-back-arrow-64.png" />
                </image>
@@ -181,7 +183,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="171.0" layoutY="19.0" onMouseClicked="#refresh" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="177.0" layoutY="17.0" onMouseClicked="#refresh" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assest/icons8-synchronize-64.png" />
                </image>
@@ -189,7 +191,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="766.0" layoutY="17.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="766.0" layoutY="16.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assest/icons8-search-96.png" />
                </image>
@@ -197,7 +199,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <Label fx:id="lbl_date" layoutX="39.0" layoutY="16.0" prefHeight="30.0" prefWidth="94.0">
+            <Label fx:id="lbl_date" layoutX="42.0" layoutY="14.0" prefHeight="30.0" prefWidth="94.0" textFill="#757373">
                <padding>
                   <Insets left="20.0" />
                </padding>
@@ -207,7 +209,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <TableView fx:id="tbl_details" layoutX="26.0" layoutY="331.0" onMouseClicked="#viewSelect" prefHeight="359.0" prefWidth="831.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="490.0" AnchorPane.topAnchor="331.0">
+      <TableView fx:id="tbl_details" layoutX="26.0" layoutY="329.0" onMouseClicked="#viewSelect" prefHeight="359.0" prefWidth="831.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="490.0" AnchorPane.topAnchor="323.0">
         <columns>
           <TableColumn prefWidth="113.00001525878906" text="Expences_ID" />
           <TableColumn prefWidth="114.0" text="Type" />
@@ -225,7 +227,7 @@
       <Line endX="-75.0" endY="-72.0" layoutX="863.0" layoutY="354.0" startX="-75.0" startY="316.0" AnchorPane.rightAnchor="469.5" />
       <AnchorPane layoutX="877.0" layoutY="266.0" prefHeight="340.0" prefWidth="426.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8;" AnchorPane.rightAnchor="20.0">
          <children>
-            <Label layoutX="64.0" layoutY="215.0" text="Value" AnchorPane.leftAnchor="64.0">
+            <Label layoutX="64.0" layoutY="268.0" text="Value" AnchorPane.leftAnchor="64.0">
                <font>
                   <Font size="13.0" />
                </font>
@@ -238,17 +240,17 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </ImageView>
-            <Label layoutX="64.0" layoutY="155.0" text="Description">
+            <Label layoutX="64.0" layoutY="208.0" text="Description">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label layoutX="63.0" layoutY="278.0" text="Date">
+            <Label layoutX="66.0" layoutY="154.0" text="Date">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label layoutX="63.0" layoutY="91.0" text="Expences Type">
+            <Label layoutX="63.0" layoutY="95.0" text="Expences Type">
                <font>
                   <Font size="13.0" />
                </font>
@@ -258,14 +260,31 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txt_desc" layoutX="161.0" layoutY="150.0" prefHeight="25.0" prefWidth="169.0" />
-            <JFXTextField fx:id="txt_val" layoutX="161.0" layoutY="209.0" prefHeight="25.0" prefWidth="169.0" />
-            <JFXComboBox fx:id="combo_expenType" focusColor="#3553ae" layoutX="161.0" layoutY="75.0" prefHeight="42.0" prefWidth="169.0" promptText="    Maintenance">
+            <JFXTextField fx:id="txt_desc" layoutX="161.0" layoutY="203.0" prefHeight="25.0" prefWidth="169.0" unFocusColor="#a8a8a8" />
+            <JFXTextField fx:id="txt_val" layoutX="161.0" layoutY="262.0" prefHeight="25.0" prefWidth="169.0" unFocusColor="#bcbcbc" />
+            <JFXComboBox fx:id="combo_expenType" focusColor="#3553ae" layoutX="161.0" layoutY="78.0" prefHeight="42.0" prefWidth="169.0" promptText="  Expences Type" unFocusColor="#a4a4a4">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></JFXComboBox>
-            <JFXTextField fx:id="txt_id" layoutX="200.0" layoutY="35.0" prefHeight="25.0" prefWidth="169.0" promptText="Search" text="id" />
-            <JFXDatePicker fx:id="pick_date" layoutX="160.0" layoutY="266.0" prefHeight="25.0" prefWidth="186.0" />
+            <JFXDatePicker fx:id="pick_date" layoutX="160.0" layoutY="144.0" prefHeight="25.0" prefWidth="186.0">
+               <defaultColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#e6f201" />
+                        <Stop color="#00ffe5" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </defaultColor></JFXDatePicker>
+            <Label fx:id="lb_id" layoutX="308.0" layoutY="40.0" text="Expences ID" textFill="#757575">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lb_id1" layoutX="291.0" layoutY="40.0" text="ID">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <JFXButton fx:id="btn_delete" buttonType="RAISED" layoutX="949.0" layoutY="624.0" onAction="#delete" prefHeight="53.0" prefWidth="112.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Delete">
@@ -315,6 +334,14 @@
          <image>
             <Image url="@../../assest/icons8-plus-64.png" />
          </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="890.0" layoutY="631.0" onMouseClicked="#report" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-microsoft-excel-2019-240.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
       </ImageView>
    </children>
 </AnchorPane>

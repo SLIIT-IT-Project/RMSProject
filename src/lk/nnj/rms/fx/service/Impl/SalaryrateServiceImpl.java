@@ -11,6 +11,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SalaryrateServiceImpl implements ISalaryrateService {
+
+    public int getInvoiceNo() throws Exception {
+        int inID = 100000;
+        int ID;
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT id FROM salaryrate ORDER BY id DESC LIMIT 1");
+        ResultSet rst = pstm.executeQuery();
+
+        if(rst.next())
+        {
+            ID = rst.getInt(1);
+            inID = ID+1;
+
+        }
+        return inID;
+    }
+
     @Override
     public boolean add(EmployeeSalaryRate emprate) throws Exception {
         Connection connection = DBConnection.getConnection();
@@ -47,6 +64,15 @@ public class SalaryrateServiceImpl implements ISalaryrateService {
     }
 
     @Override
+    public boolean replace(String type) throws Exception {
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("DELETE FROM salaryrate WHERE empType=?");
+        pstm.setObject(1, type);
+
+        return pstm.executeUpdate() > 0;
+    }
+
+    @Override
     public EmployeeSalaryRate find(int id) throws Exception {
         Connection connection = DBConnection.getConnection();
         PreparedStatement pstm = connection.prepareStatement("SELECT * FROM salaryrate WHERE id=?");
@@ -76,6 +102,7 @@ public class SalaryrateServiceImpl implements ISalaryrateService {
         ResultSet rst = pstm.executeQuery();
 
         while (rst.next()) {
+
             int id = rst.getInt(1);
             String EmpType = rst.getString(2);
             String BasicSal = rst.getString(3);

@@ -1,7 +1,6 @@
 package lk.nnj.rms.fx.service.Impl;
 
 import lk.nnj.rms.fx.db.DBConnection;
-import lk.nnj.rms.fx.model.EmployeeSalaryRate;
 import lk.nnj.rms.fx.model.Expences;
 import lk.nnj.rms.fx.service.IExpencesService;
 
@@ -9,12 +8,51 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ExpencesServiceImpl implements IExpencesService {
+
+
+    @Override
+    public int GetID() throws Exception {
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT max(id) FROM expences");
+
+
+        ResultSet rst = pstm.executeQuery();
+
+        if (rst.next()) {
+
+             if(rst.getString(1)==null)
+             {
+                 return 1;
+             }
+             else
+             {
+                 return rst.getInt(1);
+             }
+
+        }
+        return 0;
+    }
+
+    public int getInvoiceNo() throws Exception {
+        int inID = 100000;
+        int ID;
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT id FROM expences ORDER BY id DESC LIMIT 1");
+        ResultSet rst = pstm.executeQuery();
+
+        if(rst.next())
+        {
+            ID = rst.getInt(1);
+            inID = ID+1;
+
+        }
+        return inID;
+    }
+
 
     @Override
     public boolean add(Expences expences) throws Exception {
@@ -104,11 +142,11 @@ public class ExpencesServiceImpl implements IExpencesService {
     }*/
 
     @Override
-    public List<Expences> findAll(int year,int month) throws Exception {
+    public List<Expences> findAll(int year, int month) throws Exception {
         ArrayList<Expences> allUser = new ArrayList<>();
 
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM financedb.expences WHERE YEAR(edate)=? and month(edate)=? ");
+        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM expences WHERE YEAR(edate)=? and month(edate)=? ");
         pstm.setObject(1,year);
         pstm.setObject(2,month);
 //PreparedStatement pstm = connection.prepareStatement("SELECT * FROM expences ");

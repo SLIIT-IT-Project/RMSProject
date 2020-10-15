@@ -92,7 +92,7 @@
                         <Font size="13.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btn_expences" onAction="#expences" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Expencess">
+                  <JFXButton fx:id="btn_expences" onAction="#expences" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Expenses">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -137,7 +137,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton onAction="#reports" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Reports">
+                  <JFXButton onAction="#reports" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Payment">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -150,7 +150,7 @@
                      <graphic>
                         <ImageView fitHeight="52.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../assest/icons8-report-card-96.png" />
+                              <Image url="@../../assest/icons8-payment-history-64.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -170,7 +170,7 @@
             </HBox>
             <AnchorPane layoutX="911.0" layoutY="246.0" prefHeight="345.0" prefWidth="392.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8;" AnchorPane.leftAnchor="911.0" AnchorPane.rightAnchor="36.0">
                <children>
-                  <Label layoutX="63.0" layoutY="215.0" text="OT Rate" AnchorPane.leftAnchor="63.0">
+                  <Label layoutX="63.0" layoutY="210.0" text="OT Rate" AnchorPane.leftAnchor="63.0">
                      <font>
                         <Font size="13.0" />
                      </font></Label>
@@ -182,15 +182,15 @@
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </ImageView>
-                  <Label layoutX="63.0" layoutY="157.0" text="Basic Salary">
+                  <Label layoutX="63.0" layoutY="152.0" text="Basic Salary">
                      <font>
                         <Font size="13.0" />
                      </font></Label>
-                  <Label layoutX="63.0" layoutY="278.0" text="Hourly Rate">
+                  <Label layoutX="63.0" layoutY="273.0" text="Hourly Rate">
                      <font>
                         <Font size="13.0" />
                      </font></Label>
-                  <Label layoutX="63.0" layoutY="91.0" text="Employee Type">
+                  <Label layoutX="63.0" layoutY="95.0" text="Employee Type">
                      <font>
                         <Font size="13.0" />
                      </font></Label>
@@ -198,11 +198,20 @@
                      <font>
                         <Font size="13.0" />
                      </font></Label>
-                  <JFXTextField fx:id="txt_bsal" layoutX="164.0" layoutY="147.0" prefHeight="25.0" prefWidth="147.0" />
-                  <JFXTextField fx:id="txt_hourrate" layoutX="164.0" layoutY="265.0" prefHeight="25.0" prefWidth="147.0" />
-                  <JFXTextField fx:id="txt_otrate" layoutX="164.0" layoutY="204.0" prefHeight="25.0" prefWidth="147.0" />
-                  <JFXComboBox fx:id="combo_emptype" layoutX="163.0" layoutY="87.0" prefHeight="30.0" prefWidth="140.0" promptText="    Receptionist" />
-                  <JFXTextField fx:id="txt_id" layoutX="196.0" layoutY="44.0" prefHeight="25.0" prefWidth="147.0" />
+                  <JFXTextField fx:id="txt_bsal" layoutX="164.0" layoutY="142.0" prefHeight="25.0" prefWidth="147.0" unFocusColor="#b2afaf" />
+                  <JFXTextField fx:id="txt_hourrate" layoutX="164.0" layoutY="260.0" prefHeight="25.0" prefWidth="147.0" unFocusColor="#b9b7b7" />
+                  <JFXTextField fx:id="txt_otrate" layoutX="164.0" layoutY="199.0" prefHeight="25.0" prefWidth="147.0" unFocusColor="#bcbcbc" />
+                  <JFXComboBox fx:id="combo_emptype" layoutX="163.0" layoutY="87.0" prefHeight="30.0" prefWidth="147.0" promptText="Employee Type" unFocusColor="#b5b5b5" />
+                  <Label fx:id="lb_id2" contentDisplay="CENTER" layoutX="250.0" layoutY="48.0" prefHeight="19.0" prefWidth="16.0" text="ID" textAlignment="CENTER">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lb_id" alignment="CENTER" contentDisplay="CENTER" layoutX="268.0" layoutY="49.0" prefHeight="19.0" prefWidth="74.0" style="-fx-background-color: #ededed;" textAlignment="CENTER">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <TableView fx:id="tbl_details" layoutX="32.0" layoutY="246.0" onMouseClicked="#viewSelect" prefHeight="429.0" prefWidth="826.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="480.5" AnchorPane.topAnchor="246.0">
@@ -217,7 +226,7 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Line endX="579.5" layoutX="689.0" layoutY="217.0" startX="-597.0" AnchorPane.leftAnchor="91.5" AnchorPane.rightAnchor="69.5" />
+            <Line endX="403.79290771484375" endY="-8.0" layoutX="-310.79290771484375" layoutY="217.0" startX="1420.79296875" startY="-8.0" stroke="#cdcdcd" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="190.0" />
             <JFXButton fx:id="btn_delete" buttonType="RAISED" layoutX="922.0" layoutY="614.0" onAction="#delete" prefHeight="53.0" prefWidth="112.0" style="-fx-background-color: #edece8; -fx-background-radius: 12;" text="Delete">
                <opaqueInsets>
                   <Insets />
@@ -264,6 +273,11 @@
             <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="1197.0" layoutY="625.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assest/icons8-plus-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="46.0" layoutX="859.0" layoutY="627.0" onMouseClicked="#report" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assest/icons8-microsoft-excel-2019-240.png" />
                </image>
             </ImageView>
          </children>
