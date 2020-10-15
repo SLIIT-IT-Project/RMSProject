@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="626.0" prefWidth="866.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageStockController">
+   <children>
+      <AnchorPane prefHeight="67.0" prefWidth="600.0" style="-fx-background-color: #ced1d6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="59.0" layoutY="10.0" prefHeight="47.0" prefWidth="232.0" text="Manage Stock Items">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgback" fitHeight="47.0" fitWidth="41.0" layoutX="10.0" layoutY="14.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assest/icons8-back-arrow-64.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <JFXTextField fx:id="txtStName" layoutX="148.0" layoutY="134.0" prefHeight="25.0" prefWidth="183.0" />
+      <Label layoutX="35.0" layoutY="140.0" text="Stock Item Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtQut" layoutX="148.0" layoutY="175.0" prefHeight="25.0" prefWidth="183.0" />
+      <Label layoutX="35.0" layoutY="257.0" text="Date ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtType" layoutX="149.0" layoutY="212.0" prefHeight="25.0" prefWidth="183.0" promptText="Bottel  or Kg" />
+      <Label layoutX="35.0" layoutY="219.0" text="Type">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="183.0" text="Quantity">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtTC" layoutX="149.0" layoutY="286.0" prefHeight="25.0" prefWidth="183.0" />
+      <Label layoutX="36.0" layoutY="295.0" text="Total Cost">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnAdd" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="354.0" layoutY="136.0" onAction="#add" prefHeight="32.0" prefWidth="118.0" ripplerFill="#bfbdbd" style="-fx-background-color: #fffff1;" text="Add  " textAlignment="RIGHT" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="354.0" layoutY="240.0" onAction="#delete" prefHeight="32.0" prefWidth="118.0" ripplerFill="#bfbdbd" style="-fx-background-color: #fffff1;" text="Delete  " textAlignment="RIGHT" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="354.0" layoutY="189.0" onAction="#update" prefHeight="32.0" prefWidth="118.0" ripplerFill="#bfbdbd" style="-fx-background-color: #fffff1;" text="Update" textAlignment="RIGHT" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnPrint" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="354.0" layoutY="292.0" onAction="#print" prefHeight="32.0" prefWidth="118.0" ripplerFill="#bfbdbd" style="-fx-background-color: #fffff1;" text="Print  " textAlignment="RIGHT" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="364.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-plus-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="364.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-delete-128.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="363.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-synchronize-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="363.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-printer-96.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tableDetailsStock" layoutX="20.0" layoutY="354.0" onMouseClicked="#viewSelectStock" prefHeight="258.0" prefWidth="834.0" style="-fx-background-color: #aab7b8;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="354.0">
+        <columns>
+            <TableColumn prefWidth="91.0" text="Stock Iteam ID" />
+            <TableColumn prefWidth="181.0" text="Stock Item Name" />
+            <TableColumn minWidth="0.0" prefWidth="111.0" text="Type" />
+            <TableColumn prefWidth="135.0" text="Quantity ( Kg / Bottel )" />
+            <TableColumn minWidth="0.0" prefWidth="151.0" text="Total Cost" />
+            <TableColumn prefWidth="164.0" text="Date " />
+        </columns>
+      </TableView>
+      <PieChart fx:id="piechart" cache="true" cacheHint="QUALITY" layoutX="496.0" layoutY="77.0" mouseTransparent="true" prefHeight="223.0" prefWidth="232.0" style="-fx-background-color: #FFF8DC;" title="Available Stock">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></PieChart>
+      <ImageView fitHeight="109.0" fitWidth="118.0" layoutX="736.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-product-96.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtSTId" layoutX="149.0" layoutY="93.0" prefHeight="25.0" prefWidth="183.0" />
+      <JFXButton fx:id="btnSearch" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="354.0" layoutY="87.0" onAction="#search" prefHeight="32.0" prefWidth="118.0" ripplerFill="#bfbdbd" style="-fx-background-color: #fffff1;" text="Search" textAlignment="RIGHT" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="364.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-search-96.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="35.0" layoutY="96.0" text="Stock ID">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="date" layoutX="150.0" layoutY="249.0" prefHeight="25.0" prefWidth="190.0" />
+   </children>
+</AnchorPane>
