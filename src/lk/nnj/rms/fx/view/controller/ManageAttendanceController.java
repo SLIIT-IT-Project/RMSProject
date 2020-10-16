@@ -106,28 +106,42 @@ public class ManageAttendanceController implements Initializable {
         working_h = Integer.parseInt(txt_workingh.getText());
         ot_h = Integer.parseInt(txt_oth.getText());
 
-        Attendance attendance = new Attendance(emp_id, fullname, sqlDate, working_h, ot_h);
-        IAttendance iAttendance = new AttendanceServiceImpl();
-
-        try {
-            if (iAttendance.add(attendance)) {
-//                JOptionPane.showMessageDialog(null, "Success");
-                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-                alert1.setTitle("Information Dialog");
-                alert1.setHeaderText("Added");
-                alert1.setContentText("Data you entered has been added.");
-                alert1.showAndWait();
-                reset();
-                viewTable();
-            }
-        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Error! Cannot Add.");
-//            e.printStackTrace();
+        if(emp_id.equals("")){
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("Error Dialog");
-            alert1.setHeaderText("Cannot Add.");
-            alert1.setContentText("Invalid Credentials");
+            alert1.setHeaderText("Enter Employee ID");
+            alert1.setContentText("Employee ID is required");
             alert1.showAndWait();
+        }else if(fullname.equals(""))
+        {
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Enter Employee Name");
+            alert1.setContentText("Employee Name is required");
+            alert1.showAndWait();
+        }
+
+        else {
+            Attendance attendance = new Attendance(emp_id, fullname, sqlDate, working_h, ot_h);
+            IAttendance iAttendance = new AttendanceServiceImpl();
+
+            try {
+                if (iAttendance.add(attendance)) {
+                    Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                    alert1.setTitle("Information Dialog");
+                    alert1.setHeaderText("Added");
+                    alert1.setContentText("Data you entered has been added.");
+                    alert1.showAndWait();
+                    reset();
+                    viewTable();
+                }
+            } catch (Exception e) {
+                Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                alert1.setTitle("Error Dialog");
+                alert1.setHeaderText("Cannot Add.");
+                alert1.setContentText("Invalid Credentials");
+                alert1.showAndWait();
+            }
         }
     }
 
@@ -138,8 +152,6 @@ public class ManageAttendanceController implements Initializable {
 
         IAttendance iAttendance = new AttendanceServiceImpl();
         try {
-//            iAttendance.delete(id);
-//            JOptionPane.showMessageDialog(null, "Deleted");
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert1.setTitle("Information Dialog");
             alert1.setHeaderText("Deleted");
@@ -150,8 +162,6 @@ public class ManageAttendanceController implements Initializable {
             viewTable();
 
         } catch (Exception e) {
-//            e.printStackTrace();
-//            JOptionPane.showMessageDialog(null, "Error! Cannot Delete.");
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("Error Dialog");
             alert1.setHeaderText("Cannot Delete.");
@@ -179,8 +189,6 @@ public class ManageAttendanceController implements Initializable {
 
 
         } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Error! Cannot Find.");
-//            e.printStackTrace();
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("Error Dialog");
             alert1.setHeaderText("Cannot Find.");
@@ -206,7 +214,6 @@ public class ManageAttendanceController implements Initializable {
 
         try {
             if (iAttendance.update(attendance)) {
-//                JOptionPane.showMessageDialog(null, "Updated Success");
                 Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
                 alert1.setTitle("Information Dialog");
                 alert1.setHeaderText("Updated");
@@ -216,7 +223,6 @@ public class ManageAttendanceController implements Initializable {
                 viewTable();
 
             } else {
-//                JOptionPane.showMessageDialog(null, "Updated Faild.");
                 Alert alert1 = new Alert(Alert.AlertType.ERROR);
                 alert1.setTitle("Error Dialog");
                 alert1.setHeaderText("Update Faild.");
@@ -224,8 +230,7 @@ public class ManageAttendanceController implements Initializable {
                 alert1.showAndWait();
             }
         } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Error! Cannot Update.");
-//            e.printStackTrace();
+
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("Error Dialog");
             alert1.setHeaderText("Cannot Update.");

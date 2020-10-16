@@ -98,30 +98,16 @@ public class ManageEmployeeController implements Initializable {
     @FXML
     void add(ActionEvent event) {
         String emp_id, fullname, dob, address, jsd, pwd, type, mobile;
-//        int mobile;
+
         emp_id = txt_empid.getText();
         fullname = txt_fullname.getText();
-        java.sql.Date sqlDate = java.sql.Date.valueOf(txt_dob.getValue());
+
         address = txt_address.getText();
         mobile = txt_mobile.getText();
-//        mobile = Integer.parseInt(txt_mobile.getText());
-//        if (txt_mobile.getText().matches("\\\\d{10}|\\\\d{10}")) {
-//
-//            System.out.println("Its Valid Number");
-//            //return true;
-//        }else {
-//
-//            Alert alert1 = new Alert(Alert.AlertType.ERROR);
-//            alert1.setTitle("Error Dialog");
-//            alert1.setHeaderText("Enter Employee Mobile");
-//            alert1.setContentText("Employee Mobile is required");
-//            alert1.showAndWait();
-//        }
-       // jsd = txt_jsd.getText();
-        java.sql.Date jsdDate= java.sql.Date.valueOf(txt_jsd.getValue());
+
         pwd = txt_pwd.getText();
         type = txt_type.getSelectionModel().getSelectedItem().toString();
-//        System.out.print(fullname);
+
 
         if(emp_id.equals("")){
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
@@ -136,7 +122,7 @@ public class ManageEmployeeController implements Initializable {
             alert1.setHeaderText("Enter Employee Name");
             alert1.setContentText("Employee Name is required");
             alert1.showAndWait();
-        }else if(sqlDate.equals(""))
+        }else if(txt_dob.getValue() == null)
         {
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("Error Dialog");
@@ -159,7 +145,7 @@ public class ManageEmployeeController implements Initializable {
             alert1.setContentText("Employee Mobile is required");
             alert1.showAndWait();
         }
-        else if(txt_jsd.getValue().equals(""))
+        else if(txt_jsd.getValue() == null)
         {
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("Error Dialog");
@@ -188,6 +174,9 @@ public class ManageEmployeeController implements Initializable {
 
 
             try {
+
+                java.sql.Date sqlDate = java.sql.Date.valueOf(txt_dob.getValue());
+                java.sql.Date jsdDate= java.sql.Date.valueOf(txt_jsd.getValue());
 
                 User user = new User(emp_id, fullname, sqlDate, address, mobile, jsdDate, pwd, type);
                 IUser iuser = new UserServiceImpl();
@@ -238,7 +227,6 @@ public class ManageEmployeeController implements Initializable {
         IUser iUserService = new UserServiceImpl();
         try {
            iUserService.delete(id);
-//            JOptionPane.showMessageDialog(null, "Deleted");
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert1.setTitle("Information Dialog");
             alert1.setHeaderText("Deleted");
@@ -249,8 +237,6 @@ public class ManageEmployeeController implements Initializable {
             viewTable();
 
         } catch (Exception e) {
-//            e.printStackTrace();
-//            JOptionPane.showMessageDialog(null, "Error! Cannot Delete.");
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("Error Dialog");
             alert1.setHeaderText("Cannot Delete.");
@@ -281,8 +267,6 @@ public class ManageEmployeeController implements Initializable {
 
 
         } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Error! Cannot Find.");
-//            e.printStackTrace();
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("Error Dialog");
             alert1.setHeaderText("Cannot Find.");
@@ -296,13 +280,11 @@ public class ManageEmployeeController implements Initializable {
     @FXML
     void update(ActionEvent event) {
         String emp_id, fullname, dob, address, jsd, pwd, type,mobile;
-//        int mobile;
         emp_id = txt_empid.getText();
         fullname = txt_fullname.getText();
         java.sql.Date sqlDate = java.sql.Date.valueOf(txt_dob.getValue());
         address = txt_address.getText();
         mobile = txt_mobile.getText();
-//        mobile = Integer.parseInt(txt_mobile.getText());
         java.sql.Date jsdDate= java.sql.Date.valueOf(txt_jsd.getValue());
         pwd = txt_pwd.getText();
         type = txt_type.getSelectionModel().getSelectedItem().toString();
@@ -312,7 +294,6 @@ public class ManageEmployeeController implements Initializable {
 
         try {
             if (iuser.update(user)) {
-//                JOptionPane.showMessageDialog(null, "Updated Success");
                 Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
                 alert1.setTitle("Information Dialog");
                 alert1.setHeaderText("Updated");
@@ -322,7 +303,6 @@ public class ManageEmployeeController implements Initializable {
                 viewTable();
 
             } else {
-//                JOptionPane.showMessageDialog(null, "Updated Faild.");
                 Alert alert1 = new Alert(Alert.AlertType.ERROR);
                 alert1.setTitle("Error Dialog");
                 alert1.setHeaderText("Update Faild.");
@@ -330,8 +310,6 @@ public class ManageEmployeeController implements Initializable {
                 alert1.showAndWait();
             }
         } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Error! Cannot Update.");
-//            e.printStackTrace();
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("Error Dialog");
             alert1.setHeaderText("Cannot Update.");
@@ -390,7 +368,6 @@ public class ManageEmployeeController implements Initializable {
         tbl_details.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("address"));
         tbl_details.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("mobile"));
         tbl_details.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("jsd"));
-//        tbl_details.getColumns().get(7).setCellValueFactory(new PropertyValueFactory<>("pwd"));
 
         IUser iUser = new UserServiceImpl();
         try {

@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="42095d49-78c5-4fed-8f3e-fce5e6f88259" name="Default Changelist" comment="">
+    <list default="true" id="42095d49-78c5-4fed-8f3e-fce5e6f88259" name="Default Changelist" comment="Employee Management Done &amp; Dusted!?? ;)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/IAttendance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/AttendanceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/AttendanceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageAttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageAttendanceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageEmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManageAttendance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManageAttendance.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManageEmployee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManageEmployee.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +155,8 @@
       <workItem from="1602746454688" duration="323000" />
       <workItem from="1602747091951" duration="2612000" />
       <workItem from="1602778020161" duration="11903000" />
+      <workItem from="1602793189176" duration="790000" />
+      <workItem from="1602816939522" duration="1820000" />
     </task>
     <task id="LOCAL-00001" summary="by NNJ 16">
       <created>1599623203882</created>
@@ -186,11 +200,37 @@
       <option name="project" value="LOCAL" />
       <updated>1600188143538</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Employee Management Done &amp; Dusted!?? ;)">
+      <created>1602793329213</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1602793329213</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Employee Management Done &amp; Dusted!?? ;)">
+      <created>1602793443880</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602793443880</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="by madhura" />
@@ -199,28 +239,33 @@
     <MESSAGE value="Final Commit 75% done and Integrate by NNJ16" />
     <MESSAGE value="Final Commit 80% done and Integrate by NNJ16" />
     <MESSAGE value="Final Commit 81% done and Integrate by NNJ16" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Commit 81% done and Integrate by NNJ16" />
+    <MESSAGE value="Employee Management Done &amp; Dusted!?? ;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Employee Management Done &amp; Dusted!?? ;)" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1602792405702">
+    <state width="1493" height="175" key="GridCell.Tab.0.bottom" timestamp="1602818552079">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1602792405702" />
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1602817166935" />
+    <state width="1493" height="175" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1602818552079" />
     <state width="1877" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602791843550" />
-    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1602792405702">
+    <state width="1493" height="175" key="GridCell.Tab.0.center" timestamp="1602818552079">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1602792405702" />
+    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1602817166934" />
+    <state width="1493" height="175" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1602818552079" />
     <state width="1877" height="223" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602791843550" />
-    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1602792405702">
+    <state width="1493" height="175" key="GridCell.Tab.0.left" timestamp="1602818552078">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1602792405702" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1602817166933" />
+    <state width="1493" height="175" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1602818552078" />
     <state width="1877" height="223" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602791843549" />
-    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1602792405702">
+    <state width="1493" height="175" key="GridCell.Tab.0.right" timestamp="1602818552079">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1602792405702" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1602817166935" />
+    <state width="1493" height="175" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1602818552079" />
     <state width="1877" height="223" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602791843550" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1602405725707">
       <screen x="0" y="0" width="1536" height="864" />
@@ -238,6 +283,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1602405725707" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1602793619854">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1602793619854" />
   </component>
   <component name="masterDetails">
     <states>
