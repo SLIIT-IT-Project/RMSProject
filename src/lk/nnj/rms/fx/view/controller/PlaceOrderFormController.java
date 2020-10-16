@@ -216,7 +216,11 @@ public class PlaceOrderFormController implements Initializable {
         String itemName = txt_itemName.getText();
         if(itemName.equals(""))
         {
-
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Invalid Action");
+            alert1.setContentText("Select item to add.");
+            alert1.showAndWait();
         }else
         {
             try {
@@ -295,7 +299,11 @@ public class PlaceOrderFormController implements Initializable {
         String itemName = txt_itemName.getText();
         if(itemName.equals(""))
         {
-
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Invalid Action");
+            alert1.setContentText("Select item to add.");
+            alert1.showAndWait();
         }else
             {
                 try {
@@ -397,7 +405,7 @@ public class PlaceOrderFormController implements Initializable {
                     if(mobile.length()==10)
                     {
                         //if customer not found update the added new customer with the details
-                        iCustomerService.update(new Customer(cid,cname,mobile,txt_address.getText(),0));
+                        iCustomerService.update(new Customer(cid,cname,mobile,txt_address.getText(),1));
 
                         //update the order with the new customers id
                         iOrderService.update(new Order(oid,LocalDateTime.now(),desc,oType,orderAmount,sCharge,totAmount,cid));
@@ -498,6 +506,9 @@ public class PlaceOrderFormController implements Initializable {
             alert1.setContentText("Cash paid amount is not valid");
             alert1.showAndWait();
         }else {
+            try
+            {
+
             if (rb_dine.isSelected()) {
                 String oType = "Dine Inn";
                 AddOrderDetails(oType);
@@ -524,9 +535,84 @@ public class PlaceOrderFormController implements Initializable {
                     iManageDeliveryService.add(new Delivery(tid, null, "Pending", "", "", oid));
                 }
             }
+        }catch (NumberFormatException e)
+            {
+                Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                alert1.setTitle("Error Dialog");
+                alert1.setHeaderText("Invalid input found");
+                alert1.setContentText("Entered mobile no is invalid");
+                alert1.showAndWait();
+            }
         }
     }
 
+    @FXML
+    void cCheckOut(MouseEvent event) throws Exception {
+        if(txt_cname.getText().equals(""))
+        {
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Input not found");
+            alert1.setContentText("Customer name required.");
+            alert1.showAndWait();
+        }else if(txt_cmobile.getText().trim().length() !=10)
+        {
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Invalid input found");
+            alert1.setContentText("Entered mobile no is invalid");
+            alert1.showAndWait();
+
+        }else if(txt_cashPaid.getText().equals("") || Double.parseDouble(txt_cashPaid.getText().trim())<0)
+        {
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("Error Dialog");
+            alert1.setHeaderText("Invalid input found");
+            alert1.setContentText("Cash paid amount is not valid");
+            alert1.showAndWait();
+        }else {
+            try
+            {
+                Integer.parseInt(txt_cmobile.getText());
+            if (rb_dine.isSelected()) {
+                String oType = "Dine Inn";
+                //Add dine in Order
+                AddOrderDetails(oType);
+            }
+            if (rb_tAway.isSelected()) {
+                String oType = "Take Away";
+                //Add take away order
+                AddOrderDetails(oType);
+            }
+            if (rb_del.isSelected()) {
+                if(txt_address.getText().equals(""))
+                {
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setTitle("Error Dialog");
+                    alert1.setHeaderText("Input not found");
+                    alert1.setContentText("Customer address is required.");
+                    alert1.showAndWait();
+                }else {
+                        String oType = "Deliver";
+                        int oid = Integer.parseInt(txt_invoiceNo.getText());
+                        AddOrderDetails(oType);
+                        IManageDeliveryService iManageDeliveryService = new ManageDeliveryServiceImpl();
+                        IQueryService iQueryService = new QueryServiceImpl();
+                        int tid = iQueryService.getDelNo();
+                        iManageDeliveryService.add(new Delivery(tid, null, "Pending", "", "", oid));
+
+                }
+            }
+            }catch(NumberFormatException e)
+            {
+                Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                alert1.setTitle("Error Dialog");
+                alert1.setHeaderText("Invalid input found");
+                alert1.setContentText("Entered mobile no is invalid");
+                alert1.showAndWait();
+            }
+        }
+    }
     //Check whether deliver radio button is selected if enable address text area
     @FXML
     void deliver(MouseEvent event) {
@@ -612,6 +698,7 @@ public class PlaceOrderFormController implements Initializable {
             txt_itemName.setText("");
             txt_itemID.setText("");
             txt_qty.setText("1");
+            txt_address.setText("");
             txt_qty1.setText("1");
             txt_cname.setText("");
             txt_cmobile.setText("");
@@ -630,6 +717,10 @@ public class PlaceOrderFormController implements Initializable {
         addNewOrder();
     }
 
+    @FXML
+    void cNewOrder(MouseEvent event) throws Exception {
+        addNewOrder();
+    }
     //Increment Quantity
     @FXML
     void plus(MouseEvent event) {
@@ -824,7 +915,6 @@ public class PlaceOrderFormController implements Initializable {
                 log++;
                 lst_log.getItems().add(log + " : " +LocalDateTime.now().toString() +" : "+
                         " Successfully removed the order with invoice no "+" : "+Integer.toString(orderId));
-
                 try
                 {
                     if(!iCustomerService.delete(cid))
@@ -886,11 +976,35 @@ public class PlaceOrderFormController implements Initializable {
     void removeOrder(ActionEvent event) throws Exception {
         removeCOrder();
     }
+    @FXML
+    void cRemoveOrder(MouseEvent event) throws Exception {
+        removeCOrder();
+    }
 
     private static Stage stage =null;
 
     @FXML
-    void viewDel(MouseEvent event) throws IOException {
+    void viewcDel(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/rms/fx/view/style/OrderDeDetailForm.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+        if (root != null) {
+            if (stage == null) {
+                stage = new Stage();
+                stage.setTitle("Deliver Details Form");
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setOnCloseRequest(event1 -> {
+                            stage = null;
+                        }
+                );
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+
+        }
+    }
+
+    @FXML
+    void viewDel(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/rms/fx/view/style/OrderDeDetailForm.fxml"));
         Parent root = (Parent) fxmlLoader.load();
         if (root != null) {
@@ -928,13 +1042,32 @@ public class PlaceOrderFormController implements Initializable {
     }
 
     @FXML
+    void viewcElarge(MouseEvent event) throws Exception {
+        lst_viewCategory.setItems(null);
+        viewItems("Extra Large Pizza");
+    }
+
+    @FXML
     void viewLarge(ActionEvent event) throws Exception {
         lst_viewCategory.setItems(null);
         viewItems("Large Pizza");
     }
 
     @FXML
+    void viewcLarge(MouseEvent event) throws Exception {
+        lst_viewCategory.setItems(null);
+        viewItems("Large Pizza");
+    }
+
+
+    @FXML
     void viewMedium(ActionEvent event) throws Exception {
+        lst_viewCategory.setItems(null);
+        viewItems("Medium Pizza");
+    }
+
+    @FXML
+    void viewcMedium(MouseEvent event) throws Exception {
         lst_viewCategory.setItems(null);
         viewItems("Medium Pizza");
     }
@@ -945,6 +1078,11 @@ public class PlaceOrderFormController implements Initializable {
         viewItems("Small Pizza");
     }
 
+    @FXML
+    void viewcSmall(MouseEvent event) throws Exception {
+        lst_viewCategory.setItems(null);
+        viewItems("Small Pizza");
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources){
         ObservableList<String> options =
