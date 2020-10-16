@@ -29,10 +29,12 @@ public class PlayerMachineServiceImpl implements IPlayerMachineService {
         int scorenew2 = CheckScore(mid);
 
 
-        if(playerMachine.getScore() >= scorenew2) {
-            pstm.setObject(6, "Yes");
-        }else {
-            pstm.setObject(6, "No");
+        if(scorenew2 == 0) {
+            pstm.setObject(6, "No Machine");
+        }else if(playerMachine.getScore() >= scorenew2) {
+            pstm.setObject(6, "Eligible");
+        }else{
+            pstm.setObject(6, "Not Eligible");
         }
 
         return pstm.executeUpdate() > 0;
@@ -64,10 +66,13 @@ public class PlayerMachineServiceImpl implements IPlayerMachineService {
             System.out.println(score.getString(1));
         } */
 
-        if(playerMachine.getScore() >= scorenew2) {
-            pstm.setObject(5, "Yes");
-        }else {
-            pstm.setObject(5, "No");
+
+        if(scorenew2 == 0) {
+            pstm.setObject(5, "No Machine");
+        }else if(playerMachine.getScore() >= scorenew2) {
+                pstm.setObject(5, "Eligible");
+        }else{
+            pstm.setObject(5, "Not Eligible");
         }
 
         return pstm.executeUpdate() > 0;
@@ -140,13 +145,18 @@ public class PlayerMachineServiceImpl implements IPlayerMachineService {
         pstm2.setObject(1,mid);
         ResultSet score = pstm2.executeQuery();
 
-        while(score.next()){
+
+
+        while (score.next()) {
             scoreStr = score.getString(1);
             scoreInt = Integer.parseInt(scoreStr);
             System.out.println(score.getString(1));
         }
-
+        System.out.println(scoreInt);
         return scoreInt;
+
+
+
     }
 
 

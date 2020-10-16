@@ -2,6 +2,7 @@ package lk.nnj.rms.fx.view.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,6 +20,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 import lk.nnj.rms.fx.model.PlayerMachine;
 import lk.nnj.rms.fx.service.IPlayerMachineService;
 import lk.nnj.rms.fx.service.Impl.PlayerMachineServiceImpl;
@@ -95,26 +97,40 @@ public class ManagePlayerMachineController implements Initializable {
     private JFXButton btn_demo;
 
     @FXML
-    void back(ActionEvent event) {
-        Stage stage = (Stage) btn_back.getScene().getWindow();
-        stage.close();
+    void back(ActionEvent event) throws IOException {
+
+
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/AdminPanel.fxml"));
+        if (root != null) {
+            Scene subScene = new Scene(root);
+            Stage primaryStage = (Stage) this.root.getScene().getWindow();
+            primaryStage.setScene(subScene);
+            primaryStage.centerOnScreen();
+            primaryStage.setResizable(true);
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+            tt.setFromX(-subScene.getWidth());
+            tt.setToX(0);
+            tt.play();
+        }
     }
 
     @FXML
     void goMachine(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/rms/fx/view/style/ManageMachine.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-
-            Stage closeStage = (Stage) btn_machine.getScene().getWindow();
-            closeStage.close();
-
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setTitle("Machine");
-            stage.setScene(new Scene(root1));
-            stage.show();
+            Parent root = null;
+            root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/ManageMachine.fxml"));
+            if (root != null) {
+                Scene subScene = new Scene(root);
+                Stage primaryStage = (Stage) this.root.getScene().getWindow();
+                primaryStage.setScene(subScene);
+                primaryStage.centerOnScreen();
+                primaryStage.setResizable(true);
+                TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+                tt.setFromX(-subScene.getWidth());
+                tt.setToX(0);
+                tt.play();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -123,18 +139,19 @@ public class ManagePlayerMachineController implements Initializable {
     @FXML
     void goPlayer(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/rms/fx/view/style/ManagePlayer.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-
-            Stage closeStage = (Stage) btn_player.getScene().getWindow();
-            closeStage.close();
-
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setTitle("Player");
-            stage.setScene(new Scene(root1));
-            stage.show();
+            Parent root = null;
+            root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/ManagePlayer.fxml"));
+            if (root != null) {
+                Scene subScene = new Scene(root);
+                Stage primaryStage = (Stage) this.root.getScene().getWindow();
+                primaryStage.setScene(subScene);
+                primaryStage.centerOnScreen();
+                primaryStage.setResizable(true);
+                TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+                tt.setFromX(-subScene.getWidth());
+                tt.setToX(0);
+                tt.play();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -400,7 +417,7 @@ public class ManagePlayerMachineController implements Initializable {
 
     }
 
-    private static String[] columns = {"PMID","PlayerID", "MachineID", "DateTime","Score","PriceEligibilty"};
+    private static String[] columns = {"PMID","PlayerID", "MachineID", "DateTime","Score","PriceEligibility"};
 
     @FXML
     void generateReport(MouseEvent event) throws Exception {
@@ -470,7 +487,7 @@ public class ManagePlayerMachineController implements Initializable {
             int count1 = 0;
 
             for (PlayerMachine playermachine : playermachineList) {
-                if (playermachine.getPriceEligibilty().equals("Yes")) {
+                if (playermachine.getPriceEligibilty().equals("Eligible")) {
                     count0 += 1;
                 }else{
                     count1 += 1;
@@ -478,8 +495,8 @@ public class ManagePlayerMachineController implements Initializable {
 
             }
 
-            pieChartData.add(new PieChart.Data("Yes",count0));
-            pieChartData.add(new PieChart.Data("No",count1));
+            pieChartData.add(new PieChart.Data("Eligible",count0));
+            pieChartData.add(new PieChart.Data("Not Eligible",count1));
 
 
             chart.setData(pieChartData);

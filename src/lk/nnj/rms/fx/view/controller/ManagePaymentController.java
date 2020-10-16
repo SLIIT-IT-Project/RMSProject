@@ -1,11 +1,15 @@
 package lk.nnj.rms.fx.view.controller;
 
 import com.jfoenix.controls.*;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -13,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import lk.nnj.rms.fx.model.Payment;
 import lk.nnj.rms.fx.service.IPaymentService;
 import lk.nnj.rms.fx.service.Impl.PaymentServiceImpl;
@@ -22,6 +27,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import javax.swing.*;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -105,9 +111,21 @@ public class ManagePaymentController implements Initializable {
     private JFXButton btn_demo;
 
     @FXML
-    void back(ActionEvent event) {
-        Stage stage = (Stage) btn_back.getScene().getWindow();
-        stage.close();
+    void back(ActionEvent event) throws IOException {
+
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/AdminPanel.fxml"));
+        if (root != null) {
+            Scene subScene = new Scene(root);
+            Stage primaryStage = (Stage) this.root.getScene().getWindow();
+            primaryStage.setScene(subScene);
+            primaryStage.centerOnScreen();
+            primaryStage.setResizable(true);
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+            tt.setFromX(-subScene.getWidth());
+            tt.setToX(0);
+            tt.play();
+        }
     }
 
     @FXML
@@ -118,7 +136,7 @@ public class ManagePaymentController implements Initializable {
 
     @FXML
     void add(ActionEvent event) {
-        String pid, amount, datetime, status, type, description, oid;
+        String pid, amount, status, type, description, oid;
 
         pid = txt_pid.getText();
         amount = txt_amount.getText();
@@ -127,20 +145,9 @@ public class ManagePaymentController implements Initializable {
         type = cb_type.getValue();
         description = txt_description.getText();
         oid = txt_oid.getText();
+        LocalDate date = txt_date.getValue();
+        LocalTime time = txt_time.getValue();
 
-        ///////////////////////
-
-        LocalDate d1 = txt_date.getValue();
-        LocalTime t1 = txt_time.getValue();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        String date = d1.toString() +" "+ t1.toString();
-        LocalDateTime ld = LocalDateTime.parse(date,formatter);
-
-
-
-
-
-        ///////////////////////////
 
         if(pid.equals("")) {
             JOptionPane.showMessageDialog(null, "Empty PID !!!");
@@ -148,10 +155,10 @@ public class ManagePaymentController implements Initializable {
         }else if(amount.equals("")){
             JOptionPane.showMessageDialog(null, "Empty Amount !!!");
             return;
-        }else if(d1.equals("")){
+        }else if(date == null || date.equals("")){
             JOptionPane.showMessageDialog(null, "Empty Date !!!");
             return;
-        }else if(t1.equals("")){
+        }else if(time == null || date.equals("")){
             JOptionPane.showMessageDialog(null, "Empty Time !!!");
             return;
         }else if(status.equals("-") || status.equals("")){
@@ -166,6 +173,11 @@ public class ManagePaymentController implements Initializable {
         }
 
         try {
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            String datetime = date.toString() +" "+ time.toString();
+            LocalDateTime ld = LocalDateTime.parse(datetime,formatter);
+
             int pidnew = Integer.parseInt(pid);
             int oidnew = Integer.parseInt(oid);
             float amountnew = Float.parseFloat(amount);
@@ -254,7 +266,7 @@ public class ManagePaymentController implements Initializable {
 
     @FXML
     void update(ActionEvent event) {
-        String pid, amount, datetime, status, type, description, oid;
+        String pid, amount, status, type, description, oid;
         pid = txt_pid.getText();
 
         amount = txt_amount.getText();
@@ -263,20 +275,10 @@ public class ManagePaymentController implements Initializable {
         type = cb_type.getValue();
         description = txt_description.getText();
         oid = txt_oid.getText();
-
-        ///////////////////////
-
-        LocalDate d1 = txt_date.getValue();
-        LocalTime t1 = txt_time.getValue();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        String date = d1.toString() +" "+ t1.toString();
-        LocalDateTime ld = LocalDateTime.parse(date,formatter);
+        LocalDate date = txt_date.getValue();
+        LocalTime time = txt_time.getValue();
 
 
-
-
-
-        ///////////////////////////
 
         if(pid.equals("")) {
             JOptionPane.showMessageDialog(null, "Empty PID !!!");
@@ -284,10 +286,10 @@ public class ManagePaymentController implements Initializable {
         }else if(amount.equals("")){
             JOptionPane.showMessageDialog(null, "Empty Amount !!!");
             return;
-        }else if(d1.equals("")){
+        }else if(date == null || date.equals("")){
             JOptionPane.showMessageDialog(null, "Empty Date !!!");
             return;
-        }else if(t1.equals("")){
+        }else if(time == null || date.equals("")){
             JOptionPane.showMessageDialog(null, "Empty Time !!!");
             return;
         }else if(status.equals("-") || status.equals("")){
@@ -302,6 +304,11 @@ public class ManagePaymentController implements Initializable {
         }
 
         try{
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            String datetime = date.toString() +" "+ time.toString();
+            LocalDateTime ld = LocalDateTime.parse(datetime,formatter);
+
+
             int pidnew = Integer.parseInt(pid);
             int oidnew = Integer.parseInt(oid);
             float amountnew = Float.parseFloat(amount);

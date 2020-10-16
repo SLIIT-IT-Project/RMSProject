@@ -299,6 +299,7 @@ public class AdminPanelController {
             primaryStage.setScene(subScene);
             primaryStage.centerOnScreen();
             primaryStage.setResizable(true);
+            primaryStage.setMaximized(true);
             TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
             tt.setFromX(-subScene.getWidth());
             tt.setToX(0);

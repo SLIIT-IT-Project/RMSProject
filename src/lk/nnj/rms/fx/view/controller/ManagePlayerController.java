@@ -2,6 +2,7 @@ package lk.nnj.rms.fx.view.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,6 +20,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 import lk.nnj.rms.fx.model.Player;
 import lk.nnj.rms.fx.service.IPlayerService;
 import lk.nnj.rms.fx.service.Impl.PlayerServiceImpl;
@@ -85,26 +87,42 @@ public class ManagePlayerController implements Initializable {
     private JFXButton btn_demo;
 
     @FXML
-    void back(ActionEvent event) {
-        Stage stage = (Stage) btn_back.getScene().getWindow();
-        stage.close();
+    void back(ActionEvent event) throws IOException {
+
+
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/AdminPanel.fxml"));
+        if (root != null) {
+            Scene subScene = new Scene(root);
+            Stage primaryStage = (Stage) this.root.getScene().getWindow();
+            primaryStage.setScene(subScene);
+            primaryStage.centerOnScreen();
+            primaryStage.setResizable(true);
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+            tt.setFromX(-subScene.getWidth());
+            tt.setToX(0);
+            tt.play();
+        }
+
+
     }
 
     @FXML
     void goMachine(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/rms/fx/view/style/ManageMachine.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-
-            Stage closeStage = (Stage) btn_machine.getScene().getWindow();
-            closeStage.close();
-
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setTitle("Machine");
-            stage.setScene(new Scene(root1));
-            stage.show();
+            Parent root = null;
+            root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/ManageMachine.fxml"));
+            if (root != null) {
+                Scene subScene = new Scene(root);
+                Stage primaryStage = (Stage) this.root.getScene().getWindow();
+                primaryStage.setScene(subScene);
+                primaryStage.centerOnScreen();
+                primaryStage.setResizable(true);
+                TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+                tt.setFromX(-subScene.getWidth());
+                tt.setToX(0);
+                tt.play();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -113,18 +131,19 @@ public class ManagePlayerController implements Initializable {
     @FXML
     void goMachinePlayer(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/rms/fx/view/style/ManagePlayerMachine.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-
-            Stage closeStage = (Stage) btn_machineplayer.getScene().getWindow();
-            closeStage.close();
-
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setTitle("PlayerMachine");
-            stage.setScene(new Scene(root1));
-            stage.show();
+            Parent root = null;
+            root = FXMLLoader.load(getClass().getResource("/lk/nnj/rms/fx/view/style/ManagePlayerMachine.fxml"));
+            if (root != null) {
+                Scene subScene = new Scene(root);
+                Stage primaryStage = (Stage) this.root.getScene().getWindow();
+                primaryStage.setScene(subScene);
+                primaryStage.centerOnScreen();
+                primaryStage.setResizable(true);
+                TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+                tt.setFromX(-subScene.getWidth());
+                tt.setToX(0);
+                tt.play();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

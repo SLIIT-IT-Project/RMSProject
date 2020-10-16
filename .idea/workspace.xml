@@ -3,6 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="42095d49-78c5-4fed-8f3e-fce5e6f88259" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/assest/icons8-search-48.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/assest/icons8-search-48.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/db/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/db/DBConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/model/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/model/Payment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/model/PlayerMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/model/PlayerMachine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IPlayerMachineService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IPlayerMachineService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IPlayerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IPlayerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PaymentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PaymentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PlayerMachineServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PlayerMachineServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PlayerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PlayerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/AdminPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/AdminPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/PlayerMachineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/PlayerMachineServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageMachineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageMachineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePlayerMachineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePlayerMachineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManageMachine.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManageMachine.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePayment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePayment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePlayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePlayer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePlayerMachine.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePlayerMachine.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +60,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1602348766500" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RMSProject" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.171875" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -135,7 +158,8 @@
       <workItem from="1602392228108" duration="9866000" />
       <workItem from="1602410986895" duration="60000" />
       <workItem from="1602412748880" duration="521000" />
-      <workItem from="1602789354574" duration="1593000" />
+      <workItem from="1602789354574" duration="2316000" />
+      <workItem from="1602807450735" duration="10014000" />
     </task>
     <task id="LOCAL-00001" summary="by NNJ 16">
       <created>1599623203882</created>
@@ -186,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602794455310</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Commit 99.9% done">
+      <created>1602794552371</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602794552371</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,111 +231,41 @@
     <MESSAGE value="Final Commit 80% done and Integrate by NNJ16" />
     <MESSAGE value="Final Commit 81% done and Integrate by NNJ16" />
     <MESSAGE value="Commit 99% done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 99% done" />
+    <MESSAGE value="Commit 99.9% done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 99.9% done" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1602794446399">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1602794550049">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602794446399" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1602411045074">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602794550049" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1602807559845">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602411045074" />
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1602410292113">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602807559845" />
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1602818134574">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602410292113" />
-    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1602410292113">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602818134574" />
+    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1602818134574">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602410292113" />
-    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1602410292113">
+    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602818134574" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1602818134573">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602410292113" />
-    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1602410292113">
+    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602818134573" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1602818134574">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602410292113" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602818134574" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1602815101931">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602815101931" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1602794482087">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1602794482087" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>RMSProject</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>poi</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

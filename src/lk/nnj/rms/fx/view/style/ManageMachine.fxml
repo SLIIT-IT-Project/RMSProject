@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="688.0" prefWidth="1253.0" styleClass="bodybg" stylesheets="@../assest/playerBackground.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageMachineController">
+<AnchorPane fx:id="root" prefHeight="688.0" prefWidth="1368.0" styleClass="bodybg" stylesheets="@../../assest/playerBackground.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.ManageMachineController">
    <children>
       <BorderPane layoutX="19.0" layoutY="113.0" prefHeight="94.0" prefWidth="582.0" style="-fx-background-color: #19e0a4;">
          <opaqueInsets>
@@ -62,7 +62,7 @@
             </JFXButton>
             <ImageView disable="true" fitHeight="29.0" fitWidth="26.0" layoutX="581.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assest/yasoicons8-search-48.png" />
+                  <Image url="@../../assest/yasoicons8-search-48.png" />
                </image>
             </ImageView>
             <JFXButton fx:id="btn_back" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="23.0" layoutY="25.0" onAction="#back" prefHeight="50.0" prefWidth="48.0" ripplerFill="#64009a" style="-fx-background-color: #0d07b3;" text="A" textAlignment="RIGHT">
@@ -72,18 +72,18 @@
             </JFXButton>
             <ImageView disable="true" fitHeight="40.0" fitWidth="45.0" layoutX="27.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assest/icons8-back-64.png" />
+                  <Image url="@../../assest/icons8-back-64.png" />
                </image>
             </ImageView>
             <ImageView disable="true" fitHeight="78.0" fitWidth="88.0" layoutX="1271.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assest/icons8-dratini-96.png" />
+                  <Image url="@../../assest/icons8-dratini-96.png" />
                </image>
             </ImageView>
             <JFXButton fx:id="btn_reset" layoutX="710.0" layoutY="25.0" onAction="#resetButton" prefHeight="50.0" prefWidth="56.0" text="A" />
             <ImageView disable="true" fitHeight="40.0" fitWidth="45.0" layoutX="718.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assest/icons8-synchronize-64.png" />
+                  <Image url="@../../assest/icons8-synchronize-64.png" />
                </image>
             </ImageView>
          </children>
@@ -121,20 +121,20 @@
       </JFXButton>
       <ImageView disable="true" fitHeight="48.0" fitWidth="40.0" layoutX="1036.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assest/yasoicons8-delete-64.png" />
+            <Image url="@../../assest/yasoicons8-delete-64.png" />
          </image>
       </ImageView>
       <ImageView disable="true" fitHeight="40.0" fitWidth="48.0" layoutX="686.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assest/yasoicons8-plus-64.png" />
+            <Image url="@../../assest/yasoicons8-plus-64.png" />
          </image>
       </ImageView>
       <ImageView disable="true" fitHeight="50.0" fitWidth="48.0" layoutX="854.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assest/icons8-update-64.png" />
+            <Image url="@../../assest/icons8-update-64.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btn_machineplayer" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1142.0" layoutY="378.0" onAction="#goMachinePlayer" prefHeight="110.0" prefWidth="168.0" ripplerFill="#c30c98" style="-fx-background-color: #eb5ebc;" text="MachinePlayer" textAlignment="CENTER">
+      <JFXButton fx:id="btn_machineplayer" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1151.0" layoutY="378.0" onAction="#goMachinePlayer" prefHeight="110.0" prefWidth="168.0" ripplerFill="#c30c98" style="-fx-background-color: #eb5ebc;" text="MachinePlayer" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -142,7 +142,7 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btn_player" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1142.0" layoutY="518.0" onAction="#goPlayer" prefHeight="110.0" prefWidth="168.0" ripplerFill="#c30c98" style="-fx-background-color: #eb5ebc;" text="Player" textAlignment="CENTER">
+      <JFXButton fx:id="btn_player" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1153.0" layoutY="518.0" onAction="#goPlayer" prefHeight="110.0" prefWidth="168.0" ripplerFill="#c30c98" style="-fx-background-color: #eb5ebc;" text="Player" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -150,18 +150,18 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btn_report" buttonType="RAISED" layoutX="1195.0" layoutY="191.0" onMouseClicked="#generateReport" prefHeight="67.0" prefWidth="63.0" style="-fx-background-color: #000000;" text=" ">
+      <JFXButton fx:id="btn_report" buttonType="RAISED" layoutX="1198.0" layoutY="191.0" onMouseClicked="#generateReport" prefHeight="67.0" prefWidth="63.0" style="-fx-background-color: #000000;" text=" ">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <ImageView disable="true" fitHeight="50.0" fitWidth="56.0" layoutX="1202.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="50.0" fitWidth="56.0" layoutX="1205.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assest/excelyas.png" />
+            <Image url="@../../assest/excelyas.png" />
          </image>
       </ImageView>
-      <PieChart fx:id="chart" layoutX="743.0" layoutY="254.0" prefHeight="390.0" prefWidth="369.0" style="-fx-background-color: #f5d451;" title="Scores" />
-      <JFXButton fx:id="btn_chart" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1199.0" layoutY="276.0" onAction="#ShowChart" prefHeight="59.0" prefWidth="59.0" ripplerFill="#544e4e" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER">
+      <PieChart fx:id="chart" layoutX="747.0" layoutY="254.0" prefHeight="390.0" prefWidth="369.0" style="-fx-background-color: #f5d451;" title="Scores" />
+      <JFXButton fx:id="btn_chart" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1202.0" layoutY="276.0" onAction="#ShowChart" prefHeight="59.0" prefWidth="59.0" ripplerFill="#544e4e" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -169,12 +169,12 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <ImageView disable="true" fitHeight="50.0" fitWidth="48.0" layoutX="1204.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="50.0" fitWidth="48.0" layoutX="1207.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assest/circularchart.png" />
+            <Image url="@../../assest/circularchart.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btn_demo" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1211.0" layoutY="128.0" onAction="#setDemo" prefHeight="50.0" prefWidth="67.0" ripplerFill="#c30c98" style="-fx-background-color: #eb5ebc;" text="DEMO" textAlignment="CENTER">
+      <JFXButton fx:id="btn_demo" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1224.0" layoutY="128.0" onAction="#setDemo" prefHeight="50.0" prefWidth="67.0" ripplerFill="#c30c98" style="-fx-background-color: #eb5ebc;" text="DEMO" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

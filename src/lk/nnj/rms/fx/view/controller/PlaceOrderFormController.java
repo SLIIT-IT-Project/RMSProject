@@ -439,7 +439,7 @@ public class PlaceOrderFormController implements Initializable {
             Date date = new Date();
             long time = date.getTime();
             Timestamp tm = new Timestamp(time);
-            iPaymentService.add(new Payment(pid,amount,tm,"Paid",pType,desc,oid));
+            //iPaymentService.add(new Payment(pid,amount,tm,"Paid",pType,desc,oid));
         }catch (Exception e)
         {
             e.printStackTrace();
