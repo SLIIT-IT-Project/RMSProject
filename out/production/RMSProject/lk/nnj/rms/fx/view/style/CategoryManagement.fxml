@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="530.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.rms.fx.view.controller.CategoryManagementController">
+   <children>
+      <AnchorPane prefHeight="55.0" prefWidth="600.0" style="-fx-background-color: #a9a4ed;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="72.0" layoutY="11.0" prefHeight="35.0" prefWidth="287.0" text="Category Management">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="lbl_back" fitHeight="35.0" fitWidth="32.0" layoutX="14.0" layoutY="13.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assest/icons8-back-arrow-64.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="541.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assest/RHG/icons8-cat-RHG.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="72.0" layoutY="11.0" prefHeight="35.0" prefWidth="287.0" text="Category Management">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="541.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/RHG/icons8-cat-RHG.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="38.0" layoutY="124.0" text="Category ID" />
+      <JFXTextField fx:id="txt_category_id" layoutX="125.0" layoutY="120.0" />
+      <Label layoutX="40.0" layoutY="161.0" text="Name" />
+      <JFXTextField fx:id="txt_category_name" layoutX="125.0" layoutY="157.0" />
+      <Label layoutX="40.0" layoutY="200.0" text="Description" />
+      <JFXTextField fx:id="txt_description" layoutX="124.0" layoutY="196.0" />
+      <JFXButton fx:id="btn_category_add" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="418.0" layoutY="111.0" onAction="#add" prefHeight="41.0" prefWidth="135.0" style="-fx-background-color: #ffffff;" text="ADD">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btn_category_update" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="418.0" layoutY="171.0" onAction="#update" prefHeight="41.0" prefWidth="135.0" style="-fx-background-color: #ffffff;" text="UPDATE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btn_category_delete" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="418.0" layoutY="230.0" onAction="#delete" prefHeight="41.0" prefWidth="135.0" style="-fx-background-color: #ffffff;" text="DELETE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="427.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-plus-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="427.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-synchronize-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="432.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-delete-128.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tbl_category" layoutX="18.0" layoutY="314.0" onMouseClicked="#click" prefHeight="200.0" prefWidth="563.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Category ID" />
+          <TableColumn prefWidth="75.0" text="Name" />
+            <TableColumn prefWidth="75.0" text="Description" />
+            <TableColumn prefWidth="75.0" text="No Of Items" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <JFXTextField fx:id="txt_searchCategoryID" layoutX="38.0" layoutY="63.0" onAction="#click" prefHeight="25.0" prefWidth="180.0" promptText="Search Category ID" />
+      <ImageView fx:id="lbl_search_category" fitHeight="32.0" fitWidth="32.0" layoutX="219.0" layoutY="58.0" onMouseClicked="#searchCategory" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-search-48.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="41.0" layoutY="241.0" text="No of Items" />
+      <JFXTextField fx:id="txt_noOfItems" alignment="CENTER" layoutX="125.0" layoutY="236.0" text="0" />
+   </children>
+</AnchorPane>

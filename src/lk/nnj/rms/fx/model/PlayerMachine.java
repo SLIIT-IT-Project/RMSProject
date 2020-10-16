@@ -1,17 +1,20 @@
 package lk.nnj.rms.fx.model;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 public class PlayerMachine {
+
+    private String PMID;
 
     private String PlayerID;
     private String MachineID;
     private Timestamp DateTime;
+
     private int Score;
     private String PriceEligibilty;
 
-    public PlayerMachine(String playerID, String machineID, Timestamp dateTime, int score) {
+    public PlayerMachine(String pmID,String playerID, String machineID,Timestamp dateTime, int score) {
+        PMID = pmID;
         PlayerID = playerID;
         MachineID = machineID;
         DateTime = dateTime;
@@ -19,12 +22,21 @@ public class PlayerMachine {
         PriceEligibilty = "";
     }
 
-    public PlayerMachine(String playerID, String machineID, Timestamp dateTime, int score, String priceEligibilty) {
+    public PlayerMachine(String pmID,String playerID, String machineID,Timestamp dateTime, int score, String priceEligibilty) {
+        PMID = pmID;
         PlayerID = playerID;
         MachineID = machineID;
         DateTime = dateTime;
         Score = score;
         PriceEligibilty = priceEligibilty;
+    }
+
+    public String getPMID() {
+        return PMID;
+    }
+
+    public void setPMID(String PMID) {
+        this.PMID = PMID;
     }
 
     public String getPlayerID() {

@@ -1,7 +1,6 @@
 package lk.nnj.rms.fx.service.Impl;
 
 import lk.nnj.rms.fx.db.DBConnection;
-import lk.nnj.rms.fx.model.Machine;
 import lk.nnj.rms.fx.model.Player;
 import lk.nnj.rms.fx.service.IPlayerService;
 
@@ -52,9 +51,11 @@ public class PlayerServiceImpl implements IPlayerService {
 
         pstm.setObject(3,player.getPlayerID());
 
-        String x = player.getPlayerID();
+        String pid = player.getPlayerID();
 
-        int total = 0;
+        double avg = CheckRank(pid);
+
+        /*int total = 0;
         double avg = 0;
         int count = 0;
         int temp2 = 0;
@@ -73,7 +74,7 @@ public class PlayerServiceImpl implements IPlayerService {
         }
 
         avg = total / (count * 1.0);
-        System.out.println(avg);
+        System.out.println(avg);*/
 
         pstm.setObject(2, avg);
 
@@ -130,6 +131,54 @@ public class PlayerServiceImpl implements IPlayerService {
 
         }
         return allPlayer;
+    }
+
+    @Override
+    public double CheckRank(String pid) throws Exception {
+        Connection connection = DBConnection.getConnection();
+
+        int total = 0, count = 0, scoreInt;
+        double avg;
+        String scoreStr;
+
+        PreparedStatement pstm2 = connection.prepareStatement("SELECT m.Score FROM playerTable p,playermachineTable m WHERE ?=m.PlayerID ");
+        pstm2.setObject(1,pid);
+        ResultSet score = pstm2.executeQuery();
+
+        while(score.next()){
+            scoreStr =  score.getString(1);
+            scoreInt = Integer.parseInt(scoreStr);
+            total += scoreInt;
+            count += 1;
+            System.out.println(scoreInt);
+        }
+
+        avg = total / (count * 1.0);
+
+        double rank;
+
+        if(avg <= 100.0){
+            rank = 0.0;
+        }else if(avg <= 300.0){
+            rank = 1.0;
+        }else if(avg <= 500.0){
+            rank = 2.0;
+        }else if(avg <= 700.0){
+            rank = 3.0;
+        }else if(avg <= 900.0){
+            rank = 4.0;
+        }else{
+            rank = 5.0;
+        }
+
+        System.out.println(avg);
+
+        if(total == 0){
+            return 0;
+        }else{
+            return rank;
+        }
+
     }
 
 
