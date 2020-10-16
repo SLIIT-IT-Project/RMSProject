@@ -87,7 +87,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnprint" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="750.0" layoutY="186.0" onAction="#print" prefHeight="32.0" prefWidth="118.0" ripplerFill="#bfbdbd" style="-fx-background-color: #fffff1;" text="Print  " textAlignment="RIGHT" textOverrun="CLIP">
+      <JFXButton fx:id="btnprint" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="750.0" layoutY="186.0" onAction="#Report" prefHeight="32.0" prefWidth="118.0" ripplerFill="#bfbdbd" style="-fx-background-color: #fffff1;" text="Report" textAlignment="RIGHT" textOverrun="CLIP">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -112,18 +112,18 @@
       </ImageView>
       <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="759.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../assest/icons8-printer-96.png" />
+            <Image url="@../../assest/icons8-microsoft-excel-2019-48.png" />
          </image>
       </ImageView>
       <TableView fx:id="TableDetailsSupplier" layoutX="27.0" layoutY="258.0" onMouseClicked="#viewselectsupplier" prefHeight="310.0" prefWidth="1017.0" style="-fx-background-color: #aab7b8;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="258.0">
         <columns>
           <TableColumn prefWidth="70.0" text="Supplier ID" />
-          <TableColumn prefWidth="205.0" text="Supplier Name" />
-            <TableColumn minWidth="0.0" prefWidth="133.0" text="Company" />
-            <TableColumn prefWidth="108.0" text="Phone No" />
-            <TableColumn prefWidth="129.0" text="Email" />
-            <TableColumn prefWidth="232.0" text="Address" />
-            <TableColumn prefWidth="139.0" text="Discreption" />
+          <TableColumn prefWidth="134.0" text="Supplier Name" />
+            <TableColumn minWidth="0.0" prefWidth="211.0" text="Company" />
+            <TableColumn prefWidth="141.0" text="Email" />
+            <TableColumn prefWidth="112.0" text="Phone No" />
+            <TableColumn prefWidth="207.0" text="Discreption" />
+            <TableColumn prefWidth="141.0" text="Address" />
         </columns>
          <opaqueInsets>
             <Insets />
@@ -153,5 +153,36 @@
          </font>
       </Label>
       <JFXTextField fx:id="txtSId" layoutX="133.0" layoutY="75.0" prefHeight="25.0" prefWidth="183.0" />
+      <Label layoutX="606.0" layoutY="231.0" text="Total No of Supplier :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTot_supplier" layoutX="761.0" layoutY="229.0" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #ffffff;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnClear" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="752.0" layoutY="81.0" onAction="#clear" prefHeight="32.0" prefWidth="118.0" ripplerFill="#bfbdbd" style="-fx-background-color: #fffff1;" text="Clear" textAlignment="RIGHT" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="762.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assest/icons8-erase-64.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btndemo" alignment="CENTER_RIGHT" layoutX="519.0" layoutY="77.0" onAction="#demo" prefHeight="25.0" prefWidth="62.0" ripplerFill="#bfbdbd" style="-fx-background-color: #fffff1;" text="Demo" textAlignment="RIGHT" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>
