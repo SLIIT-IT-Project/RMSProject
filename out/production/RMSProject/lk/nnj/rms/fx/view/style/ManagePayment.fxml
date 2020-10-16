@@ -26,7 +26,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TableView fx:id="tbl_details" layoutX="33.0" layoutY="268.0" onMouseClicked="#viewSelect" prefHeight="417.0" prefWidth="898.0">
+      <TableView fx:id="tbl_details" layoutX="33.0" layoutY="268.0" onMouseClicked="#viewSelect" prefHeight="417.0" prefWidth="892.0">
         <columns>
           <TableColumn prefWidth="111.0" text="PID" />
           <TableColumn prefWidth="109.0" text="AMOUNT" />
@@ -160,20 +160,20 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btn_report" buttonType="RAISED" layoutX="1300.0" layoutY="322.0" onMouseClicked="#generateReport" prefHeight="59.0" prefWidth="59.0" style="-fx-background-color: #d4d0c7;" text=" ">
+      <JFXButton fx:id="btn_report" buttonType="RAISED" layoutX="1294.0" layoutY="322.0" onMouseClicked="#generateReport" prefHeight="59.0" prefWidth="59.0" style="-fx-background-color: #d4d0c7;" text=" ">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <ImageView disable="true" fitHeight="50.0" fitWidth="56.0" layoutX="1305.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="391.0" AnchorPane.leftAnchor="1305.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="327.0">
+      <ImageView disable="true" fitHeight="50.0" fitWidth="56.0" layoutX="1299.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="391.0" AnchorPane.leftAnchor="1299.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="327.0">
          <image>
             <Image url="@../../assest/icons8-view-96.png" />
          </image>
       </ImageView>
       <JFXComboBox fx:id="cb_status" layoutX="582.0" layoutY="151.0" prefHeight="25.0" prefWidth="101.0" promptText="-" />
       <JFXComboBox fx:id="cb_type" layoutX="724.0" layoutY="151.0" prefHeight="25.0" prefWidth="101.0" promptText="-" />
-      <PieChart fx:id="chart" layoutX="946.0" layoutY="249.0" prefHeight="204.0" prefWidth="339.0" title="Status" />
-      <JFXButton fx:id="btn_chart" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1300.0" layoutY="402.0" onAction="#ShowChart" prefHeight="59.0" prefWidth="59.0" ripplerFill="#544e4e" style="-fx-background-color: #d4d0c7;" text=" " textAlignment="CENTER">
+      <PieChart fx:id="chart" layoutX="941.0" layoutY="249.0" prefHeight="204.0" prefWidth="339.0" title="Status" />
+      <JFXButton fx:id="btn_chart" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1294.0" layoutY="402.0" onAction="#ShowChart" prefHeight="59.0" prefWidth="59.0" ripplerFill="#544e4e" style="-fx-background-color: #d4d0c7;" text=" " textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -188,13 +188,13 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <PieChart fx:id="chart2" layoutX="949.0" layoutY="474.0" prefHeight="204.0" prefWidth="339.0" title="Type" />
-      <ImageView disable="true" fitHeight="50.0" fitWidth="48.0" layoutX="1306.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+      <PieChart fx:id="chart2" layoutX="942.0" layoutY="474.0" prefHeight="204.0" prefWidth="339.0" title="Type" />
+      <ImageView disable="true" fitHeight="50.0" fitWidth="48.0" layoutX="1300.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../assest/circularchart.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btn_demo" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1302.0" layoutY="518.0" onAction="#setDemo" prefHeight="40.0" prefWidth="59.0" ripplerFill="#656264" style="-fx-background-color: #d4d0c7;" text="DEMO" textAlignment="CENTER">
+      <JFXButton fx:id="btn_demo" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1296.0" layoutY="518.0" onAction="#setDemo" prefHeight="40.0" prefWidth="59.0" ripplerFill="#656264" style="-fx-background-color: #d4d0c7;" text="DEMO" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

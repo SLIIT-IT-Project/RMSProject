@@ -58,7 +58,7 @@ public class UserServiceImpl implements IUser {
     @Override
     public User find(String emp_id) throws Exception {
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM employee WHERE emp_id=?");
+        PreparedStatement pstm = connection.prepareStatement("SELECT * FROM emp_details WHERE emp_id=?");
         pstm.setObject(1,emp_id);
 
         ResultSet rst =pstm.executeQuery();

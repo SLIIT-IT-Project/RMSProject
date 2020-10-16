@@ -75,7 +75,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <ImageView fx:id="lbl_del" fitHeight="46.0" fitWidth="46.0" layoutX="661.0" layoutY="41.0" onMouseClicked="#viewDel" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="54.0">
+            <ImageView fx:id="lbl_del" fitHeight="46.0" fitWidth="46.0" layoutX="661.0" layoutY="41.0" onMouseClicked="#viewcDel" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="54.0">
                <image>
                   <Image url="@../../assest/icons8-deliver-food-96.png" />
                </image>
@@ -103,7 +103,7 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></JFXButton>
-            <ImageView fx:id="lbl_remove" fitHeight="35.0" fitWidth="35.0" layoutX="878.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="276.0">
+            <ImageView fx:id="lbl_remove" fitHeight="35.0" fitWidth="35.0" layoutX="878.0" layoutY="35.0" onMouseClicked="#cRemoveOrder" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="276.0">
                <image>
                   <Image url="@../../assest/icons8-delete-128.png" />
                </image>
@@ -125,7 +125,7 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></JFXButton>
-            <ImageView fx:id="lbl_new" fitHeight="39.0" fitWidth="39.0" layoutX="955.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="195.0">
+            <ImageView fx:id="lbl_new" fitHeight="39.0" fitWidth="39.0" layoutX="955.0" layoutY="33.0" onMouseClicked="#cNewOrder" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="195.0">
                <image>
                   <Image url="@../../assest/icons8-renew-96.png" />
                </image>
@@ -133,7 +133,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="lbl_checkOut" fitHeight="46.0" fitWidth="46.0" layoutX="1076.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="67.0">
+            <ImageView fx:id="lbl_checkOut" fitHeight="46.0" fitWidth="46.0" layoutX="1076.0" layoutY="29.0" onMouseClicked="#cCheckOut" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="67.0">
                <image>
                   <Image url="@../../assest/icons8-us-dollar-96.png" />
                </image>
@@ -222,7 +222,7 @@
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
       <JFXTextField fx:id="txt_itemName" layoutX="129.0" layoutY="83.0" prefHeight="25.0" prefWidth="277.0" promptText="Search for the Item" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="783.0" />
-      <TextField fx:id="txt_qty" layoutX="458.0" layoutY="86.0" prefHeight="25.0" prefWidth="36.0" text="1" AnchorPane.rightAnchor="695.0" />
+      <TextField fx:id="txt_qty" editable="false" layoutX="458.0" layoutY="86.0" prefHeight="25.0" prefWidth="36.0" text="1" AnchorPane.rightAnchor="695.0" />
       <JFXButton fx:id="btn_add" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="560.0" layoutY="85.0" onAction="#addItem" prefHeight="27.0" prefWidth="98.0" style="-fx-background-color: #ffffff;" text="Add    " AnchorPane.rightAnchor="531.0">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -265,7 +265,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
-      <TextField fx:id="txt_qty1" layoutX="1071.0" layoutY="296.0" prefHeight="25.0" prefWidth="36.0" text="1" AnchorPane.rightAnchor="82.0" />
+      <TextField fx:id="txt_qty1" editable="false" layoutX="1071.0" layoutY="296.0" prefHeight="25.0" prefWidth="36.0" text="1" AnchorPane.rightAnchor="82.0" />
       <Label layoutX="912.0" layoutY="424.0" text="Sub Total  :" AnchorPane.rightAnchor="188.0">
          <font>
             <Font size="18.0" />
@@ -357,7 +357,7 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="lbl_largeP" fitHeight="46.0" fitWidth="46.0" layoutX="1026.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="117.0">
+      <ImageView fx:id="lbl_largeP" fitHeight="46.0" fitWidth="46.0" layoutX="1026.0" layoutY="183.0" onMouseClicked="#viewcLarge" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="117.0">
          <image>
             <Image url="@../../assest/icons8-pizza-96.png" />
          </image>
@@ -365,7 +365,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="lbl_elargeP" fitHeight="54.0" fitWidth="59.0" layoutX="1105.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="30.0">
+      <ImageView fx:id="lbl_elargeP" fitHeight="54.0" fitWidth="59.0" layoutX="1105.0" layoutY="178.0" onMouseClicked="#viewcElarge" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="30.0">
          <image>
             <Image url="@../../assest/icons8-pizza-96.png" />
          </image>
@@ -373,7 +373,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="lbl_mediumP" fitHeight="35.0" fitWidth="35.0" layoutX="1114.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="40.0">
+      <ImageView fx:id="lbl_mediumP" fitHeight="35.0" fitWidth="35.0" layoutX="1114.0" layoutY="120.0" onMouseClicked="#viewcMedium" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="40.0">
          <image>
             <Image url="@../../assest/icons8-pizza-96.png" />
          </image>
@@ -381,7 +381,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="lbl_smallP" fitHeight="32.0" fitWidth="32.0" layoutX="1033.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="124.0">
+      <ImageView fx:id="lbl_smallP" fitHeight="32.0" fitWidth="32.0" layoutX="1033.0" layoutY="121.0" onMouseClicked="#viewcSmall" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="124.0">
          <image>
             <Image url="@../../assest/icons8-pizza-96.png" />
          </image>
