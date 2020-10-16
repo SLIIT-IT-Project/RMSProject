@@ -10,4 +10,5 @@ public interface IStockService {
     boolean delete(int STId) throws Exception;
     Stock find (int STId) throws Exception;
     List<Stock> findAll() throws Exception;
+    int totalItems() throws Exception;
 }

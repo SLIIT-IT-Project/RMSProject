@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 
-public class StockDetailsImpl implements IStockService {
+public class StockServiceImpl implements IStockService {
 
     @Override
     public boolean add(Stock stock) throws Exception {
@@ -21,7 +21,7 @@ public class StockDetailsImpl implements IStockService {
         pstm.setObject(2,stock.getSTName());
         pstm.setObject(3,stock.getQuantity());
         pstm.setObject(4,stock.getType());
-        pstm.setObject(5,stock.getDate_Time());
+        pstm.setObject(5,stock.getDate());
         pstm.setObject(6,stock.getTotalCost());
 
 
@@ -33,12 +33,12 @@ public class StockDetailsImpl implements IStockService {
     public boolean update(Stock stock) throws Exception {
 
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm= connection.prepareStatement("UPDATE stock set STName = ?,Quantity = ?,Type = ?,Date_Time = ?,TotalCost = ?  WHERE STId=?");
+        PreparedStatement pstm= connection.prepareStatement("UPDATE stock set STName = ?,Quantity = ?,Type = ?,Date= ?,TotalCost = ?  WHERE STId=?");
         pstm.setObject(6,stock.getSTId());
         pstm.setObject(1,stock.getSTName());
         pstm.setObject(2,stock.getQuantity());
         pstm.setObject(3,stock.getType());
-        pstm.setObject(4,stock.getDate_Time());
+        pstm.setObject(4,stock.getDate());
         pstm.setObject(5,stock.getTotalCost());
 
         return pstm.executeUpdate()>0;
@@ -90,14 +90,30 @@ public class StockDetailsImpl implements IStockService {
             String STItemName=rst.getString(2);
             int Quantity=rst.getInt(3);
             String Type=rst.getString(4);
-            Date DateTime = rst.getDate(5);
+            Date Date = rst.getDate(5);
             int TotalCost=rst.getInt(6);
 
 
-            Stock stock = new Stock(STId,STItemName,Quantity,Type,DateTime,TotalCost);
+            Stock stock = new Stock(STId,STItemName,Quantity,Type,Date,TotalCost);
             allStock.add(stock);
         }
         return allStock;
 
     }
+
+    @Override
+    public int totalItems() throws Exception {
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT COUNT(SId) FROM supplier");
+
+        ResultSet rst = pstm.executeQuery();
+        int count = 0;
+
+        if(rst.next())
+        {
+            count = rst.getInt(1);
+        }
+        return count;
+    }
+
 }

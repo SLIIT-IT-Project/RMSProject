@@ -9,15 +9,15 @@ public class Stock {
     private String STName;
     private int Quantity;
     private String Type;
-    private Date Date_Time;
+    private Date Date;
     private int TotalCost;
 
-    public Stock(int STId, String STName, int quantity, String type, Date date_Time, int totalCost) {
+    public Stock(int STId, String STName, int quantity, String type, java.util.Date date, int totalCost) {
         this.STId = STId;
         this.STName = STName;
         Quantity = quantity;
         Type = type;
-        Date_Time = date_Time;
+        Date = date;
         TotalCost = totalCost;
     }
 
@@ -53,12 +53,12 @@ public class Stock {
         Type = type;
     }
 
-    public Date getDate_Time() {
-        return Date_Time;
+    public java.util.Date getDate() {
+        return Date;
     }
 
-    public void setDate_Time(Date date_Time) {
-        Date_Time = date_Time;
+    public void setDate(java.util.Date date) {
+        Date = date;
     }
 
     public int getTotalCost() {
@@ -76,7 +76,7 @@ public class Stock {
                 ", STName='" + STName + '\'' +
                 ", Quantity=" + Quantity +
                 ", Type='" + Type + '\'' +
-                ", Date_Time=" + Date_Time +
+                ", Date=" + Date +
                 ", TotalCost=" + TotalCost +
                 '}';
     }

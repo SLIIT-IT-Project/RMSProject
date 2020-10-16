@@ -10,4 +10,5 @@ public interface ISupplierService {
     boolean delete(int SId) throws Exception;
     Supplier find (int SId) throws Exception;
     List<Supplier> findAll() throws Exception;
+    int totalItems() throws Exception;
 }

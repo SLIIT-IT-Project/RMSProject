@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SupplierDetailsImpl implements ISupplierService {
+public class SupplierServiceImpl implements ISupplierService {
 
 
     @Override
@@ -103,6 +103,20 @@ public class SupplierDetailsImpl implements ISupplierService {
         }
         return allSupplier;
 
+    }
+    @Override
+    public int totalItems() throws Exception {
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT COUNT(SId) FROM supplier");
+
+        ResultSet rst = pstm.executeQuery();
+        int count = 0;
+
+        if(rst.next())
+        {
+            count = rst.getInt(1);
+        }
+        return count;
     }
 
 }
