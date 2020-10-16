@@ -1,31 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42095d49-78c5-4fed-8f3e-fce5e6f88259" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/assest/icons8-search-48.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/assest/icons8-search-48.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/db/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/db/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/model/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/model/Payment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/model/PlayerMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/model/PlayerMachine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IPlayerMachineService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IPlayerMachineService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IPlayerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/IPlayerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PaymentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PaymentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PlayerMachineServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PlayerMachineServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PlayerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/service/Impl/PlayerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/AdminPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/AdminPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/PlayerMachineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/service/Impl/PlayerMachineServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/AdminPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageMachineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManageMachineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePlayerMachineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/ManagePlayerMachineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/controller/PlaceOrderFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManageMachine.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManageMachine.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePayment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePayment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePlayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePlayer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePlayerMachine.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/nnj/rms/fx/view/style/ManagePlayerMachine.fxml" afterDir="false" />
+    <list default="true" id="42095d49-78c5-4fed-8f3e-fce5e6f88259" name="Default Changelist" comment="Commit 99.99% done yasoja">
+      <change beforePath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMSProject/lk/nnj/rms/fx/main/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +136,7 @@
       <workItem from="1602410986895" duration="60000" />
       <workItem from="1602412748880" duration="521000" />
       <workItem from="1602789354574" duration="2316000" />
-      <workItem from="1602807450735" duration="10014000" />
+      <workItem from="1602807450735" duration="10509000" />
     </task>
     <task id="LOCAL-00001" summary="by NNJ 16">
       <created>1599623203882</created>
@@ -217,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602794552371</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Commit 99.99% done yasoja">
+      <created>1602818209417</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602818209417</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,40 +216,53 @@
     <MESSAGE value="Final Commit 81% done and Integrate by NNJ16" />
     <MESSAGE value="Commit 99% done" />
     <MESSAGE value="Commit 99.9% done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 99.9% done" />
+    <MESSAGE value="Commit 99.99% done yasoja" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 99.99% done yasoja" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1602794550049">
+    <state x="568" y="226" key="#Notifications" timestamp="1602818464578">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602794550049" />
+    <state x="568" y="226" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1602818464578" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1602818200459">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602818200459" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1602807559845">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602807559845" />
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1602818134574">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1602818493891">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602818134574" />
-    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1602818134574">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602818493891" />
+    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1602818493891">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602818134574" />
-    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1602818134573">
+    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602818493891" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1602818493891">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602818134573" />
-    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1602818134574">
+    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602818493891" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1602818493891">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602818134574" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602818493891" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1602815101931">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602815101931" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1602794482087">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1602818576374">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1602794482087" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1602818576374" />
+    <state x="492" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602818510421">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1602818510421" />
+    <state x="394" y="152" key="git4idea.merge.GitPullDialog" timestamp="1602818642199">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="394" y="152" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1602818642199" />
   </component>
 </project>
